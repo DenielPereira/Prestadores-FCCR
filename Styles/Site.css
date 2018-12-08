@@ -1,14 +1,26 @@
 ﻿/* DEFAULTS
 ----------------------------------------------------------*/
 
+/*Inclusão da fonte MontSerrat*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
+
 body   
 {
     background: #b6b7bc;
     font-size: .80em;
-    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif !important; /*Inclui a fonte MontSerrat em todos os elementos*/
     margin: 0px;
     padding: 0px;
     color: #696969;
+}
+
+/*Adiciona uma transição suave às mudanças de elementos (0.15 segundos)*/
+*{
+    transition: all .15s ease-in-out;
+}
+
+a{
+    text-decoration: none !important;
 }
 
 a:link, a:visited
@@ -293,4 +305,150 @@ div.accountInfo
 {
     text-align: right;
     padding-right: 10px;
+}
+
+/* css que estava no head */
+
+.popUpStyle{
+    font: normal 11px auto "Trebuchet MS", Verdana;    
+    background-color: #4F4F4F;
+    color: #FF9900;  
+    padding:6px;             
+}
+
+.popUpStyle1{
+    font: normal 11px auto "Trebuchet MS", Verdana;    
+    background-color: gray;
+    color: #ff9900;  
+    padding:6px;
+    margin-left: 0px;
+    filter:alpha(opacity=80);
+    opacity:0.8;
+}
+    
+.style16{
+    width: 899px;
+}
+
+.style17{
+    width: 100%;
+}
+
+.style18{
+    height: 19px;
+}
+
+/*Deixa o elemento ocupando 90% da tela*/
+.w-90{
+    width: 90%;
+}
+
+/*Altera o estilo do separador*/
+hr{
+   border-top: 1px dotted rgba(0, 85, 79, 0.45) !important;
+}
+
+.display-4{
+    font-size: 40px !important;
+}
+
+.lead{
+    font-size: 16px !important;
+    font-style: italic;
+}
+
+.card{
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
+}
+
+.input-group-text{
+    width:70px;
+    color: white !important;
+    background-color: #00554f !important;
+}
+
+.titulo{
+    font-size: 20px;
+}
+
+.ph-center::-webkit-input-placeholder {
+   text-align: center;
+   font-size: 14px;
+}
+
+.ph-center:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+   font-size: 14px;
+}
+
+.ph-center::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center; 
+   font-size: 14px; 
+}
+
+.ph-center:-ms-input-placeholder {  
+   text-align: center;
+   font-size: 14px; 
+}
+
+.bg-logo{
+    background-image: url("../Imagens/Logotipos/fccr_horizontal.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 1% center;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #00554f !important;
+    border-color: #00554f !important;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, .5) !important;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #01504b !important;
+    border-color: #01504b !important;
+}
+
+.h-20{
+    height: 20vh;
+}
+
+.bg-green{
+    background-color: #00554f;
+}
+
+.brands{
+    position: relative;
+    top: 50%;
+    transform: translateY(-110%); 
+    color: #fff;
+    word-spacing: 20px;
+    font-size: 1.5em;
+}
+
+.footer{
+    position: relative;
+}
+
+.footer a{
+    color: #fff !important;
+}
+
+.footer a:hover{
+    color: #ccc !important;
+}
+
+.footer .copy{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 14px;
 }
