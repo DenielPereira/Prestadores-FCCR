@@ -31,14 +31,14 @@ Partial Class Enviar_Senha
         txt_CPF.Attributes.Add("onkeyup", "javascript:formatar(this, '###.###.###-##')")
         txt_CPF.Attributes.Add("onBlur", "javascript:valida_cpf(txt_CPF)")
 
-        If txt_CNPJ.Text <> "Digite aqui apenas se você for pessoa jurídica" Then
-            txt_CPF.Text = "Digite aqui apenas se você for pessoa física"
-            'txt_CPF.Enabled = "false"
-        End If
-        If txt_CPF.Text <> "Digite aqui apenas se você for pessoa física" Then
-            txt_CNPJ.Text = "Digite aqui apenas se você for pessoa jurídica"
-            'txt_CNPJ.Enabled = "false"
-        End If
+        ' If txt_CNPJ.Text <> "Digite aqui apenas se você for pessoa jurídica" Then
+        '     txt_CPF.Text = "Digite aqui apenas se você for pessoa física"
+        '     'txt_CPF.Enabled = "false"
+        ' End If
+        ' If txt_CPF.Text <> "Digite aqui apenas se você for pessoa física" Then
+        '     txt_CNPJ.Text = "Digite aqui apenas se você for pessoa jurídica"
+        '     'txt_CNPJ.Enabled = "false"
+        ' End If
 
     End Sub
 
