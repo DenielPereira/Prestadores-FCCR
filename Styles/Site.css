@@ -345,7 +345,8 @@ div.accountInfo
 
 /*Altera o estilo do separador*/
 hr{
-   border-top: 1px dotted rgba(0, 85, 79, 0.45) !important;
+    align-self: center;
+    border-top: 1px dotted rgba(0, 85, 79, 0.45) !important;
 }
 
 .display-4{

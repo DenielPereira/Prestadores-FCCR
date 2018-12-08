@@ -21,11 +21,6 @@
         <asp:ToolkitScriptManager runat="Server" EnablePartialRendering="true" ID="ToolkitScriptManager2" ScriptMode="Release" />
 
         <div class="row bg-logo px-2">
-            <!-- 
-            <div class="img">
-                <asp:Image ID="Image2" runat="server" ImageAlign="Middle" ImageUrl="~/Imagens/Logotipos/fccr_horizontal.png" Style="z-index: -1;" />
-            </div>
-            -->
             <div class="text-center mb-3 mt-3 w-100">
                 <asp:Label ID="lbl_Titulo35" runat="server" CssClass="display-4">Prestadores de Serviços</asp:Label>
                 <br />
@@ -80,7 +75,7 @@
                             </small>
                         </div>
 
-                        <asp:TextBox ID="txtCaptcha" runat="server" BackColor="White" BorderStyle="None" ForeColor="White" CssClass="align-self-center"  hidden></asp:TextBox>
+                        <asp:TextBox ID="txtCaptcha" runat="server" BackColor="White" BorderStyle="None" ForeColor="White" CssClass="align-self-center"  value="V" hidden></asp:TextBox>
 
                         <div class="row justify-content-center">
                             <div id="ReCaptchContainer" class="mb-2 mt-2"></div>

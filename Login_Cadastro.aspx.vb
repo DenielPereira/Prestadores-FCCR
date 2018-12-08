@@ -164,10 +164,10 @@ Partial Class Login_Cadastro
 
                                     lbl_mensagem_1.Text = "Este CNPJ/CPF não está cadastrado ou a senha está incorreta !!!"
                                     lbl_mensagem_2.Text = ""
-                                    img_btn_Fechar_Mensagem.Visible = "true"
-                                    img_btn_sair_Mensagem.Visible = "false"
-                                    btn_Confirma_Exclusao.Visible = "false"
-                                    btn_Nao_Confirma.Visible = "false"
+                                    img_btn_Fechar_Mensagem.Visible = "True"
+                                    img_btn_sair_Mensagem.Visible = "False"
+                                    btn_Confirma_Exclusao.Visible = "False"
+                                    btn_Nao_Confirma.Visible = "False"
                                     MPE_Login.Show()
                                     txtCaptcha.Text = ""
 
@@ -186,16 +186,17 @@ Partial Class Login_Cadastro
                         Catch ex As Exception
                             lbl_mensagem_1.Text = "Ocorreu uma falha de conexão com o banco de dados !!!"
                             lbl_mensagem_2.Text = ex.Message
-                            img_btn_Fechar_Mensagem.Visible = "true"
-                            img_btn_sair_Mensagem.Visible = "false"
-                            btn_Confirma_Exclusao.Visible = "false"
-                            btn_Nao_Confirma.Visible = "false"
+                            img_btn_Fechar_Mensagem.Visible = "True"
+                            img_btn_sair_Mensagem.Visible = "False"
+                            btn_Confirma_Exclusao.Visible = "False"
+                            btn_Nao_Confirma.Visible = "False"
                             MPE_Login.Show()
 
                         End Try
 
 
                     Else
+
                         lbl_mensagem_1.Text = "Informe seus dados corretamente !!!"
                         lbl_mensagem_2.Text = ""
                         img_btn_Fechar_Mensagem.Visible = "true"
