@@ -1,0 +1,120 @@
+CODIGO;DESCRICAO
+000001;Alimentação
+000002;Alimentação Pacientes
+000003;Assinaturas de Jornais ou Revistas
+000004;Bens de Pequeno Valor
+000005;Combustiveis e Lubrificantes
+000006;Copa e Cozinha
+000007;Correios e Telegrafos
+000008;Cursos e Especializações
+000009;Residuos Solidos Septicos
+000010;Internet
+000011;Transportes
+000012;Transportes de pacientes
+000013;Cartório
+000014;Serviços Médicos / Plantonistas
+000015;Manutenção Informática
+000016;Despesa com Veiculos
+000017;Eventos
+000018;Manutenção Preventiva
+000019;Locação de Maquinas e Equipamentos
+000020;Manutenção Predial
+000021;Manutenção Equip. (Corretiva)
+000022;Materiais Graficos
+000023;Material de Papelaria
+000024;Material de uso e consumo
+000025;Material de Limpeza
+000026;Material de Segurança - EPI
+000027;Publicidade e Propaganda
+000028;Sindicatos
+000029;Xerox / Encadernação
+000030;Emprestimo Bancario
+000031;Contribuições Sindicais
+000032;Serviço de Esterelização
+000033;Multas Fiscais Punitivas
+000034;Serviço de Laboratório
+000035;Doações
+000036;Serviço de Lavanderia
+000037;Serviço de Limpeza
+000038;Serviço de Remoção
+000039;Serviço Contratado PJ
+000040;Uniformes
+000041;Serviço Vigilância
+000042;Despesa de viagem
+000043;Guarda Mirim
+000044;Emprestimo Socios
+000045;Aumento Capital - Unicred
+000046;Estoque EPI
+000047;Estoque Hemo
+000048;Estoque Laboratório
+000049;Estoque Papelaria
+000051;Estoque Hemo - MEDICAMENTOS
+000052;Estoque Material Diversos - Tté
+000053;Estoque Material Limpeza
+000060;Imob. Aparelhos Telefonicos
+000061;Imob. Computadores e Periféricos
+000063;Imob. Ferramentas
+000064;Imob. Instalações
+000065;Convênio Médico
+000066;Imob. Maquinas e Equipamentos
+000071;Imob. Moveis e Utensilios
+000072;Imob. Software
+000073;Imob. Veiculos
+000074;Reforma Predial
+000077;Reforço Caixa
+000078;Juros por atraso
+000079;Juros de Emprestimos Bancarios
+000080;Pis s/ Faturamento
+000081;Taxa de renovação de licenças e impostos
+000086;Adiantamento de Salário / Ajuda Custo
+000087;Farmacia a Pagar
+000088;Convênio Odontologico
+000089;Vale Alimentação func
+000090;Pro - Labore
+000091;Adiantamento de 13º Salário
+000092;Férias
+000093;Pensão Alimenticia
+000094;Rescisões
+000095;Folha de Pagamento
+000096;Associações
+000097;Diversos
+000098;Multa de Transito
+000099;FGTS s/ FOPAG
+000100;INSS S/ FOPAG
+000101;INSS s/ NFs
+000102;IRRF - P.F  - CÓD. 0561 e 3208
+000103;IRRF - PJ - CÓD. 1708 e 3280
+000104;ISS s/ NFs
+000105;Retenção 4,65% s/ NFs - CÓD. 5952
+000106;CSLL
+000107;IRPJ
+000108;Cofins s/ Faturamento
+000109;Cesta de Natal
+000110;ISS s/ Faturamento
+000111;Alugueis (Tté e SJC)
+000112;Autonomos
+000113;Leasing
+000114;Seguros Automovel
+000115;Frete e Trasnporte
+000116;Pedágio e Estacionamento
+000117;Despesas Bancárias (tarifas)
+000118;Emprestimo
+000119;BNDES -
+000121;Emprestimo Consignado - Funcionários
+000122;Distribuição de Lucro
+000123;Fornecedor com Juros
+000124;Adiantamento de Fornecedor
+000125;Sinistro de Seguro
+000126;CPMF
+000127;IOF / IOC
+000129;Energia Eletrica
+000130;Vale Transporte
+000131;IPTU
+000132;IPVA
+000133;Agua
+000134;Telefonia
+000135;FGTS rescisório
+000136;Seguro / Predial - Maquina
+000137;Terceiros de Informatica
+000138;Custas Processuais
+000139;Aplicações Financeiras

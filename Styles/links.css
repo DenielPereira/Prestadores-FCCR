@@ -1,0 +1,78 @@
+A:link {text-decoration: none; color: #4E6070;}
+A:active {text-decoration: none; color: #4E6070;}
+A:visited {text-decoration: none; color: #4E6070;}
+A:hover {text-decoration: underline; color: #4E6070;}
+
+A.sub:link {text-decoration: underline; color: #4E6070;}
+A.sub:active {text-decoration: underline; color: #4E6070;}
+A.sub:visited {text-decoration: underline; color: #4E6070;}
+A.sub:hover {text-decoration: underline; color: #4E6070;}
+
+A.branco:link {text-decoration: none; color: #FFFFFF;}
+A.branco:active {text-decoration: none; color: #FFFFFF;}
+A.branco:visited {text-decoration: none; color: #FFFFFF;}
+A.branco:hover {text-decoration: underline; color: #FFFFFF;}
+
+A.laranja:link {text-decoration: none; color: #FF9900;}
+A.laranja:active {text-decoration: none; color: #FF9900;}
+A.laranja:visited {text-decoration: none; color: #FF9900;}
+A.laranja:hover {text-decoration: underline; color: #FF9900;}
+
+A.azul:link {text-decoration: none; color: #99a8bb;}
+A.azul:active {text-decoration: none; color: #99a8bb;}
+A.azul:visited {text-decoration: none; color: #99a8bb;}
+A.azul:hover {text-decoration: underline; color: #99a8bb;}
+
+p {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #4E6070;}
+br {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #4E6070;}
+td {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #4E6070;
+	margin-left: 40px;
+}
+body {margin-top: 0px; margin-bottom: 0px; margin-right: 0px; margin-left: 0px;}
+
+.campo {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: Small; color: #4E6070;
+height: 22px;
+background-color: #FFFFFF; border: #999999; border-style: solid;
+border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+border-left-width: 1px}
+
+.campoddl {
+font-family: Verdana, Arial, Helvetica, sans-serif; 
+font-size: Small; color: #4E6070;
+height: 25px;
+background-color: #FFFFFF; border: #999999; border-style: solid;
+border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+border-left-width: 1px}
+
+
+.botao {font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 11px; color: #4E6070;
+background-color: #FFFFFF; border: #4E6070; border-style: solid;
+border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+border-left-width: 1px}
+
+.collapsePanelHeader{	
+	width:650px;		
+	height:18px;
+	color: black;
+	background-color: #CFCFCF;
+	background: ../../Imagens/Backgrounds/Menu.jpg;
+	font-weight:bold;
+	float:none;
+	padding:5px; 
+	cursor: pointer; 
+	vertical-align: middle;
+}
+.collapsePanelHeader_Interno{	
+	width:650px;		
+	height:16px;
+	color: black;
+	background-color: #CCCCCC;	
+	font-weight:bold;
+	float:none;
+	cursor: pointer; 
+	vertical-align: middle;
+}
+

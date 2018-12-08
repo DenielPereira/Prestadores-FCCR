@@ -1,0 +1,359 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Conversao_SQL.aspx.vb" Inherits="Conversao_SQL" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/links.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" >
+<!--
+        // JavaScript Document
+        //adiciona mascara de cnpj
+        function MascaraCNPJ(cnpj) {
+            if (mascaraInteiro(cnpj) == false) {
+                event.returnValue = false;
+            }
+            return formataCampo(cnpj, '00.000.000/0000-00', event);
+        }
+
+        //adiciona mascara de IE
+        function MascaraIE(iest) {
+            if (mascaraInteiro(iest) == false) {
+                event.returnValue = false;
+            }
+            return formataCampo(iest, '000.000.000.000', event);
+        }
+
+        //adiciona mascara de cep
+        function MascaraCep(cep) {
+            if (mascaraInteiro(cep) == false) {
+                event.returnValue = false;
+            }
+            return formataCampo(cep, '00.000-000', event);
+        }
+
+        //adiciona mascara de data
+        function MascaraData(data) {
+            if (mascaraInteiro(data) == false) {
+                event.returnValue = false;
+            }
+            return formataCampo(data, '00/00/0000', event);
+        }
+
+        //adiciona mascara ao telefone
+        function MascaraTelefone(tel) {
+            if (mascaraInteiro(tel) == false) {
+                event.returnValue = false;
+            }
+            return formataCampo(tel, '(00) 0000-0000', event);
+        }
+
+        //adiciona mascara ao celular
+        function MascaraCelular(tel) {
+            if (mascaraInteiro(tel) == false) {
+                event.returnValue = false;
+            }
+            return formataCampo(tel, '(00) 0000-0000', event);
+        }
+
+        //adiciona mascara ao CPF
+        function MascaraCPF(cpf) {
+            if (mascaraInteiro(cpf) == false) {
+                event.returnValue = false;
+            }
+            return formataCampo(cpf, '000.000.000-00', event);
+        }
+
+        //valida telefone
+        function ValidaTelefone(tel) {
+            exp = /\(\d{2}\)\ \d{4}\-\d{4}/
+            if (!exp.test(tel.value))
+                alert('Numero de Telefone Invalido!');
+        }
+
+        //valida celular
+        function ValidaCelular(tel) {
+            exp = /\(\d{2}\)\ \d{4}\-\d{4}/
+            if (!exp.test(tel.value))
+                alert('Numero de Celular Invalido!');
+        }
+
+        //valida CEP
+        function ValidaCep(cep) {
+            exp = /\d{2}\.\d{3}\-\d{3}/
+            if (!exp.test(cep.value))
+                alert('Numero de Cep Invalido!');
+        }
+
+        //valida data
+        function ValidaData(data) {
+            exp = /\d{2}\/\d{2}\/\d{4}/
+            if (!exp.test(data.value))
+                alert('Data Invalida!');
+        }
+
+        //valida email
+        function ValidaEmail(email) {
+            exp = /^.+@.+\..{2,}$/ 
+            if (!exp.test(email.value))
+                alert('Email Invalido !');
+        }
+        
+        //valida o CPF digitado
+        function ValidarCPF(Objcpf) {
+            var cpf = Objcpf.value;
+            exp = /\.|\-/g
+            cpf = cpf.toString().replace(exp, "");
+            var digitoDigitado = eval(cpf.charAt(9) + cpf.charAt(10));
+            var soma1 = 0, soma2 = 0;
+            var vlr = 11;
+
+            for (i = 0; i < 9; i++) {
+                soma1 += eval(cpf.charAt(i) * (vlr - 1));
+                soma2 += eval(cpf.charAt(i) * vlr);
+                vlr--;
+            }
+            soma1 = (((soma1 * 10) % 11) == 10 ? 0 : ((soma1 * 10) % 11));
+            soma2 = (((soma2 + (2 * soma1)) * 10) % 11);
+
+            var digitoGerado = (soma1 * 10) + soma2;
+            if (digitoGerado != digitoDigitado)
+                alert('CPF Invalido!');
+        }
+
+        function validarCPFx(cpfvalue) {
+            var cpf = cpfvalue.value;
+            exp = /\.|\-/g
+            cpf = cpf.toString().replace(exp, "");
+               if(cpf == '') return false;       
+               // Elimina CPFs invalidos conhecidos     
+               if (cpf.length != 11 ||         
+                cpf == "00000000000" ||          
+                cpf == "11111111111" ||          
+                cpf == "22222222222" ||          
+                cpf == "33333333333" ||         
+                 cpf == "44444444444" ||          
+                 cpf == "55555555555" ||         
+                  cpf == "66666666666" ||          
+                  cpf == "77777777777" ||          
+                  cpf == "88888888888" ||          
+                  cpf == "99999999999")         
+                  return false;           
+                  // Valida 1o digito     
+                  add = 0;     
+                  for (i=0; i < 9; i ++)         
+                  add += parseInt(cpf.charAt(i)) * (10 - i);     
+                  rev = 11 - (add % 11);     
+                  if (rev == 10 || rev == 11)         
+                  rev = 0;     
+                  if (rev != parseInt(cpf.charAt(9)))         
+                  return false;
+              // Valida 2o digito
+              add = 0;
+              for (i = 0; i < 10; i++)
+                  add += parseInt(cpf.charAt(i)) * (11 - i);
+              rev = 11 - (add % 11);
+              if (rev == 10 || rev == 11)
+                  rev = 0;
+              if (rev != parseInt(cpf.charAt(10)))
+                  return false;
+              return true;     
+                    } 
+
+
+        //valida numero inteiro com mascara
+        function mascaraInteiro() {
+            if (event.keyCode < 48 || event.keyCode > 57) {
+                event.returnValue = false;
+                return false;
+            }
+            return true;
+        }
+
+        //valida o CNPJ digitado
+        function ValidarCNPJ(ObjCnpj) {
+            var cnpj = ObjCnpj.value;
+            var valida = new Array(6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2);
+            var dig1 = new Number;
+            var dig2 = new Number;
+
+            exp = /\.|\-|\//g
+            cnpj = cnpj.toString().replace(exp, "");
+            var digito = new Number(eval(cnpj.charAt(12) + cnpj.charAt(13)));
+
+            for (i = 0; i < valida.length; i++) {
+                dig1 += (i > 0 ? (cnpj.charAt(i - 1) * valida[i]) : 0);
+                dig2 += cnpj.charAt(i) * valida[i];
+            }
+            dig1 = (((dig1 % 11) < 2) ? 0 : (11 - (dig1 % 11)));
+            dig2 = (((dig2 % 11) < 2) ? 0 : (11 - (dig2 % 11)));
+
+            if (((dig1 * 10) + dig2) != digito) {
+                alert('CNPJ Invalido!');
+                ObjCnpj.value = "";
+                ObjCnpj.select();
+            }
+        }
+
+        //formata de forma generica os campos
+        function formataCampo(campo, Mascara, evento) {
+            var boleanoMascara;
+
+            var Digitato = evento.keyCode;
+            exp = /\-|\.|\/|\(|\)| /g
+            campoSoNumeros = campo.value.toString().replace(exp, "");
+
+            var posicaoCampo = 0;
+            var NovoValorCampo = "";
+            var TamanhoMascara = campoSoNumeros.length; ;
+
+            if (Digitato != 8) { // backspace 
+                for (i = 0; i <= TamanhoMascara; i++) {
+                    boleanoMascara = ((Mascara.charAt(i) == "-") || (Mascara.charAt(i) == ".")
+								|| (Mascara.charAt(i) == "/"))
+                    boleanoMascara = boleanoMascara || ((Mascara.charAt(i) == "(")
+								|| (Mascara.charAt(i) == ")") || (Mascara.charAt(i) == " "))
+                    if (boleanoMascara) {
+                        NovoValorCampo += Mascara.charAt(i);
+                        TamanhoMascara++;
+                    } else {
+                        NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
+                        posicaoCampo++;
+                    }
+                }
+                campo.value = NovoValorCampo;
+                return true;
+            } else {
+                return true;
+            }
+        }
+        
+   
+    
+
+//-->
+</script>
+
+    
+    <style type="text/css">
+       .style1
+        {
+            height: 35px;
+            background-color: #fff;
+    margin: 20px auto 0px auto;
+    border: 1px solid #496077;
+        }
+              .popUpStyle1
+    {
+        font: normal 11px auto "Trebuchet MS", Verdana;    
+        background-color: #FFFFFF;
+        color: #ff9900;  
+        padding:6px;
+                    margin-left: 0px;
+                }
+    
+    .drag
+    {
+         background-color: #dddddd;
+         cursor: move;
+         border:solid 1px gray ;
+    }
+    
+.campo {font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 11px; color: #4E6070;
+background-color: #FFFFFF; border: #999999; border-style: solid;
+border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+border-left-width: 1px}
+
+        </style>
+
+    
+</head>
+<body>
+    <form id="Form1" name="form1" runat="server">
+
+    <table class="style1" align="center">
+     <tr>
+                 <td colspan="3" align="center"><asp:Image ID="Image2" runat="server" ImageAlign="Middle"
+                    ImageUrl="~/Imagens/Logotipos/fccr_logo.jpg" />
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td align="center">
+                <asp:Button ID="btn_confirmar" runat="server" 
+                    Text="Confirmar Conversão - Documento" />
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td align="center">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td align="center" >
+                <asp:Button ID="btn_confirmar0" runat="server" 
+                    Text="Confirmar Conversão - Prestador" />
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td align="center">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td align="center">
+                <asp:Button ID="btn_confirmar1" runat="server" 
+                    Text="Confirmar Conversão - Prestador x Prestador" />
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+                <td align=center >
+                <asp:ImageButton ID="btn_Voltar" runat="server" 
+                    ImageUrl="~/Imagens/Botoes/BotaoVoltar.gif" />
+            </td>
+            
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
+

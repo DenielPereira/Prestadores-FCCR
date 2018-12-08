@@ -1,0 +1,364 @@
+﻿Imports System.Data
+Imports MySql.Data.MySqlClient
+Imports System.Data.OleDb
+Imports System.Web
+Imports System.Web.UI.ScriptReferenceCollection
+Partial Class Conversao_SQL
+    Inherits System.Web.UI.Page
+    Dim objConn As MySqlConnection
+    Dim objDt As MySqlDataAdapter
+    Dim ds As DataSet
+    Dim objCmd As MySqlCommand
+    Dim dr As MySqlDataReader
+    Dim objConnmdb As OleDbConnection
+    Dim objCmdmdb As OleDbCommand
+    Dim drmdb As OleDbDataReader
+    Dim strexec, strreader As String
+    Dim CtrLen, CtrTipo, CtrCodUsuario, CodDoc As Integer
+    Dim sFileName, sImgFile, sPath As String
+    Dim mdia, mmes As Integer
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+    End Sub
+    Private Sub Documento()
+        Dim m_vez As Integer
+
+        m_vez = 0
+
+        'abrindo conexao
+        objConn = New MySqlConnection(ConfigurationManager.ConnectionStrings("fccr_cadastro_mysql_ConnectionString").ConnectionString)
+        objConnmdb = New OleDbConnection(ConfigurationManager.ConnectionStrings("FCCR_Cadastro_MDB_ConnectionString").ConnectionString)
+
+
+        'deletar dados
+        strexec = "DELETE Cad_Documento from Cad_Documento"
+
+        objCmd = New MySqlCommand(strexec, objConn)
+        If m_vez = 0 Then
+            m_vez = 1
+            objCmd.Connection.Open()
+        End If
+        objCmd.ExecuteNonQuery()
+
+        'pegar dados
+
+        strreader = "SELECT "
+        strreader = strreader & "Cad_Documento.Doc_ID,"
+        strreader = strreader & "Cad_Documento.Doc_Descricao,"
+        strreader = strreader & "Cad_Documento.Doc_Validade,"
+        strreader = strreader & "Cad_Documento.Doc_Onde_Obter,"
+        strreader = strreader & "Cad_Documento.Doc_Prestador,"
+        strreader = strreader & "Cad_Documento.Doc_Fornecedor,"
+        strreader = strreader & "Cad_Documento.Doc_MEI,"
+        strreader = strreader & "Cad_Documento.Doc_Situacao,"
+        strreader = strreader & "Cad_Documento.Doc_Obrigatorio, "
+        strreader = strreader & "Cad_Documento.Doc_Modelo "
+        strreader = strreader & "FROM Cad_Documento "
+
+        objCmdmdb = New OleDbCommand(strreader, objConnmdb)
+
+        'criar datareader
+        objCmdmdb.Connection.Open()
+        drmdb = objCmdmdb.ExecuteReader()
+        'se achar retorna verdadeiro
+        While drmdb.Read()
+            'inserir dados
+            strexec = "INSERT INTO Cad_Documento(Doc_ID,Doc_Descricao,Doc_Validade,Doc_Onde_Obter,Doc_Prestador,Doc_Fornecedor,Doc_MEI,"
+            strexec = strexec & "Doc_Situacao,Doc_Modelo,Doc_Obrigatorio) VALUES(" & drmdb("Doc_ID") & ",'"
+            strexec = strexec & "" & drmdb("Doc_Descricao") & "',"
+            strexec = strexec & "" & drmdb("Doc_Validade") & ","
+            strexec = strexec & "'" & drmdb("Doc_Onde_Obter") & "',"
+            strexec = strexec & "" & drmdb("Doc_Prestador") & ","
+            strexec = strexec & "" & drmdb("Doc_Fornecedor") & ","
+            strexec = strexec & "" & drmdb("Doc_MEI") & ","
+            strexec = strexec & "'" & drmdb("Doc_Situacao") & "',"
+            strexec = strexec & "'" & drmdb("Doc_Modelo") & "',"
+            strexec = strexec & "" & drmdb("Doc_Obrigatorio") & ") "
+
+            objCmd = New MySqlCommand(strexec, objConn)
+            If m_vez = 0 Then
+                m_vez = 1
+                objCmd.Connection.Open()
+            End If
+
+            objCmd.ExecuteNonQuery()
+
+            
+        End While
+
+        drmdb.Close()
+        drmdb = Nothing
+
+        'fechar conexao
+
+        objConnmdb.Close()
+        objConnmdb = Nothing
+
+        If m_vez = 1 Then
+            'fechar
+            objCmd.Connection.Close()
+            objConn.Close()
+        End If
+
+    End Sub
+    Private Sub Prestador()
+        Dim m_vez As Integer
+
+        m_vez = 0
+
+        'abrindo conexao
+        objConn = New MySqlConnection(ConfigurationManager.ConnectionStrings("fccr_cadastro_mysql_ConnectionString").ConnectionString)
+        objConnmdb = New OleDbConnection(ConfigurationManager.ConnectionStrings("FCCR_Cadastro_MDB_ConnectionString").ConnectionString)
+
+        'deletar dados
+        strexec = "DELETE Cad_Prestador from Cad_Prestador"
+
+        objCmd = New MySqlCommand(strexec, objConn)
+        If m_vez = 0 Then
+            m_vez = 1
+            objCmd.Connection.Open()
+        End If
+        objCmd.ExecuteNonQuery()
+
+        'pegar dados
+
+        strreader = "SELECT "
+        strreader = strreader & "Cad_Prestador.Pre_ID,"
+        strreader = strreader & "Cad_Prestador.Pre_CNPJ,"
+        strreader = strreader & "Cad_Prestador.Pre_Razao_Social,"
+        strreader = strreader & "Cad_Prestador.Pre_Nome_Fantasia,"
+        strreader = strreader & "Cad_Prestador.Pre_IEstadual,"
+        strreader = strreader & "Cad_Prestador.Pre_IMunicipal,"
+        strreader = strreader & "Cad_Prestador.Pre_IMunicipal_Municipio,"
+        strreader = strreader & "Cad_Prestador.Pre_IMunicipal_UF,"
+        strreader = strreader & "Cad_Prestador.Pre_Representante,"
+        strreader = strreader & "Cad_Prestador.Pre_Representante_Cargo,"
+        strreader = strreader & "Cad_Prestador.Pre_Representante_Estado_Civil,"
+        strreader = strreader & "Cad_Prestador.Pre_Representante_Profissao,"
+        strreader = strreader & "Cad_Prestador.Pre_Representante_CPF,"
+        strreader = strreader & "Cad_Prestador.Pre_Representante_RG,"
+        strreader = strreader & "Cad_Prestador.Pre_Nacionalidade,"
+        strreader = strreader & "Cad_Prestador.Pre_Endereco,"
+        strreader = strreader & "Cad_Prestador.Pre_Numero,"
+        strreader = strreader & "Cad_Prestador.Pre_Complemento,"
+        strreader = strreader & "Cad_Prestador.Pre_Bairro,"
+        strreader = strreader & "Cad_Prestador.Pre_CEP,"
+        strreader = strreader & "Cad_Prestador.Pre_Municipio,"
+        strreader = strreader & "Cad_Prestador.Pre_UF,"
+        strreader = strreader & "Cad_Prestador.Pre_Telefone,"
+        strreader = strreader & "Cad_Prestador.Pre_Celular,"
+        strreader = strreader & "Cad_Prestador.Pre_Email,"
+        strreader = strreader & "Cad_Prestador.Pre_Site,"
+        strreader = strreader & "Cad_Prestador.Pre_Senha "
+        strreader = strreader & "FROM Cad_Prestador "
+
+        objCmdmdb = New OleDbCommand(strreader, objConnmdb)
+
+        'criar datareader
+        objCmdmdb.Connection.Open()
+        drmdb = objCmdmdb.ExecuteReader()
+        'se achar retorna verdadeiro
+        While drmdb.Read()
+            'inserir dados
+            strexec = "INSERT INTO Cad_Prestador(Pre_ID,"
+            strexec = strexec & "Pre_CNPJ,"
+            strexec = strexec & "Pre_Razao_Social,"
+            strexec = strexec & "Pre_Nome_Fantasia,"
+            strexec = strexec & "Pre_IEstadual,"
+            strexec = strexec & "Pre_IMunicipal,"
+            strexec = strexec & "Pre_IMunicipal_Municipio,"
+            strexec = strexec & "Pre_IMunicipal_UF,"
+            strexec = strexec & "Pre_Representante,"
+            strexec = strexec & "Pre_Representante_Cargo,"
+            strexec = strexec & "Pre_Representante_Estado_Civil,"
+            strexec = strexec & "Pre_Representante_Profissao,"
+            strexec = strexec & "Pre_Representante_CPF,"
+            strexec = strexec & "Pre_Representante_RG,"
+            strexec = strexec & "Pre_Nacionalidade,"
+            strexec = strexec & "Pre_Endereco,"
+            strexec = strexec & "Pre_Numero,"
+            strexec = strexec & "Pre_Complemento,"
+            strexec = strexec & "Pre_Bairro,"
+            strexec = strexec & "Pre_CEP,"
+            strexec = strexec & "Pre_Municipio,"
+            strexec = strexec & "Pre_UF,"
+            strexec = strexec & "Pre_Telefone,"
+            strexec = strexec & "Pre_Celular,"
+            strexec = strexec & "Pre_Email,"
+            strexec = strexec & "Pre_Site,"
+            strexec = strexec & "Pre_Senha) "
+            strexec = strexec & " VALUES (" & drmdb("Pre_ID") & ","
+            strexec = strexec & "'" & drmdb("Pre_CNPJ") & "',"
+            strexec = strexec & "'" & drmdb("Pre_Razao_Social") & "',"
+            strexec = strexec & "'" & drmdb("Pre_Nome_Fantasia") & "',"
+            strexec = strexec & "'" & drmdb("Pre_IEstadual") & "',"
+            strexec = strexec & "'" & drmdb("Pre_IMunicipal") & "',"
+            strexec = strexec & "'" & drmdb("Pre_IMunicipal_Municipio") & "',"
+            strexec = strexec & "'" & drmdb("Pre_IMunicipal_UF") & "',"
+            strexec = strexec & "'" & drmdb("Pre_Representante") & "',"
+            strexec = strexec & "'" & drmdb("Pre_Representante_Cargo") & "',"
+            strexec = strexec & "'" & drmdb("Pre_Representante_Estado_Civil") & "',"
+            strexec = strexec & "'" & drmdb("Pre_Representante_Profissao") & "',"
+            strexec = strexec & "'" & drmdb("Pre_Representante_CPF") & "',"
+            strexec = strexec & "'" & drmdb("Pre_Representante_RG") & "',"
+            strexec = strexec & "'" & drmdb("Pre_Nacionalidade") & "',"
+            strexec = strexec & "'" & drmdb("Pre_Endereco") & "',"
+            strexec = strexec & "'" & drmdb("Pre_Numero") & "',"
+            strexec = strexec & "'" & drmdb("Pre_Complemento") & "',"
+            strexec = strexec & "'" & drmdb("Pre_Bairro") & "',"
+            strexec = strexec & "'" & drmdb("Pre_CEP") & "',"
+            strexec = strexec & "'" & drmdb("Pre_Municipio") & "',"
+            strexec = strexec & "'" & drmdb("Pre_UF") & "',"
+            strexec = strexec & "'" & drmdb("Pre_Telefone") & "', "
+            strexec = strexec & "'" & drmdb("Pre_Celular") & "', "
+            strexec = strexec & "'" & drmdb("Pre_Email") & "', "
+            strexec = strexec & "'" & drmdb("Pre_Site") & "', "
+            strexec = strexec & "'" & drmdb("Pre_Senha") & "')"
+
+
+            objCmd = New MySqlCommand(strexec, objConn)
+            If m_vez = 0 Then
+                m_vez = 1
+                objCmd.Connection.Open()
+            End If
+
+            objCmd.ExecuteNonQuery()
+
+
+        End While
+
+        drmdb.Close()
+        drmdb = Nothing
+
+        'fechar conexao
+
+        objConnmdb.Close()
+        objConnmdb = Nothing
+
+        If m_vez = 1 Then
+            'fechar
+            objCmd.Connection.Close()
+            objConn.Close()
+        End If
+
+    End Sub
+    Private Sub PrestadorxPrestador()
+        Dim m_vez As Integer
+
+        m_vez = 0
+
+        'abrindo conexao
+        objConn = New MySqlConnection(ConfigurationManager.ConnectionStrings("fccr_cadastro_mysql_ConnectionString").ConnectionString)
+        objConnmdb = New OleDbConnection(ConfigurationManager.ConnectionStrings("FCCR_Cadastro_MDB_ConnectionString").ConnectionString)
+
+        'deletar dados
+        strexec = "DELETE Cad_PrestadorxPrestador from Cad_PrestadorxPrestador"
+
+        objCmd = New MySqlCommand(strexec, objConn)
+        If m_vez = 0 Then
+            m_vez = 1
+            objCmd.Connection.Open()
+        End If
+        objCmd.ExecuteNonQuery()
+
+
+        'pegar dados
+
+        strreader = "select Cad_PrestadorxPrestador.PrexPre_Id, "
+        strreader = strreader & "Cad_PrestadorxPrestador.Pre_Id, "
+        strreader = strreader & "Cad_PrestadorxPrestador.Pre_CNPJ, "
+        strreader = strreader & "Cad_PrestadorxPrestador.PrexPre_Nome, "
+        strreader = strreader & "Cad_PrestadorxPrestador.PrexPre_RG, "
+        strreader = strreader & "Cad_PrestadorxPrestador.PrexPre_CPF, "
+        strreader = strreader & "Cad_PrestadorxPrestador.PrexPre_Nacionalidade, "
+        strreader = strreader & "Cad_PrestadorxPrestador.PrexPre_Estado_Civil, "
+        strreader = strreader & "Cad_PrestadorxPrestador.PrexPre_Profissao, "
+        strreader = strreader & "Cad_PrestadorxPrestador.PrexPre_Endereco, "
+        strreader = strreader & "Cad_PrestadorxPrestador.PrexPre_Numero, "
+        strreader = strreader & "Cad_PrestadorxPrestador.PrexPre_Complemento, "
+        strreader = strreader & "Cad_PrestadorxPrestador.PrexPre_Bairro, "
+        strreader = strreader & "Cad_PrestadorxPrestador.PrexPre_CEP, "
+        strreader = strreader & "Cad_PrestadorxPrestador.PrexPre_Municipio, "
+        strreader = strreader & "Cad_PrestadorxPrestador.PrexPre_UF, "
+        strreader = strreader & "Cad_PrestadorxPrestador.PrexPre_Telefone,"
+        strreader = strreader & "Cad_PrestadorxPrestador.PrexPre_Celular,"
+        strreader = strreader & "Cad_PrestadorxPrestador.PrexPre_Email,"
+        strreader = strreader & "Cad_PrestadorxPrestador.PrexPre_Servicos "
+        strreader = strreader & "FROM Cad_PrestadorxPrestador "
+
+        objCmdmdb = New OleDbCommand(strreader, objConnmdb)
+
+        'criar datareader
+        objCmdmdb.Connection.Open()
+        drmdb = objCmdmdb.ExecuteReader()
+        'se achar retorna verdadeiro
+        While drmdb.Read()
+            'inserir dados
+            strexec = "INSERT INTO Cad_PrestadorxPrestador(Pre_ID,Pre_CNPJ,PrexPre_Nome,PrexPre_RG,PrexPre_CPF,PrexPre_Nacionalidade, "
+            strexec = strexec & "PrexPre_Estado_Civil,PrexPre_Profissao,PrexPre_Endereco,PrexPre_Numero,PrexPre_Complemento,PrexPre_Bairro, "
+            strexec = strexec & "PrexPre_CEP,PrexPre_Municipio,PrexPre_UF,PrexPre_Telefone,PrexPre_Celular,PrexPre_Email,PrexPre_Servicos) "
+            strexec = strexec & " VALUES (" & drmdb("Pre_ID") & ","
+            strexec = strexec & "'" & drmdb("Pre_CNPJ") & "',"
+            strexec = strexec & "'" & drmdb("PrexPre_Nome") & "',"
+            strexec = strexec & "'" & drmdb("PrexPre_RG") & "',"
+            strexec = strexec & "'" & drmdb("PrexPre_CPF") & "',"
+            strexec = strexec & "'" & drmdb("PrexPre_Nacionalidade") & "',"
+            strexec = strexec & "'" & drmdb("PrexPre_Estado_Civil") & "',"
+            strexec = strexec & "'" & drmdb("PrexPre_Profissao") & "',"
+            strexec = strexec & "'" & drmdb("PrexPre_Endereco") & "',"
+            strexec = strexec & "'" & drmdb("PrexPre_Numero") & "',"
+            strexec = strexec & "'" & drmdb("PrexPre_Complemento") & "',"
+            strexec = strexec & "'" & drmdb("PrexPre_Bairro") & "',"
+            strexec = strexec & "'" & drmdb("PrexPre_CEP") & "',"
+            strexec = strexec & "'" & drmdb("PrexPre_Municipio") & "',"
+            strexec = strexec & "'" & drmdb("PrexPre_UF") & "',"
+            strexec = strexec & "'" & drmdb("PrexPre_Telefone") & "',"
+            strexec = strexec & "'" & drmdb("PrexPre_Celular") & "',"
+            strexec = strexec & "'" & drmdb("PrexPre_Email") & "',"
+            strexec = strexec & "'" & drmdb("PrexPre_Servicos") & "')"
+
+            objCmd = New MySqlCommand(strexec, objConn)
+            If m_vez = 0 Then
+                m_vez = 1
+                objCmd.Connection.Open()
+            End If
+
+            objCmd.ExecuteNonQuery()
+
+
+        End While
+
+        drmdb.Close()
+        drmdb = Nothing
+
+        'fechar conexao
+
+        objConnmdb.Close()
+        objConnmdb = Nothing
+
+        If m_vez = 1 Then
+            'fechar
+            objCmd.Connection.Close()
+            objConn.Close()
+        End If
+
+    End Sub
+
+    Protected Sub btn_Voltar_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles btn_Voltar.Click
+        Response.Redirect("Cadastro_Menu.aspx")
+        Response.End()
+    End Sub
+
+    Protected Sub btn_confirmar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_confirmar.Click
+        Documento()
+       
+    End Sub
+
+    Protected Sub btn_confirmar0_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_confirmar0.Click
+        Prestador()
+    End Sub
+
+    Protected Sub btn_confirmar1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_confirmar1.Click
+        PrestadorxPrestador()
+    End Sub
+End Class
