@@ -1,0 +1,217 @@
+
+		.style1 {
+			height: 0px;
+			background-color: #fff;
+			margin: 0px auto 0px auto;
+			border: 1px solid #496077;
+			margin-left: 0px;
+			margin-right: 0px;
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+
+		.popUpStyle {
+			background-color: #4F4F4F;
+			color: #FF9900;
+			padding: 6px;
+		}
+
+		.popUpStyle1 {
+			background-color: gray;
+			color: #ff9900;
+			padding: 6px;
+			margin-left: 0px;
+			filter: alpha(opacity=80);
+			opacity: 0.8;
+		}
+
+		.drag {
+			background-color: #dddddd;
+			cursor: move;
+			border: solid 1px gray;
+		}
+
+		.campo {
+			font-size: 11px;
+			color: #4E6070;
+			background-color: #FFFFFF;
+			border: 1px solid #999999;
+			height: 17px;
+			margin-left: 17px;
+			margin-bottom: 0px;
+		}
+
+		/*Header*/
+		.Tab .ajax__tab_header {
+			color: #4682b4;
+			font-family: Calibri;
+			font-size: 14px;
+			font-weight: bold;
+			background-color: #ffffff;
+			margin-left: 0px;
+		}
+
+		/*Body*/
+		.Tab .ajax__tab_body {
+			border: 1px solid #b4cbdf;
+			padding-top: 0px;
+		}
+
+		/*Tab Active*/
+		.Tab .ajax__tab_active .ajax__tab_tab {
+			color: #ffffff;
+			background: url("../../tab_active.gif") repeat-x;
+			height: 20px;
+		}
+
+		.Tab .ajax__tab_active .ajax__tab_inner {
+			color: #ffffff;
+			background: url("../../tab_left_active.gif") no-repeat left;
+			padding-left: 10px;
+		}
+
+		.Tab .ajax__tab_active .ajax__tab_outer {
+			color: #ffffff;
+			background: url("../../tab_right_active.gif") no-repeat right;
+			padding-right: 6px;
+		}
+
+		/*Tab Hover*/
+		.Tab .ajax__tab_hover .ajax__tab_tab {
+			color: #000000;
+			background: url("../../tab_hover.gif") repeat-x;
+			height: 20px;
+		}
+
+		.Tab .ajax__tab_hover .ajax__tab_inner {
+			color: #000000;
+			background: url("../../tab_left_hover.gif") no-repeat left;
+			padding-left: 10px;
+		}
+
+		.Tab .ajax__tab_hover .ajax__tab_outer {
+			color: #000000;
+			background: url("../../tab_right_hover.gif") no-repeat right;
+			padding-right: 6px;
+		}
+
+		/*Tab Inactive*/
+		.Tab .ajax__tab_tab {
+			color: #666666;
+			background: url("../../tab_Inactive.gif") repeat-x;
+			height: 20px;
+		}
+
+		.Tab .ajax__tab_inner {
+			color: #666666;
+			background: url("../../tab_left_inactive.gif") no-repeat left;
+			padding-left: 10px;
+		}
+
+		.Tab .ajax__tab_outer {
+			color: #666666;
+			background: url("../../tab_right_inactive.gif") no-repeat right;
+			padding-right: 6px;
+			margin-right: 2px;
+		}
+
+		.MyTabStyle .ajax__tab_header {
+			background: transparent;
+			border: none;
+			-moz-border-radius: 0px;
+			-webkit-border-radius: 0px;
+			border-radius: 0px;
+			text-align: center;
+		}
+
+		.MyTabStyle .ajax__tab_header .ajax__tab_outer {
+			border-color: #222;
+			color: #222;
+			padding-left: 10px;
+			margin-right: 3px;
+			border: none;
+		}
+
+		.MyTabStyle .ajax__tab_header .ajax__tab_inner {
+			border-color: #666;
+			color: #666;
+			padding: 3px 10px 2px 0px;
+			border: none;
+		}
+
+		.MyTabStyle .ajax__tab_hover .ajax__tab_outer {
+			background-color: #9c3;
+			border: none;
+		}
+
+		.MyTabStyle .ajax__tab_hover .ajax__tab_inner {
+			color: #fff;
+			border: none;
+			font-weight: bolder;
+			font-size: medium;
+		}
+
+		.MyTabStyle .ajax__tab_active .ajax__tab_outer {
+			border-bottom-color: #ffffff;
+			background: transparent;
+			font-weight: bolder;
+			font-size: medium;
+			border: none;
+			color: #459e00;
+		}
+
+		.MyTabStyle .ajax__tab_active .ajax__tab_inner {
+			color: #000;
+			border-color: #333;
+			/* background: transparent url(..imagens/uiTabsArrow.png) no-repeat bottom center; */
+			border: none;
+			font-weight: bolder;
+			font-size: medium;
+		}
+
+		.MyTabStyle .ajax__tab_body {
+			
+			/*font-size: 10pt;*/
+			background-color: #fff;
+			border-top-width: 0;
+			border: none;
+			/*border-top-color: #ffffff;*/
+		}
+
+		.MyTabStyle .ajax__tab_tab {
+			color: #666666;
+			height: 35px;
+		}
+
+
+		.tabs-min {
+			background: transparent;
+			border: none;
+		}
+
+		.tabs-min .ajax__tab_header {
+			background: transparent;
+			border: none;
+			border-bottom: 1px solid #c0c0c0;
+			-moz-border-radius: 0px;
+			-webkit-border-radius: 0px;
+			border-radius: 0px;
+		}
+
+		.tabs-min .ui-tabs-nav .ui-state-default {
+			background: transparent;
+			border: none;
+		}
+
+		.tabs-min .ui-tabs-nav .ui-state-active {
+			background: transparent url(../img/uiTabsArrow.png) no-repeat bottom center;
+			border: none;
+		}
+
+		.tabs-min .ui-tabs-nav .ui-state-default a {
+			color: #c0c0c0;
+		}
+
+		.tabs-min .ui-tabs-nav .ui-state-active a {
+			color: #459e00;
+		}

@@ -55,14 +55,14 @@ Partial Class Cadastro_Prestador
         txt_Prestador_CPF.Attributes.Add("onkeyup", "javascript:formatar(this, '###.###.###-##')")
         txt_Prestador_CPF.Attributes.Add("onBlur", "javascript:valida_cpf(Tabs_TabPanel_2_txt_Prestador_CPF)")
 
-        If txt_cad_CNPJ.Text <> "Digite aqui apenas se você for pessoa jurídica" Then
-            txt_cad_CPF.Text = "Digite aqui apenas se você for pessoa física"
-            txt_cad_CPF.Enabled = "false"
-        End If
-        If txt_cad_CPF.Text <> "Digite aqui apenas se você for pessoa física" Then
-            txt_cad_CNPJ.Text = "Digite aqui apenas se você for pessoa jurídica"
-            txt_cad_CNPJ.Enabled = "false"
-        End If
+        ' If txt_cad_CNPJ.Text <> "Digite aqui apenas se você for pessoa jurídica" Then
+        '     txt_cad_CPF.Text = "Digite aqui apenas se você for pessoa física"
+        '     txt_cad_CPF.Enabled = "false"
+        ' End If
+        ' If txt_cad_CPF.Text <> "Digite aqui apenas se você for pessoa física" Then
+        '     txt_cad_CNPJ.Text = "Digite aqui apenas se você for pessoa jurídica"
+        '     txt_cad_CNPJ.Enabled = "false"
+        ' End If
 
         If Not Page.IsPostBack Then
 
@@ -2598,8 +2598,8 @@ Partial Class Cadastro_Prestador
 
         If rb_pessoa.SelectedValue = "PF" Then
 
-            txt_cad_CPF.Text = "Digite aqui apenas se você for pessoa física"
-            txt_cad_CNPJ.Text = "Digite aqui apenas se você for pessoa jurídica"
+            ' txt_cad_CPF.Text = "Digite aqui apenas se você for pessoa física"
+            ' txt_cad_CNPJ.Text = "Digite aqui apenas se você for pessoa jurídica"
 
             txt_cad_CNPJ.Enabled = "false"
             txt_cad_CPF.Enabled = "true"
@@ -2617,8 +2617,8 @@ Partial Class Cadastro_Prestador
         End If
         If rb_pessoa.SelectedValue = "PJ" Then
 
-            txt_cad_CPF.Text = "Digite aqui apenas se você for pessoa física"
-            txt_cad_CNPJ.Text = "Digite aqui apenas se você for pessoa jurídica"
+            ' txt_cad_CPF.Text = "Digite aqui apenas se você for pessoa física"
+            ' txt_cad_CNPJ.Text = "Digite aqui apenas se você for pessoa jurídica"
 
             txt_cad_CPF.Enabled = "false"
             txt_cad_CNPJ.Enabled = "true"

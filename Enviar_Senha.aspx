@@ -29,7 +29,9 @@
 			</div>
 		</div>
 
-		<hr class="align-self-center w-90" />
+		<div class="d-flex justify-content-center">
+			<hr class="align-self-center w-90" />
+		</div>
 
 		<asp:Panel ID="Panel1" runat="server" CssClass="row align-items-center justify-content-center text-center">
 
@@ -42,44 +44,43 @@
 					<small>
 						<asp:Label ID="lbl_Titulo36" runat="server">Informe os dados abaixo para enviarmos sua senha</asp:Label>
 					</small>
+
 					<div class="card-body py-2 px-5">
-						<div class="card-body py-2 px-3">
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<asp:Label ID="lbl_Titulo2" runat="server" CssClass="input-group-text">CNPJ</asp:Label>
-								</div>
-								<asp:TextBox ID="txt_CNPJ" runat="server" CssClass="ph-center campo form-control" ForeColor="Black" ToolTip="Digite apenas os números"
-								 placeholder="Digite aqui apenas se você for pessoa jurídica" MaxLength="18"></asp:TextBox>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<asp:Label ID="lbl_Titulo2" runat="server" CssClass="input-group-text">CNPJ</asp:Label>
 							</div>
-
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<asp:Label ID="lbl_Titulo5" runat="server" CssClass="input-group-text">CPF</asp:Label>
-								</div>
-								<asp:TextBox ID="txt_CPF" runat="server" CssClass="ph-center campo form-control" ForeColor="Black" ToolTip="Digite apenas os números"
-								 placeholder="Digite aqui apenas se você for pessoa física" MaxLength="14"></asp:TextBox>
-							</div>
-
-							<div class="input-group">
-								<div class="input-group-prepend">
-									<asp:Label ID="lbl_Titulo6" runat="server" CssClass="input-group-text">E-mail</asp:Label>
-								</div>
-								<asp:TextBox ID="txt_Email" runat="server" CssClass="ph-center campo form-control" ForeColor="Black" ToolTip="Digite aqui o seu e-mail"
-								 placeholder="Digite aqui o seu e-mail" MaxLength="50"></asp:TextBox>
-							</div>
-
-							<asp:TextBox ID="txtCaptcha" runat="server" hidden="true" value="V"></asp:TextBox>
-							<div class="row justify-content-center">
-								<div id="ReCaptchContainer" class="mb-2 mt-2"></div>
-								<label id="lblMessage" runat="server" clientidmode="static" visible="False"></label>
-								<div class="g-recaptcha" data-sitekey="6Lf26n0UAAAAAGrX52ppYaF5BdsEHsPUIr_2f6yJ"></div>
-							</div>
-
-							<asp:Button ID="btn_entrar_senha" runat="server" Text="Enviar Senha" CssClass="btn btn-primary w-50 align-self-center mb-2" />
-							<p>
-								<asp:LinkButton ID="LinkButton4" runat="server">Não esqueceu a senha?</asp:LinkButton>
-							</p>
+							<asp:TextBox ID="txt_CNPJ" runat="server" CssClass="ph-center campo form-control" ForeColor="Black" ToolTip="Digite apenas os números"
+							 placeholder="Digite aqui apenas se você for pessoa jurídica" MaxLength="18"></asp:TextBox>
 						</div>
+
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<asp:Label ID="lbl_Titulo5" runat="server" CssClass="input-group-text">CPF</asp:Label>
+							</div>
+							<asp:TextBox ID="txt_CPF" runat="server" CssClass="ph-center campo form-control" ForeColor="Black" ToolTip="Digite apenas os números"
+							 placeholder="Digite aqui apenas se você for pessoa física" MaxLength="14"></asp:TextBox>
+						</div>
+
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<asp:Label ID="lbl_Titulo6" runat="server" CssClass="input-group-text">E-mail</asp:Label>
+							</div>
+							<asp:TextBox ID="txt_Email" runat="server" CssClass="ph-center campo form-control" ForeColor="Black" ToolTip="Digite aqui o seu e-mail"
+							 placeholder="Digite aqui o seu e-mail" MaxLength="50"></asp:TextBox>
+						</div>
+
+						<asp:TextBox ID="txtCaptcha" runat="server" hidden="true" value="V"></asp:TextBox>
+						<div class="row justify-content-center">
+							<div id="ReCaptchContainer" class="mb-2 mt-2"></div>
+							<label id="lblMessage" runat="server" clientidmode="static" visible="False"></label>
+							<div class="g-recaptcha" data-sitekey="6Lf26n0UAAAAAGrX52ppYaF5BdsEHsPUIr_2f6yJ"></div>
+						</div>
+
+						<asp:Button ID="btn_entrar_senha" runat="server" Text="Enviar Senha" CssClass="btn btn-primary w-50 align-self-center mb-2" />
+						<p>
+							<asp:LinkButton ID="LinkButton4" runat="server">Não esqueceu a senha?</asp:LinkButton>
+						</p>
 					</div>
 				</div>
 		</asp:Panel>
@@ -173,7 +174,7 @@
 		</tr>
 		<tr>
 			<td width="5%" align="center" colspan="5" style="width: 20%" bgcolor="#00554F" forecolor="White">
-				
+
 			</td>
 		</tr>
 		<tr>
