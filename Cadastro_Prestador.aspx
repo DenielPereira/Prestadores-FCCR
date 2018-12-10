@@ -149,272 +149,234 @@
       <!-- IDENTIFICAÇÃO PESSOA JURIDICA -->
 
 
-      <asp:TabPanel runat="server" HeaderText="Identificação" ID="TabPanel_11" Enabled="False" Visible="true" Height="500px"
-        TabIndex="0">
+      <asp:TabPanel runat="server" HeaderText="Identificação" ID="TabPanel_11" Enabled="False" Visible="true">
+
         <HeaderTemplate>
           <i class="far fa-id-card"></i>
         </HeaderTemplate>
         <ContentTemplate>
-          <table width="100%">
-            <tr>
-              <td width="10%">&#160;</td>
-              <td colspan="2" width="80%" align="center">&nbsp;<td width="10%">&nbsp;</td>
-            <tr>
-              <td width="10%">&nbsp;</td>
-              <td align="center" colspan="2" width="80%">
-                <asp:Panel ID="Panel1" runat="server" BorderStyle="Solid" BorderWidth="1px" Width="75%">
-                  <table width="100%">
-                    <tr>
-                      <td colspan="2">
-                        <asp:Label ID="Label1" runat="server" Font-Size="Medium">Identificação
-                        </asp:Label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td background="Imagens/Backgrounds/LinhaS.gif" colspan="2">&nbsp;</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2">
-                        <asp:Label ID="Label3" runat="server" Font-Size="Small">Agora
-                          precisamos de algumas
-                          informações sobre sua empresa</asp:Label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>&nbsp;</td>
-                      <td align="left">&nbsp;</td>
-                    </tr>
-                    <tr>
-                      <td align="left">Razão Social :</td>
-                      <td align="left">
-                        <asp:TextBox ID="txt_Razao_Social" runat="server" CssClass="form-control" MaxLength="70"
-                          onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui sua Razão Social" Width="400px"></asp:TextBox>
-                        <asp:Label ID="Label43" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
-                        <br />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">Nome Fantasia :</td>
-                      <td align="left">
-                        <asp:TextBox ID="txt_Nome_Fantasia" runat="server" CssClass="form-control" MaxLength="25"
-                          onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui seu Nome Fantasia caso tenha"
-                          Width="300px"></asp:TextBox>
-                        <asp:Label ID="Label44" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">Inscrição Estadual :</td>
-                      <td align="left">
-                        <asp:TextBox ID="txt_IEstadual" runat="server" CssClass="form-control" MaxLength="20" ToolTip="Informe aqui sua Inscrição Estadual, se não houver, informe ISENTO "
-                          Width="300px"></asp:TextBox>
-                        <br />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">Inscrição Municipal :</td>
-                      <td align="left">
-                        <asp:TextBox ID="txt_IMunicipal" runat="server" CssClass="form-control" MaxLength="20" ToolTip="Informe aqui sua Incrição Municipal"
-                          Width="300px"></asp:TextBox>
-                        <asp:Label ID="Label45" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">Cidade :</td>
-                      <td align="left">
-                        <asp:TextBox ID="txt_IM_Cidade" runat="server" CssClass="form-control" MaxLength="50" onkeyup="this.value=this.value.toUpperCase();"
-                          ToolTip="Informe aqui a cidade de sua Inscrição Municipal" Width="400px"></asp:TextBox>
-                        <br />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">UF :</td>
-                      <td align="left">
-                        <asp:DropDownList ID="ddl_IM_UF" runat="server" CssClass="form-control" Height="30px" ToolTip="Informe aqui o Estado de sua Inscrição Municipal"
-                          Width="300px">
-                          <asp:ListItem Value="Selecione "> Selecione uma opção</asp:ListItem>
-                          <asp:ListItem Value="DF">DISTRITO FEDERAL</asp:ListItem>
-                          <asp:ListItem Value="AC">ACRE</asp:ListItem>
-                          <asp:ListItem Value="AL">ALAGOAS</asp:ListItem>
-                          <asp:ListItem Value="AP">AMAPÁ</asp:ListItem>
-                          <asp:ListItem Value="AM">AMAZONAS</asp:ListItem>
-                          <asp:ListItem Value="BA">BAHIA</asp:ListItem>
-                          <asp:ListItem Value="CE">CEARÁ</asp:ListItem>
-                          <asp:ListItem Value="ES">ESPÍRITO SANTO</asp:ListItem>
-                          <asp:ListItem Value="GO">GOIÁS</asp:ListItem>
-                          <asp:ListItem Value="MA">MARANHÃO</asp:ListItem>
-                          <asp:ListItem Value="MT">MATO GROSSO</asp:ListItem>
-                          <asp:ListItem Value="MS">MATO GROSSO DO SUL</asp:ListItem>
-                          <asp:ListItem Value="MG">MINAS GERAIS</asp:ListItem>
-                          <asp:ListItem Value="PR">PARANÁ</asp:ListItem>
-                          <asp:ListItem Value="PB">PARAÍBA</asp:ListItem>
-                          <asp:ListItem Value="PA">PARÁ</asp:ListItem>
-                          <asp:ListItem Value="PE">PERNAMBUCO</asp:ListItem>
-                          <asp:ListItem Value="PI">PIAUÍ</asp:ListItem>
-                          <asp:ListItem Value="RJ">RIO DE JANEIRO</asp:ListItem>
-                          <asp:ListItem Value="RN">RIO GRANDE DO NORTE</asp:ListItem>
-                          <asp:ListItem Value="RS">RIO GRANDE DO SUL</asp:ListItem>
-                          <asp:ListItem Value="RO">RONDÔNIA</asp:ListItem>
-                          <asp:ListItem Value="RR">RORAIMA</asp:ListItem>
-                          <asp:ListItem Value="SC">SANTA CATARINA</asp:ListItem>
-                          <asp:ListItem Value="SE">SERGIPE</asp:ListItem>
-                          <asp:ListItem Value="SP">SÃO PAULO</asp:ListItem>
-                          <asp:ListItem Value="TO">TOCANTINS</asp:ListItem>
-                        </asp:DropDownList>
-                        <br />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">Código C.N.A.E :</td>
-                      <td align="left">
-                        <asp:TextBox ID="txt_CNAE_Codigo" runat="server" CausesValidation="True" CssClass="form-control"
-                          MaxLength="9" ToolTip="Informe aqui o CPF do CNAE da Empresa" Width="300px"></asp:TextBox>
-                        <br />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">Descrição C.N.A.E :</td>
-                      <td align="left">
-                        <asp:TextBox ID="txt_CNAE_Descricao" runat="server" CssClass="form-control" MaxLength="150"
-                          onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o endereço da empresa"
-                          Width="400px"></asp:TextBox>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">&nbsp;</td>
-                      <td align="left">&nbsp;</td>
-                    </tr>
-                    <tr>
-                      <td align="left">Representante :<br />
-                        <br />
-                      </td>
-                      <td align="left">
-                        <asp:TextBox ID="txt_Representante" runat="server" CssClass="form-control" align=" midlle"
-                          MaxLength="50" onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o nome do Requesentante Legal da Empresa"
-                          Width="400px"></asp:TextBox>
-                        <br />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">Cargo :</td>
-                      <td align="left">
-                        <asp:TextBox ID="txt_Representante_Cargo" runat="server" CssClass="form-control" MaxLength="40"
-                          onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o cargo do Requesentante Legal da Empresa"
-                          Width="400px"></asp:TextBox>
-                        <br />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">C.P.F. :</td>
-                      <td align="left">
-                        <asp:TextBox ID="txt_CPF" runat="server" CausesValidation="True" CssClass="form-control"
-                          MaxLength="20" ToolTip="Informe aqui o CPF do Requesentante Legal da Empresa" Width="300px"></asp:TextBox>
-                        <br />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">R.G. :</td>
-                      <td align="left">
-                        <asp:TextBox ID="txt_RG" runat="server" CssClass="form-control" MaxLength="20" onkeyup="this.value=this.value.toUpperCase();"
-                          ToolTip="Informe aqui o RG do Requesentante Legal da Empresa" Width="300px"></asp:TextBox>
-                        <br />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">Nacionalidade :</td>
-                      <td align="left">
-                        <asp:TextBox ID="txt_Nacionalidade" runat="server" CssClass="form-control" MaxLength="30"
-                          onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui a nacionalidade do Requesentante Legal da Empresa"
-                          Width="300px"></asp:TextBox>
-                        <br />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">Estado Civil :</td>
-                      <td align="left">
-                        <asp:DropDownList ID="ddl_Representante_EstadoCivil" runat="server" Height="40px" ToolTip="Informe aqui o estado civil do Requesentante Legal da Empresa"
-                          Width="300px" CssClass="form-control">
-                          <asp:ListItem Value=" Selecione "> Selecione uma opção</asp:ListItem>
-                          <asp:ListItem>SOLTEIRO</asp:ListItem>
-                          <asp:ListItem>CASADO</asp:ListItem>
-                          <asp:ListItem>DIVORCIADO</asp:ListItem>
-                          <asp:ListItem>VIÚVO</asp:ListItem>
-                        </asp:DropDownList>
-                        <br />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">Profissão :</td>
-                      <td align="left">
-                        <asp:TextBox ID="txt_Representante_Profissao" runat="server" CssClass="form-control" MaxLength="50"
-                          onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui a profissão do Requesentante Legal da Empresa"
-                          Width="300px"></asp:TextBox>
-                        <br />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">E-mail :</td>
-                      <td align="left">
-                        <asp:TextBox ID="txt_Representante_Email" runat="server" CssClass="form-control" MaxLength="50"
-                          ToolTip="Informe aqui o endereço de email da empresa - ATENÇÃO !!! Este será o email de contato com a Fundação Cultural "
-                          Width="300px"></asp:TextBox>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">&nbsp;</td>
-                      <td align="left">&nbsp;</td>
-                    </tr>
-                    <tr>
-                      <td align="left">Senha :</td>
-                      <td align="left">
-                        <asp:TextBox ID="txt_Senha" runat="server" CssClass="form-control" MaxLength="10" ToolTip="Informe aqui sua senha com no mínimo 6 caracteres ( números e/ou letras)"
-                          Width="300px"></asp:TextBox>
-                        <asp:Label ID="Label562" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">Confirme a senha :</td>
-                      <td align="left">
-                        <asp:TextBox ID="txt_Confirma_Senha" runat="server" CssClass="form-control" MaxLength="10"
-                          ToolTip="Redigite a senha para confirmá-la" Width="300px"></asp:TextBox>
-                        <asp:Label ID="Label563" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>&nbsp;</td>
-                      <td align="left">&nbsp;</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2">
-                        <asp:Button ID="Imgbtn_Voltar_11" runat="server" BackColor="#00554F" CausesValidation="False"
-                          ForeColor="White" Height="35px" Text="RETORNAR" Width="150px" />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="Imgbtn_Continuar_11" runat="server" BackColor="#00554F" CausesValidation="False"
-                          ForeColor="White" Height="35px" Text="CONTINUAR" Width="150px" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td colspan="2">Os campos assinalados com (*) são de preenchimento obrigatório.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td colspan="2">
-                        <asp:Label ID="lbl_Error_ID" runat="server" Font-Size="Medium" ForeColor="#CC0000" Visible="False"></asp:Label>
-                      </td>
-                    </tr>
-                  </table>
-                </asp:Panel>
-              </td>
-              <td width="10%">&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            </td>
-            </tr>
-          </table>
+
+          <asp:Panel ID="Panel1" runat="server" CssClass="row align-items-center justify-content-center text-center mx-0">
+
+            <div class="container">
+              <div class="card py-2 w-60 mx-auto">
+
+
+                <div class="titulo">
+                  <asp:Label ID="Label1" runat="server">Identificação </asp:Label>
+                </div>
+                <hr class="w-90  align-self-center" />
+                <small>
+                  <asp:Label ID="Label3" runat="server">Agora precisamos de algumas informações sobre sua
+                    empresa</asp:Label>
+                </small>
+
+                <div class="card-body py-2 px-5 mt-2">
+
+                  <div class="input-group-txt-lg">
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Razão Social</span>
+                      </div>
+                      <asp:TextBox ID="txt_Razao_Social" runat="server" CssClass="ph-center form-control" MaxLength="70"
+                        onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui sua Razão Social"
+                        placeholder="Qual a razão social da empresa?"></asp:TextBox>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Nome Fantasia</span>
+                      </div>
+                      <asp:TextBox ID="txt_Nome_Fantasia" runat="server" CssClass="ph-center form-control" MaxLength="25"
+                        onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui seu Nome Fantasia caso tenha"
+                        placeholder="Qual o nome fantasia da empresa?"></asp:TextBox>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Inscrição Estadual</span>
+                      </div>
+                      <asp:TextBox ID="txt_IEstadual" runat="server" CssClass="ph-center form-control" MaxLength="20"
+                        ToolTip="Se não tiver uma, digite ISENTO." placeholder="Qual a Inscrição Estadual da empresa?"></asp:TextBox>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Inscrição Municipal</span>
+                      </div>
+                      <asp:TextBox ID="txt_IMunicipal" runat="server" CssClass="ph-center form-control" MaxLength="20"
+                        ToolTip="Se não tiver uma, digite ISENTO." placeholder="Qual a Inscrição Municipal da empresa?"></asp:TextBox>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Cidade</span>
+                      </div>
+                      <asp:TextBox ID="txt_IM_Cidade" runat="server" CssClass="ph-center form-control" MaxLength="50"
+                        onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui a cidade de sua Inscrição Municipal"
+                        placeholder="Qual a cidade da Inscrição Municipal?"></asp:TextBox>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">UF</span>
+                      </div>
+                      <asp:DropDownList ID="ddl_IM_UF" runat="server" CssClass="ph-center form-control" ToolTip="Informe aqui o Estado de sua Inscrição Municipal">
+                        <asp:ListItem Value="Selecione " disabled> Selecione uma opção</asp:ListItem>
+                        <asp:ListItem Value="DF">DISTRITO FEDERAL</asp:ListItem>
+                        <asp:ListItem Value="AC">ACRE</asp:ListItem>
+                        <asp:ListItem Value="AL">ALAGOAS</asp:ListItem>
+                        <asp:ListItem Value="AP">AMAPÁ</asp:ListItem>
+                        <asp:ListItem Value="AM">AMAZONAS</asp:ListItem>
+                        <asp:ListItem Value="BA">BAHIA</asp:ListItem>
+                        <asp:ListItem Value="CE">CEARÁ</asp:ListItem>
+                        <asp:ListItem Value="ES">ESPÍRITO SANTO</asp:ListItem>
+                        <asp:ListItem Value="GO">GOIÁS</asp:ListItem>
+                        <asp:ListItem Value="MA">MARANHÃO</asp:ListItem>
+                        <asp:ListItem Value="MT">MATO GROSSO</asp:ListItem>
+                        <asp:ListItem Value="MS">MATO GROSSO DO SUL</asp:ListItem>
+                        <asp:ListItem Value="MG">MINAS GERAIS</asp:ListItem>
+                        <asp:ListItem Value="PR">PARANÁ</asp:ListItem>
+                        <asp:ListItem Value="PB">PARAÍBA</asp:ListItem>
+                        <asp:ListItem Value="PA">PARÁ</asp:ListItem>
+                        <asp:ListItem Value="PE">PERNAMBUCO</asp:ListItem>
+                        <asp:ListItem Value="PI">PIAUÍ</asp:ListItem>
+                        <asp:ListItem Value="RJ">RIO DE JANEIRO</asp:ListItem>
+                        <asp:ListItem Value="RN">RIO GRANDE DO NORTE</asp:ListItem>
+                        <asp:ListItem Value="RS">RIO GRANDE DO SUL</asp:ListItem>
+                        <asp:ListItem Value="RO">RONDÔNIA</asp:ListItem>
+                        <asp:ListItem Value="RR">RORAIMA</asp:ListItem>
+                        <asp:ListItem Value="SC">SANTA CATARINA</asp:ListItem>
+                        <asp:ListItem Value="SE">SERGIPE</asp:ListItem>
+                        <asp:ListItem Value="SP">SÃO PAULO</asp:ListItem>
+                        <asp:ListItem Value="TO">TOCANTINS</asp:ListItem>
+                      </asp:DropDownList>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Cod. CNAE</span>
+                      </div>
+                      <asp:TextBox ID="txt_CNAE_Codigo" runat="server" CausesValidation="True" CssClass="ph-center form-control"
+                        MaxLength="9" ToolTip="Informe aqui o CPF do CNAE da Empresa" placeholder="Código CNAE principal da empresa"></asp:TextBox>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Descrição CNAE</span>
+                      </div>
+                      <asp:TextBox ID="txt_CNAE_Descricao" runat="server" CssClass="ph-center form-control" MaxLength="150"
+                        onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe a descrição do CNAE principal da empresa"
+                        placeholder="Descrição do CNAE principal da empresa"></asp:TextBox>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Representante</span>
+                      </div>
+                      <asp:TextBox ID="txt_Representante" runat="server" CssClass="ph-center form-control" align=" midlle"
+                        MaxLength="50" onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o nome do Requesentante Legal da Empresa"
+                        placeholder="Nome completo do representante legal da empresa"></asp:TextBox>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Cargo</span>
+                      </div>
+                      <asp:TextBox ID="txt_Representante_Cargo" runat="server" CssClass="ph-center form-control"
+                        MaxLength="40" onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o cargo do Requesentante Legal da Empresa"
+                        placeholder="Qual o cargo do representante?"></asp:TextBox>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">CPF</span>
+                      </div>
+                      <asp:TextBox ID="txt_CPF" runat="server" CausesValidation="True" CssClass="ph-center form-control"
+                        MaxLength="20" ToolTip="Informe aqui o CPF do Requesentante Legal da Empresa" placeholder="CPF do representante legal"></asp:TextBox>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">RG</span>
+                      </div>
+                      <asp:TextBox ID="txt_RG" runat="server" CssClass="ph-center form-control" MaxLength="20" onkeyup="this.value=this.value.toUpperCase();"
+                        ToolTip="Informe aqui o RG do Requesentante Legal da Empresa" placeholder="RG do representante legal"></asp:TextBox>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Nacionalidade</span>
+                      </div>
+                      <asp:TextBox ID="txt_Nacionalidade" runat="server" CssClass="ph-center form-control" MaxLength="30"
+                        onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui a nacionalidade do Requesentante Legal da Empresa"
+                        placeholder="Nacionalidade do representante legal"></asp:TextBox>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Estado Civil</span>
+                      </div>
+                      <asp:DropDownList ID="ddl_Representante_EstadoCivil" runat="server" ToolTip="Informe aqui o estado civil do Requesentante Legal da Empresa"
+                        CssClass="ph-center form-control select-color">
+                        <asp:ListItem Value=" Selecione " selected disabled> Selecione uma opção</asp:ListItem>
+                        <asp:ListItem>SOLTEIRO</asp:ListItem>
+                        <asp:ListItem>CASADO</asp:ListItem>
+                        <asp:ListItem>DIVORCIADO</asp:ListItem>
+                        <asp:ListItem>VIÚVO</asp:ListItem>
+                      </asp:DropDownList>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Profissão</span>
+                      </div>
+                      <asp:TextBox ID="txt_Representante_Profissao" runat="server" CssClass="ph-center form-control"
+                        MaxLength="50" onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui a profissão do Representante Legal da Empresa"
+                        placeholder="Qual a profissão do representante?"></asp:TextBox>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">E-mail</span>
+                      </div>
+                      <asp:TextBox ID="txt_Representante_Email" runat="server" CssClass="ph-center form-control"
+                        MaxLength="50" placeholder="E-mail de contato da empresa" data-toggle="popover" title="Atenção!"
+                        data-content="Esse e-mail vai servir como meio de contato com a Fundação Cultural Cassiano Ricardo."></asp:TextBox>
+                    </div>
+
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Senha</span>
+                      </div>
+                      <asp:TextBox ID="txt_Senha" runat="server" CssClass="ph-center form-control" MaxLength="10"
+                        ToolTip="Informe aqui sua senha com no mínimo 6 caracteres ( números e/ou letras)" type="password"
+                        placeholder="Escolha uma senha"></asp:TextBox>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Confirme a senha</span>
+                      </div>
+                      <asp:TextBox ID="txt_Confirma_Senha" runat="server" CssClass="ph-center form-control" MaxLength="10"
+                        ToolTip="Redigite a senha para confirmá-la" type="password" placeholder="Repita a senha"></asp:TextBox>
+                    </div>
+
+                    <asp:Button ID="Imgbtn_Voltar_11" runat="server" CausesValidation="False" Text="Sessão Anterior"
+                      CssClass="btn btn-primary" />
+                    <asp:Button ID="Imgbtn_Continuar_11" runat="server" CausesValidation="False" Text="Proxima Sessão"
+                      CssClass="btn btn-primary" />
+
+                    <asp:Label ID="lbl_Error_ID" runat="server" Visible="False"></asp:Label>
+                    <div class="input-group-txt-lg"></div>
+                  </div>
+                </div>
+              </div>
+
+          </asp:Panel>
+
         </ContentTemplate>
       </asp:TabPanel>
 
@@ -530,10 +492,6 @@
                     <asp:Button ID="Imgbtn_Continuar_12" runat="server" Text="Próxima Sessão" CausesValidation="False"
                       CssClass="btn btn-primary" />
 
-                    <div class="my-2">
-                      <small>Os campos assinalados com (*) são de preenchimento obrigatório.</small>
-                    </div>
-
                     <asp:Label ID="lbl_Error_ID0" runat="server" Font-Size="Medium" ForeColor="#CC0000" Visible="False"></asp:Label>
                   </div>
                 </div>
@@ -586,8 +544,8 @@
                       <td align="left">C.E.P. :</td>
                       <td align="left">
                         <br />
-                        <asp:TextBox ID="txt_CEP" runat="server" CssClass="form-control" MaxLength="10" ToolTip="Informe aqui o código de endereçamento postal e em seguida clique no botão Pesquisar CEP para o preenchimento automático do Endereço, Bairro, Cidade e UF."
-                          Width="300px"></asp:TextBox>
+                        <asp:TextBox ID="txt_CEP" runat="server" CssClass="ph-center form-control" MaxLength="10"
+                          ToolTip="Informe aqui o código de endereçamento postal e em seguida clique no botão Pesquisar CEP para o preenchimento automático do Endereço, Bairro, Cidade e UF."></asp:TextBox>
                         <asp:Button ID="btn_CEP" runat="server" CausesValidation="False" Height="20px" Text="Pesquisar CEP" />
                         <asp:Label ID="Label46" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
                         <asp:RequiredFieldValidator ID="RV_CEP" runat="server" ControlToValidate="txt_CEP" ErrorMessage="Informe o CEP">*</asp:RequiredFieldValidator>
@@ -597,8 +555,9 @@
                       <td align="left">&nbsp;</td>
                       <td align="left">Endereço :</td>
                       <td align="left">
-                        <asp:TextBox ID="txt_Endereco" runat="server" CssClass="form-control" MaxLength="100" onkeyup="this.value=this.value.toUpperCase();"
-                          ToolTip="Informe aqui o endereço da empresa" Width="400px"></asp:TextBox>
+                        <asp:TextBox ID="txt_Endereco" runat="server" CssClass="ph-center form-control" MaxLength="100"
+                          onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o endereço da empresa"
+                          Width="400px"></asp:TextBox>
                         <asp:Label ID="Label47" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
                         <asp:RequiredFieldValidator ID="RV_Endereco" runat="server" ControlToValidate="txt_Endereco"
                           ErrorMessage="Informe o Endereço">*</asp:RequiredFieldValidator>
@@ -608,8 +567,8 @@
                       <td align="left">&nbsp;</td>
                       <td align="left">Número :</td>
                       <td align="left">
-                        <asp:TextBox ID="txt_Numero" runat="server" CssClass="form-control" MaxLength="10" ToolTip="Informe aqui o número do endereço da empresa"
-                          Width="200px"></asp:TextBox>
+                        <asp:TextBox ID="txt_Numero" runat="server" CssClass="ph-center form-control" MaxLength="10"
+                          ToolTip="Informe aqui o número do endereço da empresa" Width="200px"></asp:TextBox>
                         <asp:Label ID="Label48" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
                         <asp:RequiredFieldValidator ID="RV_Numero" runat="server" ControlToValidate="txt_Numero"
                           ErrorMessage="Informe o Número">*</asp:RequiredFieldValidator>
@@ -619,9 +578,8 @@
                       <td align="left">&nbsp;</td>
                       <td align="left">Complemento :</td>
                       <td align="left">
-                        <asp:TextBox ID="txt_Complemento" runat="server" CssClass="form-control" MaxLength="50" onkeyup="this.value=this.value.toUpperCase();"
-                          ToolTip="Informe aqui o complemento do endereço da empresa se houver : bloco, andar, sala, etc."
-                          Width="300px"></asp:TextBox>
+                        <asp:TextBox ID="txt_Complemento" runat="server" CssClass="ph-center form-control" MaxLength="50"
+                          onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o complemento do endereço da empresa se houver : bloco, andar, sala, etc."></asp:TextBox>
                         <br />
                       </td>
                     </tr>
@@ -629,8 +587,9 @@
                       <td align="left">&nbsp;</td>
                       <td align="left">Bairro :</td>
                       <td align="left">
-                        <asp:TextBox ID="txt_Bairro" runat="server" CssClass="form-control" MaxLength="50" onkeyup="this.value=this.value.toUpperCase();"
-                          ToolTip="Informe aqui o bairro da empresa" Width="400px"></asp:TextBox>
+                        <asp:TextBox ID="txt_Bairro" runat="server" CssClass="ph-center form-control" MaxLength="50"
+                          onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o bairro da empresa"
+                          Width="400px"></asp:TextBox>
                         <asp:Label ID="Label576" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
                       </td>
                     </tr>
@@ -638,8 +597,9 @@
                       <td align="left">&nbsp;</td>
                       <td align="left">Cidade :</td>
                       <td align="left">
-                        <asp:TextBox ID="txt_Cidade" runat="server" CssClass="form-control" MaxLength="50" onkeyup="this.value=this.value.toUpperCase();"
-                          ToolTip="Informe aqui a cidade da empresa" Width="400px"></asp:TextBox>
+                        <asp:TextBox ID="txt_Cidade" runat="server" CssClass="ph-center form-control" MaxLength="50"
+                          onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui a cidade da empresa"
+                          Width="400px"></asp:TextBox>
                         <asp:Label ID="Label49" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
                         <asp:RequiredFieldValidator ID="RV_Cidade" runat="server" ControlToValidate="txt_Cidade"
                           ErrorMessage="Informe a Cidade">*</asp:RequiredFieldValidator>
@@ -650,7 +610,7 @@
                       <td align="left">UF :</td>
                       <td align="left">
                         <asp:DropDownList ID="ddl_UF" runat="server" Height="30px" ToolTip="Informe aqui a Unidade da Federação da empresa"
-                          Width="200px" CssClass="form-control">
+                          Width="200px" CssClass="ph-center form-control">
                           <asp:ListItem Value="Selecione"> Selecione uma opção</asp:ListItem>
                           <asp:ListItem Value="DF">DISTRITO FEDERAL</asp:ListItem>
                           <asp:ListItem Value="AC">ACRE</asp:ListItem>
@@ -687,8 +647,8 @@
                       <td align="left">&nbsp;</td>
                       <td align="left">Telefone 1 :</td>
                       <td align="left">
-                        <asp:TextBox ID="txt_Telefone" runat="server" CssClass="form-control" MaxLength="25" ToolTip="Informe aqui o DDD e o telefone da empresa"
-                          Width="200px" ValidateRequestMode="Enabled"></asp:TextBox>
+                        <asp:TextBox ID="txt_Telefone" runat="server" CssClass="ph-center form-control" MaxLength="25"
+                          ToolTip="Informe aqui o DDD e o telefone da empresa" Width="200px" ValidateRequestMode="Enabled"></asp:TextBox>
                         <asp:Label ID="Label574" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
                       </td>
                     </tr>
@@ -696,8 +656,8 @@
                       <td align="left">&nbsp;</td>
                       <td align="left">Telefone 2 :</td>
                       <td align="left">
-                        <asp:TextBox ID="txt_Telefone_1" runat="server" CssClass="form-control" MaxLength="25" ToolTip="Informe aqui o DDD e o telefone da empresa"
-                          Width="200px"></asp:TextBox>
+                        <asp:TextBox ID="txt_Telefone_1" runat="server" CssClass="ph-center form-control" MaxLength="25"
+                          ToolTip="Informe aqui o DDD e o telefone da empresa" Width="200px"></asp:TextBox>
                         <br />
                       </td>
                     </tr>
@@ -705,8 +665,8 @@
                       <td align="left">&nbsp;</td>
                       <td align="left">Celular :</td>
                       <td align="left">
-                        <asp:TextBox ID="txt_Celular" runat="server" CssClass="form-control" MaxLength="25" ToolTip="Informe aqui o DDD e o celular da empresa"
-                          Width="200px"></asp:TextBox>
+                        <asp:TextBox ID="txt_Celular" runat="server" CssClass="ph-center form-control" MaxLength="25"
+                          ToolTip="Informe aqui o DDD e o celular da empresa" Width="200px"></asp:TextBox>
                         <br />
                       </td>
                     </tr>
@@ -714,8 +674,8 @@
                       <td align="left">&nbsp;</td>
                       <td align="left">WhatsApp Corporativo :</td>
                       <td align="left">
-                        <asp:TextBox ID="txt_WhatsApp" runat="server" CssClass="form-control" MaxLength="25" ToolTip="Informe aqui o DDD e o celular da empresa"
-                          Width="200px"></asp:TextBox>
+                        <asp:TextBox ID="txt_WhatsApp" runat="server" CssClass="ph-center form-control" MaxLength="25"
+                          ToolTip="Informe aqui o DDD e o celular da empresa" Width="200px"></asp:TextBox>
                         <br />
                       </td>
                     </tr>
@@ -723,8 +683,8 @@
                       <td align="left">&nbsp;</td>
                       <td align="left">E-mail 1 :</td>
                       <td align="left">
-                        <asp:TextBox ID="txt_Email" runat="server" CssClass="form-control" MaxLength="50" ToolTip="Informe aqui o endereço de email da empresa - ATENÇÃO !!! Este será o email de contato com a Fundação Cultural "
-                          Width="300px"></asp:TextBox>
+                        <asp:TextBox ID="txt_Email" runat="server" CssClass="ph-center form-control" MaxLength="50"
+                          ToolTip="Informe aqui o endereço de email da empresa - ATENÇÃO !!! Este será o email de contato com a Fundação Cultural "></asp:TextBox>
                         <asp:Label ID="Label564" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
                         <asp:RequiredFieldValidator ID="RV_Email" runat="server" ControlToValidate="txt_Email"
                           ErrorMessage="Informe o email">*</asp:RequiredFieldValidator>
@@ -734,8 +694,8 @@
                       <td align="left">&nbsp;</td>
                       <td align="left">E-mail 2 :</td>
                       <td align="left">
-                        <asp:TextBox ID="txt_Email_1" runat="server" CssClass="form-control" MaxLength="50" ToolTip="Informe aqui o endereço de email da empresa - ATENÇÃO !!! Este será o email de contato com a Fundação Cultural "
-                          Width="300px"></asp:TextBox>
+                        <asp:TextBox ID="txt_Email_1" runat="server" CssClass="ph-center form-control" MaxLength="50"
+                          ToolTip="Informe aqui o endereço de email da empresa - ATENÇÃO !!! Este será o email de contato com a Fundação Cultural "></asp:TextBox>
                         <br />
                       </td>
                     </tr>
@@ -743,8 +703,8 @@
                       <td align="left">&nbsp;</td>
                       <td align="left">Website :</td>
                       <td align="left">
-                        <asp:TextBox ID="txt_Site" runat="server" CssClass="form-control" MaxLength="50" onkeyup="this.value=this.value.toUpperCase();"
-                          ToolTip="Informe aqui o endereço da home page empresa se houver" Width="300px"></asp:TextBox>
+                        <asp:TextBox ID="txt_Site" runat="server" CssClass="ph-center form-control" MaxLength="50"
+                          onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o endereço da home page empresa se houver"></asp:TextBox>
                         <br />
                       </td>
                     </tr>
@@ -752,9 +712,8 @@
                       <td align="left">&nbsp;</td>
                       <td align="left">Pessoa de&nbsp;&nbsp; Contato :</td>
                       <td align="left">
-                        <asp:TextBox ID="txt_Pessoa_Contato" runat="server" CssClass="form-control" MaxLength="50"
-                          onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o endereço da home page empresa se houver"
-                          Width="300px"></asp:TextBox>
+                        <asp:TextBox ID="txt_Pessoa_Contato" runat="server" CssClass="ph-center form-control" MaxLength="50"
+                          onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o endereço da home page empresa se houver"></asp:TextBox>
                       </td>
                     </tr>
                     <tr>
@@ -852,7 +811,7 @@
                     <tr>
                       <td align="left" width="20%">Banco :</td>
                       <td align="left">
-                        <asp:TextBox ID="txt_Banco_Codigo" runat="server" CssClass="form-control" Height="30px"
+                        <asp:TextBox ID="txt_Banco_Codigo" runat="server" CssClass="ph-center form-control" Height="30px"
                           MaxLength="3" onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o código do banco"
                           Width="200px"></asp:TextBox>
                         <br />
@@ -861,7 +820,7 @@
                     <tr>
                       <td align="left">Agência :</td>
                       <td align="left">
-                        <asp:TextBox ID="txt_Banco_Agencia" runat="server" CssClass="form-control" MaxLength="4"
+                        <asp:TextBox ID="txt_Banco_Agencia" runat="server" CssClass="ph-center form-control" MaxLength="4"
                           onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o código da agência"
                           Width="200px"></asp:TextBox>
                         <br />
@@ -870,8 +829,9 @@
                     <tr>
                       <td align="left">Conta :</td>
                       <td align="left">
-                        <asp:TextBox ID="txt_Banco_Conta" runat="server" CssClass="form-control" MaxLength="10" onkeyup="this.value=this.value.toUpperCase();"
-                          ToolTip="Informe aqui o número da conta bancária" Width="200px"></asp:TextBox>
+                        <asp:TextBox ID="txt_Banco_Conta" runat="server" CssClass="ph-center form-control" MaxLength="10"
+                          onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o número da conta bancária"
+                          Width="200px"></asp:TextBox>
                         <br />
                       </td>
                     </tr>
@@ -879,7 +839,7 @@
                       <td align="left">Tipo de Conta:</td>
                       <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:DropDownList ID="ddl_Banco_TipoConta" runat="server" Height="30px" ToolTip="Informe aqui o tipo de conta"
-                          Width="200px" CssClass="form-control">
+                          Width="200px" CssClass="ph-center form-control">
                           <asp:ListItem Value=" Selecione "> Selecione uma opção</asp:ListItem>
                           <asp:ListItem>CORRENTE</asp:ListItem>
                           <asp:ListItem Value="POUPANCA">POUPANÇA</asp:ListItem>
@@ -1032,7 +992,7 @@
                     <td>&nbsp;</td>
                     <td>Nome :</td>
                     <td>
-                      <asp:TextBox ID="txt_Prestador_Nome" runat="server" CssClass="form-control" MaxLength="70"
+                      <asp:TextBox ID="txt_Prestador_Nome" runat="server" CssClass="ph-center form-control" MaxLength="70"
                         onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o nome do Prestador de Serviço"
                         Width="400px"></asp:TextBox>
                       &nbsp;<asp:Label ID="Label57" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
@@ -1043,8 +1003,8 @@
                     <td>&nbsp;</td>
                     <td>R.G. :</td>
                     <td>
-                      <asp:TextBox ID="txt_Prestador_RG" runat="server" CssClass="form-control" MaxLength="20" ToolTip="Informe aqui o RG do Prestador de Serviço"
-                        Width="300px"></asp:TextBox>
+                      <asp:TextBox ID="txt_Prestador_RG" runat="server" CssClass="ph-center form-control" MaxLength="20"
+                        ToolTip="Informe aqui o RG do Prestador de Serviço"></asp:TextBox>
                       &nbsp;<asp:Label ID="Label58" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
                     </td>
                     <td>&nbsp;</td>
@@ -1053,8 +1013,8 @@
                     <td>&nbsp;</td>
                     <td>C.P.F. :</td>
                     <td>
-                      <asp:TextBox ID="txt_Prestador_CPF" runat="server" CausesValidation="True" CssClass="form-control"
-                        MaxLength="20" ToolTip="Informe aqui o CPF do Prestador de Serviço" Width="300px"></asp:TextBox>
+                      <asp:TextBox ID="txt_Prestador_CPF" runat="server" CausesValidation="True" CssClass="ph-center form-control"
+                        MaxLength="20" ToolTip="Informe aqui o CPF do Prestador de Serviço"></asp:TextBox>
                       &nbsp;<asp:Label ID="Label59" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
                     </td>
                     <td>&nbsp;</td>
@@ -1063,9 +1023,8 @@
                     <td>&nbsp;</td>
                     <td>Nacionalidade :</td>
                     <td>
-                      <asp:TextBox ID="txt_Prestador_Nacionalidade" runat="server" CssClass="form-control" MaxLength="30"
-                        onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui a nacionalidade do Prestador de Serviço"
-                        Width="300px"></asp:TextBox>
+                      <asp:TextBox ID="txt_Prestador_Nacionalidade" runat="server" CssClass="ph-center form-control"
+                        MaxLength="30" onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui a nacionalidade do Prestador de Serviço"></asp:TextBox>
                       &nbsp;<asp:Label ID="Label60" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
                     </td>
                     <td>&nbsp;</td>
@@ -1075,7 +1034,7 @@
                     <td>Estado Civil :</td>
                     <td>
                       <asp:DropDownList ID="ddl_Prestador_EstadoCivil" runat="server" ToolTip="Informe aqui o Estado Civil do Prestador de Serviço"
-                        Width="250px" CssClass="form-control" Height="30px">
+                        Width="250px" CssClass="ph-center form-control" Height="30px">
                         <asp:ListItem Value=" "> Selecione uma opção</asp:ListItem>
                         <asp:ListItem>SOLTEIRO</asp:ListItem>
                         <asp:ListItem>CASADO</asp:ListItem>
@@ -1090,9 +1049,8 @@
                     <td>&nbsp;</td>
                     <td>Profissão :</td>
                     <td>
-                      <asp:TextBox ID="txt_Prestador_Profissao" runat="server" CssClass="form-control" MaxLength="50"
-                        onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui a Profissão do Prestador de Serviço"
-                        Width="300px"></asp:TextBox>
+                      <asp:TextBox ID="txt_Prestador_Profissao" runat="server" CssClass="ph-center form-control"
+                        MaxLength="50" onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui a Profissão do Prestador de Serviço"></asp:TextBox>
                       <br />
                     </td>
                     <td>&nbsp;</td>
@@ -1101,9 +1059,8 @@
                     <td>&nbsp;</td>
                     <td>C.E.P. :</td>
                     <td>
-                      <asp:TextBox ID="txt_Prestador_CEP" runat="server" CssClass="form-control" MaxLength="10" onkeyup="this.value=this.value.toUpperCase();"
-                        ToolTip="Informe aqui o código de endereçamento postal e em seguida clique no botão Pesquisar CEP para o preenchimento automático do Endereço, Bairro, Cidade e UF."
-                        Width="300px"></asp:TextBox>
+                      <asp:TextBox ID="txt_Prestador_CEP" runat="server" CssClass="ph-center form-control" MaxLength="10"
+                        onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o código de endereçamento postal e em seguida clique no botão Pesquisar CEP para o preenchimento automático do Endereço, Bairro, Cidade e UF."></asp:TextBox>
                       &nbsp;&nbsp;<asp:Label ID="Label62" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
                       &nbsp;&nbsp;
                       <asp:Button ID="btn_CEP_Prestador" runat="server" CausesValidation="False" Height="20px" Text="Pesquisar CEP" />
@@ -1114,8 +1071,8 @@
                     <td>&nbsp;</td>
                     <td>Endereço :</td>
                     <td>
-                      <asp:TextBox ID="txt_Prestador_Endereco" runat="server" CssClass="form-control" MaxLength="100"
-                        onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o endereço do Prestador de Serviço"
+                      <asp:TextBox ID="txt_Prestador_Endereco" runat="server" CssClass="ph-center form-control"
+                        MaxLength="100" onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o endereço do Prestador de Serviço"
                         Width="400px"></asp:TextBox>
                       &nbsp;<asp:Label ID="Label63" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
                     </td>
@@ -1125,7 +1082,7 @@
                     <td>&nbsp;</td>
                     <td>Número :</td>
                     <td>
-                      <asp:TextBox ID="txt_Prestador_Numero" runat="server" CssClass="form-control" MaxLength="10"
+                      <asp:TextBox ID="txt_Prestador_Numero" runat="server" CssClass="ph-center form-control" MaxLength="10"
                         ToolTip="Informe aqui o número do endereço do Prestador de Serviço" Width="250px"></asp:TextBox>
                       &nbsp;<asp:Label ID="Label64" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
                     </td>
@@ -1135,9 +1092,8 @@
                     <td>&nbsp;</td>
                     <td>Complemento :</td>
                     <td>
-                      <asp:TextBox ID="txt_Prestador_Complemento" runat="server" CssClass="form-control" MaxLength="50"
-                        onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o complemento do endereço do Prestador de Serviço se houver : bloco, andar, sala, etc."
-                        Width="300px"></asp:TextBox>
+                      <asp:TextBox ID="txt_Prestador_Complemento" runat="server" CssClass="ph-center form-control"
+                        MaxLength="50" onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o complemento do endereço do Prestador de Serviço se houver : bloco, andar, sala, etc."></asp:TextBox>
                       <br />
                     </td>
                     <td>&nbsp;</td>
@@ -1146,7 +1102,7 @@
                     <td>&nbsp;</td>
                     <td>Bairro :</td>
                     <td>
-                      <asp:TextBox ID="txt_Prestador_Bairro" runat="server" CssClass="form-control" MaxLength="50"
+                      <asp:TextBox ID="txt_Prestador_Bairro" runat="server" CssClass="ph-center form-control" MaxLength="50"
                         onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o bairro do Prestador de Serviço"
                         Width="350px"></asp:TextBox>
                       &nbsp;<asp:Label ID="Label65" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
@@ -1157,9 +1113,8 @@
                     <td>&nbsp;</td>
                     <td>Cidade :</td>
                     <td>
-                      <asp:TextBox ID="txt_Prestador_Municipio" runat="server" CssClass="form-control" MaxLength="50"
-                        onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui a cidade do Prestador de Serviço"
-                        Width="300px"></asp:TextBox>
+                      <asp:TextBox ID="txt_Prestador_Municipio" runat="server" CssClass="ph-center form-control"
+                        MaxLength="50" onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui a cidade do Prestador de Serviço"></asp:TextBox>
                       &nbsp;<asp:Label ID="Label66" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
                     </td>
                     <td>&nbsp;</td>
@@ -1168,7 +1123,7 @@
                     <td>&nbsp;</td>
                     <td>UF :</td>
                     <td>
-                      <asp:DropDownList ID="ddl_Prestador_UF" runat="server" CssClass="form-control" ToolTip="Informe aqui a Unidade da Federação do Prestador de Serviço"
+                      <asp:DropDownList ID="ddl_Prestador_UF" runat="server" CssClass="ph-center form-control" ToolTip="Informe aqui a Unidade da Federação do Prestador de Serviço"
                         Width="180px">
                         <asp:ListItem Value=" ">&nbsp; Selecione uma opção</asp:ListItem>
                         <asp:ListItem Value="DF">DISTRITO FEDERAL</asp:ListItem>
@@ -1207,8 +1162,8 @@
                     <td>&nbsp;</td>
                     <td>Telefone :</td>
                     <td>
-                      <asp:TextBox ID="txt_Prestador_Telefone" runat="server" CssClass="form-control" MaxLength="25"
-                        ToolTip="Informe aqui o DDD e o telefone do Prestador de Serviço" Width="300px"></asp:TextBox>
+                      <asp:TextBox ID="txt_Prestador_Telefone" runat="server" CssClass="ph-center form-control"
+                        MaxLength="25" ToolTip="Informe aqui o DDD e o telefone do Prestador de Serviço"></asp:TextBox>
                       <br />
                     </td>
                     <td>&nbsp;</td>
@@ -1217,8 +1172,8 @@
                     <td>&nbsp;</td>
                     <td>Celular :</td>
                     <td>
-                      <asp:TextBox ID="txt_Prestador_Celular" runat="server" CssClass="form-control" MaxLength="25"
-                        ToolTip="Informe aqui o DDD e o celular do Prestador de Serviço" Width="300px"></asp:TextBox>
+                      <asp:TextBox ID="txt_Prestador_Celular" runat="server" CssClass="ph-center form-control"
+                        MaxLength="25" ToolTip="Informe aqui o DDD e o celular do Prestador de Serviço"></asp:TextBox>
                       <br />
                     </td>
                     <td>&nbsp;</td>
@@ -1227,8 +1182,8 @@
                     <td>&nbsp;</td>
                     <td>E-mail :</td>
                     <td>
-                      <asp:TextBox ID="txt_Prestador_Email" runat="server" CssClass="form-control" MaxLength="50"
-                        ToolTip="Informe aqui o endereço de email do Prestador de Serviço" Width="300px"></asp:TextBox>
+                      <asp:TextBox ID="txt_Prestador_Email" runat="server" CssClass="ph-center form-control" MaxLength="50"
+                        ToolTip="Informe aqui o endereço de email do Prestador de Serviço"></asp:TextBox>
                       <br />
                     </td>
                     <td>&nbsp;</td>
@@ -1237,8 +1192,8 @@
                     <td>&nbsp;</td>
                     <td>Serviços :</td>
                     <td>
-                      <asp:TextBox ID="txt_Prestador_Servico" runat="server" CssClass="form-control" MaxLength="100"
-                        onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o(s) serviço(s) prestado(s) separados por ;"
+                      <asp:TextBox ID="txt_Prestador_Servico" runat="server" CssClass="ph-center form-control"
+                        MaxLength="100" onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o(s) serviço(s) prestado(s) separados por ;"
                         Width="400px"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
@@ -1330,8 +1285,8 @@
               <td width="20px">&nbsp;</td>
               <td>&nbsp;</td>
               <td align="center">&nbsp;&nbsp;&nbsp; Material :
-                <asp:TextBox ID="txtdescservico" runat="server" CausesValidation="True" CssClass="form-control" Height="20px"
-                  MaxLength="250" onkeyup="this.value=this.value.toUpperCase();" Rows="1"></asp:TextBox>
+                <asp:TextBox ID="txtdescservico" runat="server" CausesValidation="True" CssClass="ph-center form-control"
+                  Height="20px" MaxLength="250" onkeyup="this.value=this.value.toUpperCase();" Rows="1"></asp:TextBox>
                 &nbsp;&nbsp;
                 <asp:ImageButton ID="ImageButton3" runat="server" CausesValidation="False" ImageUrl="~/Imagens/Botoes/botao_mais.gif" />
               </td>
@@ -1461,8 +1416,8 @@
               <td width="20px">&nbsp;</td>
               <td>&nbsp;</td>
               <td align="center">&nbsp;&nbsp;&nbsp; Serviço :
-                <asp:TextBox ID="txtdescservico1" runat="server" CausesValidation="True" CssClass="form-control" Height="20px"
-                  MaxLength="250" onkeyup="this.value=this.value.toUpperCase();" Rows="1"></asp:TextBox>
+                <asp:TextBox ID="txtdescservico1" runat="server" CausesValidation="True" CssClass="ph-center form-control"
+                  Height="20px" MaxLength="250" onkeyup="this.value=this.value.toUpperCase();" Rows="1"></asp:TextBox>
                 &nbsp;&nbsp;
                 <asp:ImageButton ID="ImageButton31" runat="server" CausesValidation="False" ImageUrl="~/Imagens/Botoes/botao_mais.gif" />
               </td>
@@ -2176,11 +2131,21 @@
     </div>
   </footer>
   <script src="https://www.google.com/recaptcha/api.js?onload=renderRecaptcha&render=explicit" async defer></script>
-  <script src="https://www.google.com/recaptcha/api.js?onload=renderRecaptcha&render=explicit" async defer></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
   <script type="text/javascript" src="/js/tabs.js"></script>
   <script type="text/javascript" src="/js/functions.js"></script>
+  <script>
+    $(function () {
+      $('[data-toggle="popover"]').popover({
+        trigger: 'focus'
+      })
+    })
+  </script>
 </body>
 
 </html>
