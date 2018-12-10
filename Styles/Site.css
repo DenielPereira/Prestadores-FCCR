@@ -366,7 +366,15 @@ hr{
 }
 
 .input-group-text{
+    font-size: 14px;
     width:70px;
+    color: white !important;
+    background-color: #00554f !important;
+}
+
+.input-group-txt-lg .input-group-text{
+    font-size: 14px;
+    width:150px !important;
     color: white !important;
     background-color: #00554f !important;
 }
@@ -462,4 +470,19 @@ hr{
     position: relative;
     top: 50%;
     transform: translateY(15%); 
+}
+
+.select-color{ 
+    text-align-last: center !important;
+    font-size: 14px !important; 
+} 
+
+.select-color option[disabled] { 
+    text-align: center;
+    font-size: 14px; 
+}
+
+.required:after {
+  content:" *"; 
+  color: red;
 }
