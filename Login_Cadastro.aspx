@@ -6,15 +6,19 @@
 <!DOCTYPE html>
 
 <html>
+
 <head id="Head1" runat="server">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>FCCR - Prestadores de Serviços</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
+
 <body style="overflow-x: hidden;">
     <form id="Form1" name="form1" runat="server">
 
@@ -30,7 +34,7 @@
 
         <hr class="align-self-center w-90" />
 
-        <asp:Panel ID="Panel1" runat="server" CssClass="row align-items-center justify-content-center text-center">
+        <asp:Panel ID="Panel1" runat="server" CssClass="row align-items-center justify-content-center text-center v-center">
 
             <div class="container">
 
@@ -46,8 +50,7 @@
                                 <asp:Label ID="lbl_Titulo2" runat="server" CssClass="input-group-text">CNPJ</asp:Label>
                             </div>
                             <asp:TextBox ID="txt_CNPJ" runat="server" CssClass="ph-center campo form-control" ForeColor="Black"
-                                ToolTip="Digite apenas os números"
-                                placeholder="Digite aqui apenas se você for pessoa jurídica"></asp:TextBox>
+                                ToolTip="Digite apenas os números" placeholder="Digite aqui apenas se você for pessoa jurídica"></asp:TextBox>
                         </div>
 
                         <div class="input-group mb-3">
@@ -55,17 +58,15 @@
                                 <asp:Label ID="lbl_Titulo5" runat="server" CssClass="input-group-text">CPF</asp:Label>
                             </div>
                             <asp:TextBox ID="txt_CPF" runat="server" CssClass="ph-center campo form-control" ForeColor="Black"
-                                ToolTip="Digite apenas os números"
-                                placeholder="Digite aqui apenas se você for pessoa física"></asp:TextBox>
+                                ToolTip="Digite apenas os números" placeholder="Digite aqui apenas se você for pessoa física"></asp:TextBox>
                         </div>
 
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <asp:Label ID="lbl_Titulo6" runat="server" CssClass="input-group-text">Senha</asp:Label>
                             </div>
-                            <asp:TextBox ID="txt_Senha" runat="server"
-                                CssClass="ph-center campo form-control" ForeColor="Black" MaxLength="10"
-                                TextMode="Password" ToolTip="Digite aqui sua senha"
+                            <asp:TextBox ID="txt_Senha" runat="server" CssClass="ph-center campo form-control"
+                                ForeColor="Black" MaxLength="10" TextMode="Password" ToolTip="Digite aqui sua senha"
                                 placeholder="Digite aqui sua senha"></asp:TextBox>
                         </div>
 
@@ -75,7 +76,8 @@
                             </small>
                         </div>
 
-                        <asp:TextBox ID="txtCaptcha" runat="server" BackColor="White" BorderStyle="None" ForeColor="White" CssClass="align-self-center"  value="V" hidden></asp:TextBox>
+                        <asp:TextBox ID="txtCaptcha" runat="server" BackColor="White" BorderStyle="None" ForeColor="White"
+                            CssClass="align-self-center" value="V" hidden></asp:TextBox>
 
                         <div class="row justify-content-center">
                             <div id="ReCaptchContainer" class="mb-2 mt-2"></div>
@@ -83,7 +85,8 @@
                             <div class="g-recaptcha" data-sitekey="6Lf26n0UAAAAAGrX52ppYaF5BdsEHsPUIr_2f6yJ"></div>
                         </div>
 
-                        <asp:Button ID="btn_entrar" runat="server" CssClass="btn btn-primary w-50 align-self-center mb-2" Text="Entrar" />
+                        <asp:Button ID="btn_entrar" runat="server" CssClass="btn btn-primary w-50 align-self-center mb-2"
+                            Text="Entrar" />
 
                         <p>
                             Ainda não tem uma conta?
@@ -95,8 +98,8 @@
         </asp:Panel>
 
         <asp:Panel ID="pnlpopup" runat="server" CssClass="popUpStyle" Width="580px" Style="display: none;">
-            <table align="center" bgcolor="#FFFF99" frame="border" border="0"
-                cellpadding="1" cellspacing="1" rules="none" width="100%">
+            <table align="center" bgcolor="#FFFF99" frame="border" border="0" cellpadding="1" cellspacing="1" rules="none"
+                width="100%">
                 <tr>
                     <td>&nbsp;</td>
                     <td align="right">&nbsp;</td>
@@ -105,8 +108,8 @@
                 <tr>
                     <td>&nbsp;</td>
                     <td align="center">
-                        <asp:Label ID="Label566" runat="server" Font-Bold="True" Font-Size="Medium"
-                            ForeColor="#CC3300" Text="A T E N Ç Ã O   ! ! !"></asp:Label>
+                        <asp:Label ID="Label566" runat="server" Font-Bold="True" Font-Size="Medium" ForeColor="#CC3300"
+                            Text="A T E N Ç Ã O   ! ! !"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -117,28 +120,14 @@
                         <asp:Button ID="Button1" runat="server" Text="Salvar" Style="display: none;" />
                         <asp:Button ID="Button2" runat="server" Text="Cancelar" Style="display: none;" />
 
-                        &nbsp;&nbsp;&nbsp;&nbsp; 
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
                     <td align="center">
-                        <asp:Label ID="lbl_mensagem_1" runat="server" Font-Bold="True"
-                            Font-Size="Medium" ForeColor="#669900"></asp:Label>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td align="center">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td align="center">
-                        <asp:Label ID="lbl_mensagem_2" runat="server" Font-Bold="True"
-                            Font-Size="Medium" ForeColor="#669900"></asp:Label>
+                        <asp:Label ID="lbl_mensagem_1" runat="server" Font-Bold="True" Font-Size="Medium" ForeColor="#669900"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -149,31 +138,39 @@
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
+                    <td align="center">
+                        <asp:Label ID="lbl_mensagem_2" runat="server" Font-Bold="True" Font-Size="Medium" ForeColor="#669900"></asp:Label>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
                     <td align="center">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
                     <td align="center">
-                        <asp:Button ID="btn_Confirma_Exclusao" runat="server"
-                            BackColor="#00554F" Font-Bold="True" Font-Names="Verdana" ForeColor="White"
-                            Height="40px" Text="S I M" Visible="False" Width="150px" />
-                        &nbsp;&nbsp;&nbsp;                                                                
-                                                                <asp:Button ID="btn_Nao_Confirma" runat="server" BackColor="#00554F"
-                                                                    Font-Bold="True" Font-Names="Verdana" ForeColor="White" Height="40px"
-                                                                    Text="N Â O" Visible="False" Width="150px" />
+                        <asp:Button ID="btn_Confirma_Exclusao" runat="server" BackColor="#00554F" Font-Bold="True"
+                            Font-Names="Verdana" ForeColor="White" Height="40px" Text="S I M" Visible="False" Width="150px" />
+                        &nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btn_Nao_Confirma" runat="server" BackColor="#00554F" Font-Bold="True"
+                            Font-Names="Verdana" ForeColor="White" Height="40px" Text="N Â O" Visible="False" Width="150px" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
                     <td align="center">
-                        <asp:Button ID="img_btn_Fechar_Mensagem" runat="server" BackColor="#00554F"
-                            Font-Bold="True" Font-Names="Verdana" ForeColor="White" Height="40px"
-                            Text="FECHAR" Visible="False" Width="150px" />
-                        <asp:Button ID="img_btn_sair_Mensagem" runat="server" BackColor="#00554F"
-                            Font-Bold="True" Font-Names="Verdana" ForeColor="White" Height="40px"
-                            Text="FECHAR" Visible="False" Width="150px" />
+                        <asp:Button ID="img_btn_Fechar_Mensagem" runat="server" BackColor="#00554F" Font-Bold="True"
+                            Font-Names="Verdana" ForeColor="White" Height="40px" Text="FECHAR" Visible="False" Width="150px" />
+                        <asp:Button ID="img_btn_sair_Mensagem" runat="server" BackColor="#00554F" Font-Bold="True"
+                            Font-Names="Verdana" ForeColor="White" Height="40px" Text="FECHAR" Visible="False" Width="150px" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -184,12 +181,9 @@
                 </tr>
             </table>
 
-        </asp:Panel> 
-        <asp:ModalPopupExtender ID="MPE_Login" runat="server"
-            BackgroundCssClass="popUpStyle1" PopupControlID="pnlpopup"
-            Enabled="True"
-            TargetControlID="Button1"
-            CancelControlID="Button2" OkControlID="Button1" />
+        </asp:Panel>
+        <asp:ModalPopupExtender ID="MPE_Login" runat="server" BackgroundCssClass="popUpStyle1" PopupControlID="pnlpopup"
+            Enabled="True" TargetControlID="Button1" CancelControlID="Button2" OkControlID="Button1" />
 
     </form>
     <footer class="bg-green h-20 footer mt-3">
@@ -215,7 +209,9 @@
     </footer>
 
     <script src="https://www.google.com/recaptcha/api.js?onload=renderRecaptcha&render=explicit" async defer></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
     <script type="text/javascript" src="/js/functions.js"></script>
 </body>
+
 </html>

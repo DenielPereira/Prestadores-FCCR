@@ -150,16 +150,6 @@ first child of the left and right table columns */
     min-height: 200px;
 }
 
-.footer
-{
-    color: #4e5766;
-    padding: 8px 0px 0px 0px;
-    margin: 0px auto;
-    text-align: center;
-    line-height: normal;
-}
-
-
 /* TAB MENU   
 ----------------------------------------------------------*/
 
@@ -446,7 +436,10 @@ hr{
 }
 
 .footer{
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .footer a{
@@ -463,4 +456,10 @@ hr{
     left: 0;
     right: 0;
     font-size: 14px;
+}
+
+.v-center{
+    position: relative;
+    top: 50%;
+    transform: translateY(15%); 
 }

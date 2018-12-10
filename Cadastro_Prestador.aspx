@@ -106,7 +106,8 @@
 											<h6>Participa de Licitação :</h6>
 										</div>
 										<div class="col-6">
-											<asp:RadioButtonList ID="RB_Licitacao" runat="server" CssClass="row justify-content-start" AutoPostBack="True" RepeatDirection="Horizontal">
+											<asp:RadioButtonList ID="RB_Licitacao" runat="server" CssClass="row justify-content-start" AutoPostBack="True"
+											 RepeatDirection="Horizontal">
 												<asp:ListItem Value="Sim">Sim</asp:ListItem>
 												<asp:ListItem Value="Nao">Não</asp:ListItem>
 											</asp:RadioButtonList>
@@ -2151,7 +2152,7 @@
 		</div>
 
 	</form>
-	<footer class="bg-green h-20 footer mt-3">
+	<footer class="bg-green h-20 footer mt-3 position-relative">
 		<div class="text-center brands">
 			<a href="http://facebook.com/fccrsjc" target="_blank">
 				<i class="fab fa-facebook"></i>

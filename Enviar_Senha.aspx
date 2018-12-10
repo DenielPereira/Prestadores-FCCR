@@ -33,7 +33,7 @@
 			<hr class="align-self-center w-90" />
 		</div>
 
-		<asp:Panel ID="Panel1" runat="server" CssClass="row align-items-center justify-content-center text-center">
+		<asp:Panel ID="Panel1" runat="server" CssClass="row align-items-center justify-content-center text-center v-center">
 
 			<div class="container">
 				<div class="card py-2 w-50 mx-auto">
@@ -83,6 +83,7 @@
 						</p>
 					</div>
 				</div>
+			</div>
 		</asp:Panel>
 
 		<asp:Panel ID="pnlpopup" runat="server" CssClass="popUpStyle" Width="580px" Style="display: none;">
@@ -205,7 +206,6 @@
 			</p>
 		</div>
 	</footer>
-	<script src="https://www.google.com/recaptcha/api.js?onload=renderRecaptcha&render=explicit" async defer></script>
 	<script src="https://www.google.com/recaptcha/api.js?onload=renderRecaptcha&render=explicit" async defer></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 	 crossorigin="anonymous"></script>
