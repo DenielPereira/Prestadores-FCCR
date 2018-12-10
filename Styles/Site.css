@@ -6,12 +6,7 @@
 
 body   
 {
-    background: #b6b7bc;
-    font-size: .80em;
     font-family: 'Montserrat', sans-serif !important; /*Inclui a fonte MontSerrat em todos os elementos*/
-    margin: 0px;
-    padding: 0px;
-    color: #696969;
 }
 
 /*Adiciona uma transição suave às mudanças dos elementos (0.15 segundos)*/
@@ -19,8 +14,11 @@ body
     transition: all .15s ease-in-out;
 }
 
-:disabled{
+.form-control:disabled{
     cursor: not-allowed;
+    font-size: 14px !important;
+    text-align: center !important;
+    color: #696969 !important;
 }
 
 a{

@@ -151,7 +151,9 @@
 
       <asp:TabPanel runat="server" HeaderText="Identificação" ID="TabPanel_11" Enabled="False" Visible="true" Height="500px"
         TabIndex="0">
-        <HeaderTemplate>Identificação</HeaderTemplate>
+        <HeaderTemplate>
+          <i class="far fa-id-card"></i>
+        </HeaderTemplate>
         <ContentTemplate>
           <table width="100%">
             <tr>
