@@ -80,7 +80,7 @@
 		.Tab .ajax__tab_hover .ajax__tab_tab {
 			color: #000000;
 			background: url("../../tab_hover.gif") repeat-x;
-			height: 20px;
+			font-size: 32px; 
 		}
 
 		.Tab .ajax__tab_hover .ajax__tab_inner {
@@ -116,6 +116,7 @@
 		}
 
 		.MyTabStyle .ajax__tab_header {
+			font-size: 28px;
 			background: transparent;
 			border: none;
 			-moz-border-radius: 0px;
@@ -139,48 +140,37 @@
 			border: none;
 		}
 
-		.MyTabStyle .ajax__tab_hover .ajax__tab_outer {
-			background-color: #9c3;
+		.MyTabStyle .ajax__tab_hover .ajax__tab_outer i{
 			border: none;
+			/* TODO: ADICIONAR EFEITO DE HOVER NO ICONE DA SESSÃO ATIVA */
 		}
 
 		.MyTabStyle .ajax__tab_hover .ajax__tab_inner {
 			color: #fff;
 			border: none;
 			font-weight: bolder;
-			font-size: medium;
 		}
 
 		.MyTabStyle .ajax__tab_active .ajax__tab_outer {
 			border-bottom-color: #ffffff;
 			background: transparent;
-			font-weight: bolder;
-			font-size: medium;
 			border: none;
 			color: #459e00;
 		}
 
-		.MyTabStyle .ajax__tab_active .ajax__tab_inner {
-			color: #000;
-			border-color: #333;
-			/* background: transparent url(..imagens/uiTabsArrow.png) no-repeat bottom center; */
-			border: none;
-			font-weight: bolder;
-			font-size: medium;
+		.MyTabStyle .ajax__tab_active .ajax__tab_inner i{
+			color: #00554f;
 		}
 
 		.MyTabStyle .ajax__tab_body {
-			
-			/*font-size: 10pt;*/
 			background-color: #fff;
 			border-top-width: 0;
 			border: none;
-			/*border-top-color: #ffffff;*/
 		}
 
 		.MyTabStyle .ajax__tab_tab {
-			color: #666666;
-			height: 35px;
+			color: #4d4d4d;
+			/* height: 35px; */
 		}
 
 

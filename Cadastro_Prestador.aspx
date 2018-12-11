@@ -727,135 +727,84 @@
 
       <!-- DADOS BANCARIOS -->
 
-      <asp:TabPanel ID="TabPanel_3" runat="server" HeaderText="Categoria" Enabled="false" Visible="true" Height="500px"
-        TabIndex="0">
-        <HeaderTemplate>Dados Bancários</HeaderTemplate>
+      <asp:TabPanel ID="TabPanel_3" runat="server" HeaderText="Categoria" Enabled="false" Visible="true">
+        <HeaderTemplate>
+          <i class="fas fa-money-check-alt"></i>
+        </HeaderTemplate>
         <ContentTemplate>
-          <table width="100%">
-            <tr>
-              <td width="10%">&#160;</td>
-              <td colspan="2" width="80%" align="center">&nbsp;<tr>
-              <td width="10%">&nbsp;</td>
-              <td align="center" colspan="2" width="80%">
-                <asp:Panel ID="Panel2" runat="server" BorderStyle="Solid" BorderWidth="1px" Width="75%">
-                  <table width="100%">
-                    <tr>
-                      <td colspan="2">
-                        <asp:Label ID="Label10" runat="server" Font-Size="Medium">Dados
-                          Bancários</asp:Label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td background="Imagens/Backgrounds/LinhaS.gif" colspan="2">&nbsp;</td>
-                    </tr>
-                    <tr>
-                      <td colspan="2">
-                        <asp:Label ID="Label11" runat="server" Font-Size="Small">Agora
-                          informe seus dados bancários</asp:Label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>&nbsp;</td>
-                      <td align="left">&nbsp;</td>
-                    </tr>
-                    <tr>
-                      <td align="left" width="20%">Banco :</td>
-                      <td align="left">
-                        <asp:TextBox ID="txt_Banco_Codigo" runat="server" CssClass="ph-center form-control" Height="30px"
-                          MaxLength="3" onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o código do banco"
-                          Width="200px"></asp:TextBox>
-                        <br />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">Agência :</td>
-                      <td align="left">
-                        <asp:TextBox ID="txt_Banco_Agencia" runat="server" CssClass="ph-center form-control" MaxLength="4"
-                          onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o código da agência"
-                          Width="200px"></asp:TextBox>
-                        <br />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">Conta :</td>
-                      <td align="left">
-                        <asp:TextBox ID="txt_Banco_Conta" runat="server" CssClass="ph-center form-control" MaxLength="10"
-                          onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o número da conta bancária"
-                          Width="200px"></asp:TextBox>
-                        <br />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">Tipo de Conta:</td>
-                      <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:DropDownList ID="ddl_Banco_TipoConta" runat="server" Height="30px" ToolTip="Informe aqui o tipo de conta"
-                          Width="200px" CssClass="ph-center form-control">
-                          <asp:ListItem Value=" Selecione "> Selecione uma opção</asp:ListItem>
-                          <asp:ListItem>CORRENTE</asp:ListItem>
-                          <asp:ListItem Value="POUPANCA">POUPANÇA</asp:ListItem>
-                        </asp:DropDownList>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">&nbsp;</td>
-                      <td align="left">&nbsp;</td>
-                    </tr>
-                    <tr>
-                      <td align="center" class="style2" colspan="2">
-                        <asp:Button ID="Imgbtn_Voltar_3" runat="server" BackColor="#00554F" CausesValidation="False"
-                          ForeColor="White" Height="40px" Text="RETORNAR" Width="150px" />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="Imgbtn_Continuar_3" runat="server" BackColor="#00554F" CausesValidation="False"
-                          ForeColor="White" Height="40px" Text="CONTINUAR" Width="150px" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="center" colspan="2">Os campos assinalados com (*) são de preenchimento obrigatório.</td>
-                    </tr>
-                    <tr>
-                      <td align="left" colspan="2">&nbsp;</td>
-                    </tr>
-                    <tr>
-                      <td align="center" colspan="2">
-                        <asp:Label ID="lbl_Error_Banco" runat="server" Font-Size="Medium" ForeColor="#CC0000" Visible="False"></asp:Label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">&nbsp;</td>
-                      <td align="left">&nbsp;</td>
-                    </tr>
-                  </table>
-                </asp:Panel>
-              </td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            </td>
-            </tr>
 
+          <div class="row align-items-center justify-content-center text-center mx-0">
 
-          </table>
+            <div class="container">
 
+              <div class="card py-2 w-60 mx-auto">
+                <div class="titulo">
+                  <asp:Label ID="Label10" runat="server" Font-Size="Medium">Dados Bancários</asp:Label>
+                </div>
+                <hr class="w-90  align-self-center" />
+                <small>
+                  <asp:Label ID="Label11" runat="server">Agora informe seus dados bancários</asp:Label>
+                </small>
+                <div class="card-body py-2 px-5 mt-2">
+
+                  <div class="input-group-txt-lg">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Banco</span>
+                      </div>
+                      <asp:TextBox ID="txt_Banco_Codigo" runat="server" CssClass="ph-center form-control" MaxLength="3"
+                        onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o código do banco"
+                        placeholder="Informe aqui o código do banco"></asp:TextBox>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Agência</span>
+                      </div>
+                      <asp:TextBox ID="txt_Banco_Agencia" runat="server" CssClass="ph-center form-control" MaxLength="6"
+                        onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o código da agência"
+                        placeholder="Informe aqui o código da agência"></asp:TextBox>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Conta</span>
+                      </div>
+                      <asp:TextBox ID="txt_Banco_Conta" runat="server" CssClass="ph-center form-control" MaxLength="10"
+                        onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o número da conta bancária"
+                        placeholder="Informe aqui o número da conta bancária"></asp:TextBox>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Tipo de Conta</span>
+                      </div>
+                      <asp:DropDownList ID="ddl_Banco_TipoConta" runat="server" ToolTip="Informe aqui o tipo de conta"
+                        CssClass="ph-center form-control">
+                        <asp:ListItem Value=" Selecione "> Selecione uma opção</asp:ListItem>
+                        <asp:ListItem>CORRENTE</asp:ListItem>
+                        <asp:ListItem Value="POUPANCA">POUPANÇA</asp:ListItem>
+                      </asp:DropDownList>
+                    </div>
+
+                    <asp:Button ID="Imgbtn_Voltar_3" runat="server" CssClass="btn btn-primary" CausesValidation="False"
+                      Text="Sessão Anterior" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="Imgbtn_Continuar_3" runat="server" CssClass="btn btn-primary" CausesValidation="False"
+                      Text="Proxima Sessão" />
+
+                    <asp:Label ID="lbl_Error_Banco" runat="server" Font-Size="Medium" ForeColor="#CC0000" Visible="False"></asp:Label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </ContentTemplate>
       </asp:TabPanel>
 
-      <asp:TabPanel runat="server" ID="TabPanel_X" HeaderText="XXX" Enabled="false" Visible="false">
+      <!-- TODO: descobrir o que é esse trecho de codigo abaixo -->
+
+      <asp:TabPanel runat="server" ID="TabPanel_X" HeaderText="Materiais" Enabled="false" Visible="false">
         <ContentTemplate>
           <table width="100%">
             <tr>
@@ -1202,60 +1151,41 @@
 
       </asp:TabPanel>
 
+      <!-- MATERIAIS -->
+
       <asp:TabPanel runat="server" ID="TabPanel_4" HeaderText="Materiais" Enabled="false" Visible="true">
+        <HeaderTemplate>
+          <i class="fas fa-box-open"></i>
+        </HeaderTemplate>
         <ContentTemplate>
-          <table width="100%">
-            <tr>
-              <td width="20px">&#160;</td>
-              <td colspan="2" align="center" style="font-weight: bold">
-                <asp:Label ID="Label577" runat="server" Font-Size="Medium">Materiais</asp:Label>
-              <td>&nbsp;</td>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td align="center" background="Imagens/Backgrounds/LinhaS.gif" colspan="2" style="font-weight: bold">&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td align="center" colspan="2" style="font-weight: bold">Marque os materiais que podem ser&nbsp;
-                fornecidos,
-                clicando na descrição do
-                material.</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td align="center" colspan="2" style="font-weight: bold">Se o material não constar na lista e desejar
-                cadastrar,
-                preencha o campo abaixo
-                e clique no botão de adição</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td align="center">&nbsp;&nbsp;&nbsp; Material :
+
+          <div class="row align-items-center justify-content-center text-center mx-0">
+
+            <div class="container">
+
+              <div class="card py-2 w-80 mx-auto">
+                <div class="titulo">
+                  <asp:Label ID="Label577" runat="server">Materiais</asp:Label>
+                </div>
+                <hr class="w-90  align-self-center" />
+                <small>
+                  <p>Marque os materiais que podem ser fornecidos, clicando na descrição do material.
+                    Se o material não constar na lista e desejar
+                    cadastrar,
+                    preencha o campo abaixo
+                    e clique no botão de adição</p>
+                </small>
+
+
+                Material :
                 <asp:TextBox ID="txtdescservico" runat="server" CausesValidation="True" CssClass="ph-center form-control"
-                  Height="20px" MaxLength="250" onkeyup="this.value=this.value.toUpperCase();" Rows="1"></asp:TextBox>
-                &nbsp;&nbsp;
+                  MaxLength="250" onkeyup="this.value=this.value.toUpperCase();" Rows="1"></asp:TextBox>
+
                 <asp:ImageButton ID="ImageButton3" runat="server" CausesValidation="False" ImageUrl="~/Imagens/Botoes/botao_mais.gif" />
-              </td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td align="center">
-                <asp:DataGrid ID="Datagrid2" runat="server" AllowSorting="True" AutoGenerateColumns="False" BackColor="White"
-                  BorderColor="Gainsboro" BorderStyle="Solid" BorderWidth="1px" CellPadding="6" DataKeyField="PrexSM_ID"
-                  OnDeleteCommand="DataGrid2_DeleteCommand" OnItemDataBound="DataGrid2_ItemDataBound" PageSize="100"
-                  Width="90%">
+
+                <asp:DataGrid ID="Datagrid2" runat="server" AllowSorting="True" AutoGenerateColumns="False" CssClass="table"
+                  CellPadding="6" DataKeyField="PrexSM_ID" OnDeleteCommand="DataGrid2_DeleteCommand" OnItemDataBound="DataGrid2_ItemDataBound"
+                  PageSize="100">
                   <AlternatingItemStyle BackColor="#E6E6E6" />
                   <Columns>
                     <asp:TemplateColumn HeaderText="Lista dos Materiais">
@@ -1282,191 +1212,81 @@
                     PrevPageText="Anterior" />
                   <SelectedItemStyle BackColor="#008A8C" ForeColor="White" />
                 </asp:DataGrid>
-              </td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td align="center">
+
                 <asp:Button ID="Imgbtn_Voltar_4" runat="server" BackColor="#00554F" CausesValidation="False" ForeColor="White"
                   Height="40px" Text="RETORNAR" Width="150px" />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
                 <asp:Button ID="Imgbtn_Continuar_4" runat="server" BackColor="#00554F" CausesValidation="False"
                   ForeColor="White" Height="40px" Text="CONTINUAR" Width="150px" />
-              </td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td align="center" colspan="2">&nbsp;&nbsp;<br />
-                <br />
+
                 <asp:TextBox ID="txtcodservico" runat="server" BackColor="White" BorderStyle="None" ForeColor="White"
                   Width="30px"></asp:TextBox>
-              </td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td align="center" colspan="2">&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td align="left" colspan="2">&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            </td>
-            </tr>
-          </table>
-
+              </div>
+            </div>
         </ContentTemplate>
       </asp:TabPanel>
+
+      <!-- SERVIÇOS -->
+
       <asp:TabPanel runat="server" ID="TabPanel_5" HeaderText="Serviços" Enabled="false" Visible="true">
+        <HeaderTemplate>
+          <i class="fas fa-wrench"></i>
+        </HeaderTemplate>
         <ContentTemplate>
-          <table width="100%">
-            <tr>
-              <td width="20px">&#160;</td>
-              <td colspan="2" align="center" style="font-weight: bold">
-                <asp:Label ID="Label578" runat="server" Font-Size="Medium">Serviços</asp:Label>
-              <td>&nbsp;</td>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td align="center" background="Imagens/Backgrounds/LinhaS.gif" colspan="2" style="font-weight: bold">&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td align="center" colspan="2" style="font-weight: bold">Marque os serviços que podem ser&nbsp;
-                fornecidos,
-                clicando na descrição do serviço.</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td align="center" colspan="2" style="font-weight: bold">Se o serviço não constar na lista e desejar
-                cadastrar,
-                preencha o campo abaixo e
-                clique no botão de adição</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td align="center">&nbsp;&nbsp;&nbsp; Serviço :
-                <asp:TextBox ID="txtdescservico1" runat="server" CausesValidation="True" CssClass="ph-center form-control"
-                  Height="20px" MaxLength="250" onkeyup="this.value=this.value.toUpperCase();" Rows="1"></asp:TextBox>
-                &nbsp;&nbsp;
-                <asp:ImageButton ID="ImageButton31" runat="server" CausesValidation="False" ImageUrl="~/Imagens/Botoes/botao_mais.gif" />
-              </td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td align="center">
-                <asp:DataGrid ID="Datagrid3" runat="server" AllowSorting="True" AutoGenerateColumns="False" BackColor="White"
-                  BorderColor="Gainsboro" BorderStyle="Solid" BorderWidth="1px" CellPadding="6" DataKeyField="PrexSM_ID"
-                  OnDeleteCommand="DataGrid3_DeleteCommand" OnItemDataBound="DataGrid3_ItemDataBound" PageSize="100"
-                  Width="90%" GridLines="None">
-                  <AlternatingItemStyle BackColor="#EEEEEE" />
-                  <Columns>
-                    <asp:TemplateColumn HeaderText="Lista dos Serviços">
-                      <ItemTemplate>
-                        <asp:LinkButton ID="LnkBtnDel31" runat="server" CausesValidation="False" CommandName="Delete"
-                          Height="10px" Text='<%# DataBinder.Eval(Container, "DataItem.SM_Descricao") %>' ToolTip="Marcar/Desmarcar este material da minha lista"
-                          Width="90%"></asp:LinkButton>
-                      </ItemTemplate>
-                      <HeaderStyle Width="90%" />
-                    </asp:TemplateColumn>
-                    <asp:TemplateColumn>
-                      <ItemTemplate>
-                        <asp:CheckBox ID="ckitem" runat="server" AutoPostBack="True" Checked='<%# DataBinder.Eval(Container, "DataItem.SM_Selecao") %>'
-                          Enabled="false" />
-                      </ItemTemplate>
-                    </asp:TemplateColumn>
-                  </Columns>
-                  <EditItemStyle VerticalAlign="Middle" />
-                  <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                  <HeaderStyle BackColor="White" ForeColor="White" HorizontalAlign="Center" Height="25px" />
-                  <ItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Size="Small"
-                    Font-Strikeout="False" Font-Underline="False" VerticalAlign="Middle" HorizontalAlign="Left" />
-                  <PagerStyle BackColor="WhiteSmoke" HorizontalAlign="Center" Mode="NumericPages" NextPageText="Posterior"
-                    PrevPageText="Anterior" />
-                  <SelectedItemStyle BackColor="#008A8C" ForeColor="White" />
-                </asp:DataGrid>
-              </td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td align="center">&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td align="center">
-                <asp:Button ID="Imgbtn_Voltar_5" runat="server" BackColor="#00554F" CausesValidation="False" ForeColor="White"
-                  Height="40px" Text="RETORNAR" Width="150px" />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Imgbtn_Continuar_5" runat="server" BackColor="#00554F" CausesValidation="False"
-                  ForeColor="White" Height="40px" Text="CONTINUAR" Width="150px" />
-              </td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td align="center">&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td>&nbsp;</td>
-              <td align="center">&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td align="center" colspan="2">&nbsp;&nbsp;<br />
-                <br />
-                <asp:TextBox ID="TextBox5" runat="server" BackColor="White" BorderStyle="None" ForeColor="White" Width="30px"></asp:TextBox>
-              </td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td align="center" colspan="2">&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="20px">&nbsp;</td>
-              <td align="left" colspan="2">&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
-            </td>
-            </tr>
-          </table>
+
+          <asp:Label ID="Label578" runat="server" Font-Size="Medium">Serviços</asp:Label>
+          >Marque os serviços que podem ser
+          fornecidos,
+          clicando na descrição do serviço.</td>
+          Se o serviço não constar na lista e desejar
+          cadastrar,
+          preencha o campo abaixo e
+          clique no botão de adição
+          Serviço :
+          <asp:TextBox ID="txtdescservico1" runat="server" CausesValidation="True" CssClass="ph-center form-control"
+            Height="20px" MaxLength="250" onkeyup="this.value=this.value.toUpperCase();" Rows="1"></asp:TextBox>
+          &nbsp;&nbsp;
+          <asp:ImageButton ID="ImageButton31" runat="server" CausesValidation="False" ImageUrl="~/Imagens/Botoes/botao_mais.gif" />
+
+          <asp:DataGrid ID="Datagrid3" runat="server" AllowSorting="True" AutoGenerateColumns="False" BackColor="White"
+            BorderColor="Gainsboro" BorderStyle="Solid" BorderWidth="1px" CellPadding="6" DataKeyField="PrexSM_ID"
+            OnDeleteCommand="DataGrid3_DeleteCommand" OnItemDataBound="DataGrid3_ItemDataBound" PageSize="100" Width="90%"
+            GridLines="None">
+            <AlternatingItemStyle BackColor="#EEEEEE" />
+            <Columns>
+              <asp:TemplateColumn HeaderText="Lista dos Serviços">
+                <ItemTemplate>
+                  <asp:LinkButton ID="LnkBtnDel31" runat="server" CausesValidation="False" CommandName="Delete" Height="10px"
+                    Text='<%# DataBinder.Eval(Container, "DataItem.SM_Descricao") %>' ToolTip="Marcar/Desmarcar este material da minha lista"
+                    Width="90%"></asp:LinkButton>
+                </ItemTemplate>
+                <HeaderStyle Width="90%" />
+              </asp:TemplateColumn>
+              <asp:TemplateColumn>
+                <ItemTemplate>
+                  <asp:CheckBox ID="ckitem" runat="server" AutoPostBack="True" Checked='<%# DataBinder.Eval(Container, "DataItem.SM_Selecao") %>'
+                    Enabled="false" />
+                </ItemTemplate>
+              </asp:TemplateColumn>
+            </Columns>
+            <EditItemStyle VerticalAlign="Middle" />
+            <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+            <HeaderStyle BackColor="White" ForeColor="White" HorizontalAlign="Center" Height="25px" />
+            <ItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Size="Small" Font-Strikeout="False"
+              Font-Underline="False" VerticalAlign="Middle" HorizontalAlign="Left" />
+            <PagerStyle BackColor="WhiteSmoke" HorizontalAlign="Center" Mode="NumericPages" NextPageText="Posterior"
+              PrevPageText="Anterior" />
+            <SelectedItemStyle BackColor="#008A8C" ForeColor="White" />
+          </asp:DataGrid>
+
+          <asp:Button ID="Imgbtn_Voltar_5" runat="server" BackColor="#00554F" CausesValidation="False" ForeColor="White"
+            Height="40px" Text="RETORNAR" Width="150px" />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <asp:Button ID="Imgbtn_Continuar_5" runat="server" BackColor="#00554F" CausesValidation="False" ForeColor="White"
+            Height="40px" Text="CONTINUAR" Width="150px" />
+
+          <asp:TextBox ID="TextBox5" runat="server" BackColor="White" BorderStyle="None" ForeColor="White" Width="30px"></asp:TextBox>
+
 
         </ContentTemplate>
       </asp:TabPanel>
@@ -1740,7 +1560,13 @@
           </table>
         </ContentTemplate>
       </asp:TabPanel>
+
+      <!-- DECLARAÇÃO -->
+
       <asp:TabPanel runat="server" ID="TabPanel_6" HeaderText="DECLARAÇÃO" Enabled="false" Visible="true">
+        <HeaderTemplate>
+          <i class="fas fa-file-contract"></i>
+        </HeaderTemplate>
         <ContentTemplate>
           <table width="100%">
             <tr>
