@@ -342,3 +342,4 @@ ASALocalRun/
 .localhistory/
 
 # End of https://www.gitignore.io/api/visualstudio
+.vs/config/applicationhost.config
