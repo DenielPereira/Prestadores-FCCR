@@ -78,45 +78,45 @@
 
 		/*Tab Hover*/
 		.Tab .ajax__tab_hover .ajax__tab_tab {
-			color: #000000;
+			/* color: #000000; */
 			background: url("../../tab_hover.gif") repeat-x;
 			font-size: 32px; 
 		}
 
 		.Tab .ajax__tab_hover .ajax__tab_inner {
-			color: #000000;
+			/* color: #000000; */
 			background: url("../../tab_left_hover.gif") no-repeat left;
 			padding-left: 10px;
 		}
 
 		.Tab .ajax__tab_hover .ajax__tab_outer {
-			color: #000000;
+			/* color: #000000; */
 			background: url("../../tab_right_hover.gif") no-repeat right;
 			padding-right: 6px;
 		}
 
 		/*Tab Inactive*/
 		.Tab .ajax__tab_tab {
-			color: #666666;
+			/* color: #666666; */
 			background: url("../../tab_Inactive.gif") repeat-x;
 			height: 20px;
 		}
 
 		.Tab .ajax__tab_inner {
-			color: #666666;
+			/* color: #666666; */
 			background: url("../../tab_left_inactive.gif") no-repeat left;
 			padding-left: 10px;
 		}
 
 		.Tab .ajax__tab_outer {
-			color: #666666;
+			/* color: #666666; */
 			background: url("../../tab_right_inactive.gif") no-repeat right;
 			padding-right: 6px;
 			margin-right: 2px;
 		}
 
 		.MyTabStyle .ajax__tab_header {
-			font-size: 28px;
+			/* font-size: 28px; */
 			background: transparent;
 			border: none;
 			-moz-border-radius: 0px;
@@ -127,7 +127,7 @@
 
 		.MyTabStyle .ajax__tab_header .ajax__tab_outer {
 			border-color: #222;
-			color: #222;
+			/* color: #222; */
 			padding-left: 10px;
 			margin-right: 3px;
 			border: none;
@@ -135,31 +135,31 @@
 
 		.MyTabStyle .ajax__tab_header .ajax__tab_inner {
 			border-color: #666;
-			color: #666;
+			/* color: #666; */
 			padding: 3px 10px 2px 0px;
 			border: none;
 		}
 
-		.MyTabStyle .ajax__tab_hover .ajax__tab_outer i{
+		/* .MyTabStyle .ajax__tab_hover .ajax__tab_outer i{
 			border: none;
-			/* TODO: ADICIONAR EFEITO DE HOVER NO ICONE DA SESSÃO ATIVA */
-		}
+			TODO: ADICIONAR EFEITO DE HOVER NO ICONE DA SESSÃO ATIVA
+		 }
 
 		.MyTabStyle .ajax__tab_hover .ajax__tab_inner {
 			color: #fff;
 			border: none;
 			font-weight: bolder;
-		}
+		} */
 
 		.MyTabStyle .ajax__tab_active .ajax__tab_outer {
 			border-bottom-color: #ffffff;
 			background: transparent;
 			border: none;
-			color: #459e00;
+			
 		}
 
 		.MyTabStyle .ajax__tab_active .ajax__tab_inner i{
-			color: #00554f;
+			/* color: #00554f; */
 		}
 
 		.MyTabStyle .ajax__tab_body {

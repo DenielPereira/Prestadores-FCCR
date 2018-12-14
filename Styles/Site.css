@@ -88,9 +88,9 @@ h4
     font-size: 1.1em;
 }
 
-h5, h6
-{
+h5, h6{
     font-size: 1em;
+    font-weight: 500 !important;
 }
 
 /* this rule styles <h1> and <h2> tags that are the 
@@ -472,7 +472,7 @@ hr{
     transform: translateY(15%); 
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (max-width: 1024px){
     .footer{
         position: relative;
     }
@@ -494,3 +494,76 @@ hr{
   content:" *"; 
   color: red;
 }
+
+.font-size-lg-4{
+    font-size: 16px !important;
+}
+
+/* PROGRESS STEP */
+
+.progress-steps {
+    /* display: table; */
+    table-layout: fixed;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: calc(33px + 1em);
+    margin-bottom: 16px;
+    /* margin-top: 40px; */
+  }
+  .progress-steps > .circle {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+    top: 40px;
+    color: #999;
+  }
+  .progress-steps > .circle.active {
+    color: #00554f;
+    font-weight: 400;
+  }
+  .progress-steps > .circle.active > .number {
+    background: #00837A;
+    color: #fff;
+  }
+  .progress-steps > .circle.active::before {
+    border-color: #00837A;
+  }
+  .progress-steps > .circle.complete {
+    color: #056C48;
+    font-weight: 400;
+  }
+  .progress-steps > .circle.complete > .number {
+    background: #056C48;
+    color: #fff;
+  }
+  .progress-steps > .circle.complete::before {
+    border-color: #056C48;
+  }
+  .progress-steps > .circle > .number {
+    box-sizing: border-box;
+    display: block;
+    font-size: 1.2em;
+    font-weight: 300;
+    border-radius: 50%;
+    background: #e5e5e5;
+    width: 33px;
+    height: 33px;
+    padding: 4px 0 0 2px;
+    text-align: center;
+    left: calc(50% - 16.5px);
+    top: -34px;
+    position: absolute;
+  }
+  .progress-steps > .circle::before {
+    position: absolute;
+    width: calc( 100% - 45px );
+    content: "";
+    border-bottom: dashed 1px #d4d4d1;
+    left: calc( -50% + 22.5px );
+    top: -18.5px;
+  }
+  .progress-steps > .circle:first-child::before {
+    border: none;
+  }
