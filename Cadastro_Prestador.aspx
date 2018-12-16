@@ -88,7 +88,7 @@
         TabIndex="0" BorderStyle="None" BorderWidth="0px">
         <HeaderTemplate>
           <div class="progress-steps">
-            <div class="circle active">
+            <div id="categoria" class="circle active">
               <span class="number">
                 <i class="fas fa-industry"></i>
               </span>
@@ -545,16 +545,16 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text">Senha</span>
                       </div>
-                      <asp:TextBox ID="txt_Senha0" runat="server" type="password" CssClass="ph-center form-control"
+                      <asp:TextBox ID="txt_Senha0" runat="server" CssClass="ph-center form-control"
                         MaxLength="10" ToolTip="Informe aqui sua senha com no mínimo 6 caracteres ( números e/ou letras)"
-                        placeholder="Escolha a sua senha"></asp:TextBox>
+                        placeholder="Escolha a sua senha" ></asp:TextBox>
                     </div>
 
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
                         <span class="input-group-text">Confirmação</span>
                       </div>
-                      <asp:TextBox ID="txt_Confirma_Senha0" runat="server" type="password" CssClass="ph-center form-control required"
+                      <asp:TextBox ID="txt_Confirma_Senha0" runat="server" CssClass="ph-center form-control required"
                         MaxLength="10" ToolTip="Redigite a senha para confirmá-la" placeholder="Repita a senha escolhida"></asp:TextBox>
                     </div>
 
@@ -578,7 +578,7 @@
         TabIndex="0">
         <HeaderTemplate>
           <div class="progress-steps">
-            <div class="circle">
+            <div  class="circle">
               <span class="number">
                 <i class="fas fa-mail-bulk"></i>
               </span>
@@ -811,7 +811,7 @@
         TabIndex="0">
         <HeaderTemplate>
           <div class="progress-steps">
-            <div class="circle">
+            <div  class="circle">
               <span class="number">
                 <i class="fas fa-money-check-alt"></i>
               </span>
@@ -1327,7 +1327,7 @@
       <asp:TabPanel runat="server" ID="TabPanel_4" HeaderText="Materiais" Enabled="false" Visible="true">
         <HeaderTemplate>
           <div class="progress-steps">
-            <div class="circle">
+            <div  class="circle">
               <span class="number">
                 <i class="fas fa-box-open"></i>
               </span>
@@ -1416,7 +1416,7 @@
       <asp:TabPanel runat="server" ID="TabPanel_5" HeaderText="Serviços" Enabled="false" Visible="true">
         <HeaderTemplate>
           <div class="progress-steps">
-            <div class="circle">
+            <div  class="circle">
               <span class="number">
                 <i class="fas fa-wrench"></i>
               </span>
@@ -1835,7 +1835,7 @@
       <asp:TabPanel runat="server" ID="TabPanel_6" HeaderText="DECLARAÇÃO" Enabled="false" Visible="true">
         <HeaderTemplate>
           <div class="progress-steps">
-            <div class="circle">
+            <div  class="circle">
               <span class="number">
                 <i class="fas fa-file-contract"></i>
               </span>

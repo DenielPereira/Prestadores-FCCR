@@ -300,6 +300,46 @@ function clickButton(e, buttonid) {
 
 }
 
+
+function addClass(){
+
+    var prevItem = document.getElementById('categoria');
+    var nextButton = document.getElementById('Tabs_TabPanel_0_Imgbtn_Continuar_0');
+
+    function exibirMensagem(){
+        console.log('seu buceta');
+        prevItem.classList.add("complete");
+    }
+
+    nextButton.addEventListener("click", exibirMensagem);
+
+}
+
+
+window.onload = function(){
+    fechar_menu();
+}
+
+function abrir_menu() {
+    document.getElementById("sidebar").style.display = "initial";
+    document.getElementById("sidebar").style.maxWidth = "250px";
+    document.getElementById("sidebar").style.left = "0";
+    document.getElementById("botao_abrir").style.display = "none";
+    document.getElementById("botao_fechar").style.display = "initial";
+    document.getElementById("botao_fechar").style.marginLeft = "250px";
+    document.getElementById("content").style.marginLeft = "250px";
+}
+
+function fechar_menu() {
+    document.getElementById('sidebar').style.left = "-250px";
+    document.getElementById("sidebar").style.maxWidth = "0";
+    document.getElementById("botao_fechar").style.display = "none";
+    document.getElementById("botao_abrir").style.display = "initial";
+    document.getElementById("botao_abrir").style.marginLeft = "0";
+    document.getElementById("content").style.marginLeft = "0";
+}
+
+
 //ReCaptcha
 
 var your_site_key = '6Lf26n0UAAAAAGrX52ppYaF5BdsEHsPUIr_2f6yJ';
