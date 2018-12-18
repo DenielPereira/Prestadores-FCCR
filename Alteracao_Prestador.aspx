@@ -71,7 +71,7 @@
 				</div>
 			</nav>
 
-			<div class="d-none">
+			<div class="d-none position-fixed">
 				<asp:TextBox ID="txt_CNPJ" runat="server" CssClass="form-control" Enabled="False" Font-Bold="True" ReadOnly="True"
 				 Visible="False"></asp:TextBox>
 				<asp:Label ID="lbl_perfil" runat="server" Font-Bold="True" Visible="False"></asp:Label>
@@ -104,10 +104,12 @@
 			<asp:Label ID="lbl_cnpj_codigo" runat="server"></asp:Label>
 		</div>
 
+
+
 		<asp:TabContainer runat="server" ScrollBars="Auto" ID="Tabs" ActiveTabIndex="0" borderstyle="None" EnableTheming="true"
 		 CssClass="MyTabStyle">
-			<asp:TabPanel runat="server" HeaderText="Identificação" ID="TabPanel_1" Enabled="true" Visible="true" Height="500px"
-			 TabIndex="0">
+			<!-- MEUS DADOS -->
+			<asp:TabPanel runat="server" HeaderText="Identificação" ID="TabPanel_1" Enabled="true" Visible="true" TabIndex="0">
 				<HeaderTemplate>
 					<!-- Nada aqui por enquanto -->
 				</HeaderTemplate>
@@ -713,542 +715,454 @@
 
 			</asp:TabPanel>
 
+			<!-- PRESTADORES -->
+
 			<asp:TabPanel runat="server" ID="TabPanel_2" HeaderText="" Enabled="true">
 				<ContentTemplate>
-					<table width="100%">
+					<div id="content2">
+						<div class="ml-2 text-left">
+							<div class="display-4">
+								<span>Prestadores da Empresa</span>
+							</div>
+						</div>
+						<asp:Panel ID="pnl_prestador" runat="server">
+							<div class="px-2 mb-3">
+								<p class="mb-0">Informe, um a um, os prestadores de serviços da sua empresa.</p>
+								<small class="font-italic">Caso o próprio Representante Legal seja um dos prestadores,
+									<asp:LinkButton ID="lnk_auto_inclusao" runat="server" CausesValidation="False">clique aqui</asp:LinkButton>
+									para cadastrá-lo como um Prestador de Serviço.</small>
+							</div>
+						</asp:Panel>
+
+						<asp:Panel ID="pnl_prestador_consulta" runat="server" Visible="False">
+							Para Consultar os dados do Prestador cadastrado, clique no nome do prestador.
+						</asp:Panel>
+
+						<div class="p-3">
+							<asp:GridView ID="GridView2" runat="server" AllowSorting="True" AutoGenerateColumns="False" CellPadding="5"
+							 DataKeyNames="PrexPre_ID" DataSourceID="SqlPrexPre" OnRowCommand="GridView2_RowCommand" OnRowDataBound="GridView2_RowDataBound"
+							 CssClass="table table-borderless border-0">
+
+								<Columns>
+									<asp:TemplateField HeaderText="Prestador">
+										<ItemTemplate>
+											<asp:LinkButton ID="cmdDelete20" runat="server" CausesValidation="false" CommandArgument='<%# Eval("PrexPre_ID") %>'
+											 CommandName="Delete20" Text="&#xf013;" CssClass="color-darkgreen fa-family">
+											</asp:LinkButton>
+											<asp:Label ID="nomezinhoqualquer" runat="server" Text='<%# Bind("PrexPre_Nome") %>' CssClass="text-dark ml-1"></asp:Label>
+										</ItemTemplate>
+										<ItemStyle HorizontalAlign="Left" width="60%" />
+									</asp:TemplateField>
+
+									<asp:TemplateField HeaderText="Serviços" SortExpression="PrexPre_Servicos">
+										<ItemTemplate>
+											<asp:Label ID="Label55" runat="server" Text='<%# Bind("PrexPre_Servicos") %>' CssClass="text-dark"></asp:Label>
+										</ItemTemplate>
+										<ItemStyle width="40%" CssClass="" />
+									</asp:TemplateField>
+								</Columns>
+
+								<AlternatingRowStyle BackColor="#ffffff" />
+								<FooterStyle ForeColor="#CCCCCC" />
+								<HeaderStyle BackColor="#e9ecef" CssClass="border-bottom-2px border-top" />
+								<PagerStyle BackColor="WhiteSmoke" />
+								<RowStyle BackColor="Transparent" CssClass="border-bottom" />
+
+								<SelectedRowStyle BackColor="Transparent" ForeColor="Transparent" />
+							</asp:GridView>
+							<asp:LinkButton ID="lnk_inclui_prestador" runat="server" CausesValidation="False" CssClass="ml-2 color-darkgreen"
+							 data-toggle="tooltip" data-title="Cadastrar Prestador">
+								<i class="fas fa-user-plus"></i>
+							</asp:LinkButton>
+						</div>
+
+						<asp:Panel ID="pnl_prestador_detalhe" runat="server" Visible="False">
+							<table class="style1">
+								<tr>
+									<td>Nome :</td>
+									<td>
+										<asp:TextBox ID="txt_Prestador_Nome" runat="server" CssClass="form-control" MaxLength="70" onkeyup="this.value=this.value.toUpperCase();"
+										 ToolTip="Informe aqui o nome do Prestador de Serviço" Width="400px"></asp:TextBox>
+										<asp:Label ID="Label57" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>&#160;
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>R.G. :</td>
+									<td>
+										<asp:TextBox ID="txt_Prestador_RG" runat="server" CssClass="form-control" MaxLength="20" ToolTip="Informe aqui o RG do Prestador de Serviço"
+										 Width="300px"></asp:TextBox>
+										<asp:Label ID="Label58" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>C.P.F. :</td>
+									<td>
+										<asp:TextBox ID="txt_Prestador_CPF" runat="server" CssClass="form-control" MaxLength="20" ToolTip="Informe aqui o CPF do Prestador de Serviço"
+										 Width="300px"></asp:TextBox>
+										<asp:Label ID="Label59" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>Nacionalidade :</td>
+									<td>
+										<asp:TextBox ID="txt_Prestador_Nacionalidade" runat="server" CssClass="form-control" MaxLength="30" onkeyup="this.value=this.value.toUpperCase();"
+										 ToolTip="Informe aqui a nacionalidade do Prestador de Serviço" Width="300px"></asp:TextBox>
+										<asp:Label ID="Label60" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>Estado Civil :</td>
+									<td>
+										<asp:DropDownList ID="ddl_Prestador_EstadoCivil" runat="server" ToolTip="Informe aqui o Estado Civil do Prestador de Serviço"
+										 Width="300px" Height="30px">
+											<asp:ListItem Value=" "> Selecione uma
+												opção</asp:ListItem>
+											<asp:ListItem>SOLTEIRO</asp:ListItem>
+											<asp:ListItem>CASADO</asp:ListItem>
+											<asp:ListItem>DIVORCIADO</asp:ListItem>
+											<asp:ListItem>VIÚVO</asp:ListItem>
+										</asp:DropDownList>
+										<asp:Label ID="Label61" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>Profissão :</td>
+									<td>
+										<asp:TextBox ID="txt_Prestador_Profissao" runat="server" CssClass="form-control" MaxLength="50" onkeyup="this.value=this.value.toUpperCase();"
+										 ToolTip="Informe aqui a Profissão do Prestador de Serviço" Width="300px"></asp:TextBox>
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>C.E.P. :</td>
+									<td>
+										<asp:TextBox ID="txt_Prestador_CEP" runat="server" CssClass="form-control" MaxLength="10" onkeyup="this.value=this.value.toUpperCase();"
+										 ToolTip="Informe aqui o código de endereçamento postal e em seguida clique no botão Pesquisar CEP para o preenchimento automático do Endereço, Bairro, Cidade e UF."
+										 Width="200px"></asp:TextBox>
+										<asp:Label ID="Label62" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>&#160;&nbsp;
+										<asp:Button ID="btn_CEP_Prestador" runat="server" CausesValidation="False" Height="30px" Text="Pesquisar CEP" />
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>Endereço :</td>
+									<td>
+										<asp:TextBox ID="txt_Prestador_Endereco" runat="server" CssClass="form-control" MaxLength="100" onkeyup="this.value=this.value.toUpperCase();"
+										 ToolTip="Informe aqui o endereço do Prestador de Serviço" Width="400px"></asp:TextBox>
+										<asp:Label ID="Label63" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>Número :</td>
+									<td>
+										<asp:TextBox ID="txt_Prestador_Numero" runat="server" CssClass="form-control" MaxLength="10" ToolTip="Informe aqui o número do endereço do Prestador de Serviço"
+										 Width="200px"></asp:TextBox>
+										<asp:Label ID="Label64" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>Complemento :</td>
+									<td>
+										<asp:TextBox ID="txt_Prestador_Complemento" runat="server" CssClass="form-control" MaxLength="50" onkeyup="this.value=this.value.toUpperCase();"
+										 ToolTip="Informe aqui o complemento do endereço do Prestador de Serviço se houver : bloco, andar, sala, etc."
+										 Width="300px"></asp:TextBox>
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>Bairro :</td>
+									<td>
+										<asp:TextBox ID="txt_Prestador_Bairro" runat="server" CssClass="form-control" MaxLength="50" onkeyup="this.value=this.value.toUpperCase();"
+										 ToolTip="Informe aqui o bairro do Prestador de Serviço" Width="400px"></asp:TextBox>
+										<asp:Label ID="Label65" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>Cidade :</td>
+									<td>
+										<asp:TextBox ID="txt_Prestador_Municipio" runat="server" CssClass="form-control" MaxLength="50" onkeyup="this.value=this.value.toUpperCase();"
+										 ToolTip="Informe aqui a cidade do Prestador de Serviço" Width="300px"></asp:TextBox>
+										<asp:Label ID="Label66" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>UF :</td>
+									<td>
+										<asp:DropDownList ID="ddl_Prestador_UF" runat="server" CssClass="form-control" ToolTip="Informe aqui a Unidade da Federação do Prestador de Serviço"
+										 Width="300px">
+											<asp:ListItem Value=" ">&nbsp;
+												Selecione uma opção</asp:ListItem>
+											<asp:ListItem Value="DF">DISTRITO
+												FEDERAL</asp:ListItem>
+											<asp:ListItem Value="AC">ACRE</asp:ListItem>
+											<asp:ListItem Value="AL">ALAGOAS</asp:ListItem>
+											<asp:ListItem Value="AP">AMAPÁ</asp:ListItem>
+											<asp:ListItem Value="AM">AMAZONAS</asp:ListItem>
+											<asp:ListItem Value="BA">BAHIA</asp:ListItem>
+											<asp:ListItem Value="CE">CEARÁ</asp:ListItem>
+											<asp:ListItem Value="ES">ESPÍRITO SANTO</asp:ListItem>
+											<asp:ListItem Value="GO">GOIÁS</asp:ListItem>
+											<asp:ListItem Value="MA">MARANHÃO</asp:ListItem>
+											<asp:ListItem Value="MT">MATO GROSSO</asp:ListItem>
+											<asp:ListItem Value="MS">MATO GROSSO DO
+												SUL</asp:ListItem>
+											<asp:ListItem Value="MG">MINAS GERAIS</asp:ListItem>
+											<asp:ListItem Value="PR">PARANÁ</asp:ListItem>
+											<asp:ListItem Value="PB">PARAÍBA</asp:ListItem>
+											<asp:ListItem Value="PA">PARÁ</asp:ListItem>
+											<asp:ListItem Value="PE">PERNAMBUCO</asp:ListItem>
+											<asp:ListItem Value="PI">PIAUÍ</asp:ListItem>
+											<asp:ListItem Value="RJ">RIO DE JANEIRO</asp:ListItem>
+											<asp:ListItem Value="RN">RIO GRANDE DO
+												NORTE</asp:ListItem>
+											<asp:ListItem Value="RS">RIO GRANDE DO
+												SUL</asp:ListItem>
+											<asp:ListItem Value="RO">RONDÔNIA</asp:ListItem>
+											<asp:ListItem Value="RR">RORAIMA</asp:ListItem>
+											<asp:ListItem Value="SC">SANTA CATARINA</asp:ListItem>
+											<asp:ListItem Value="SE">SERGIPE</asp:ListItem>
+											<asp:ListItem Value="SP">SÃO PAULO</asp:ListItem>
+											<asp:ListItem Value="TO">TOCANTINS</asp:ListItem>
+										</asp:DropDownList>
+										<asp:Label ID="Label67" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>Telefone :</td>
+									<td>
+										<asp:TextBox ID="txt_Prestador_Telefone" runat="server" CssClass="form-control" MaxLength="25" ToolTip="Informe aqui o DDD e o telefone do Prestador de Serviço"
+										 Width="300px"></asp:TextBox>
+										<br />
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>Celular :</td>
+									<td>
+										<asp:TextBox ID="txt_Prestador_Celular" runat="server" CssClass="form-control" MaxLength="25" ToolTip="Informe aqui o DDD e o celular do Prestador de Serviço"
+										 Width="300px"></asp:TextBox>
+										<br />
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>E-mail :</td>
+									<td>
+										<asp:TextBox ID="txt_Prestador_Email" runat="server" CssClass="form-control" MaxLength="50" ToolTip="Informe aqui o endereço de email do Prestador de Serviço"
+										 Width="300px"></asp:TextBox>
+										<br />
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>Serviços :</td>
+									<td>
+										<asp:TextBox ID="txt_Prestador_Servico" runat="server" CssClass="form-control" MaxLength="100" onkeyup="this.value=this.value.toUpperCase();"
+										 ToolTip="Informe aqui o(s) serviço(s) prestado(s) separados por ;" Width="400px"></asp:TextBox>
+										<br />
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>&#160;</td>
+									<td>
+										Informe abaixo os arquivos com informações
+										do prestador,
+										<br />
+										Tamanho máximo permitido de 800kb e&nbsp;
+										somente formato PDF.</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>
+										<asp:TextBox ID="txt_Prestador_Doc_1" runat="server" CssClass="form-control" MaxLength="150" ReadOnly="True"
+										 ToolTip="Informe aqui o DDD e o celular do Prestador de Serviço" Visible="False" Width="56px"></asp:TextBox>
+									</td>
+									<td>
+										<asp:FileUpload ID="PrexPre_Doc_1" runat="server" ToolTip="Selecione aqui o documento a enviar" Width="400px"
+										 CssClass="form-control" Height="40px" />
+										<br />
+										<asp:HyperLink ID="hl_up_1" runat="server" CssClass="form-control" Target="_blank">...</asp:HyperLink>
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>
+										<asp:TextBox ID="txt_Prestador_Doc_2" runat="server" CssClass="form-control" MaxLength="150" ToolTip="Informe aqui o DDD e o celular do Prestador de Serviço"
+										 Visible="False" Width="64px"></asp:TextBox>
+									</td>
+									<td>
+										<asp:FileUpload ID="PrexPre_Doc_2" runat="server" ToolTip="Selecione aqui o documento a enviar" Width="500px" />
+										<br />
+										<asp:HyperLink ID="hl_up_2" runat="server" CssClass="form-control" Target="_blank">...</asp:HyperLink>
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>
+										<asp:TextBox ID="txt_Prestador_Doc_3" runat="server" CssClass="form-control" MaxLength="150" ToolTip="Informe aqui o DDD e o celular do Prestador de Serviço"
+										 Visible="False" Width="64px"></asp:TextBox>
+									</td>
+									<td>
+										<asp:FileUpload ID="PrexPre_Doc_3" runat="server" ToolTip="Selecione aqui o documento a enviar" Width="500px" />
+										<br />
+										<asp:HyperLink ID="hl_up_3" runat="server" CssClass="form-control" Target="_blank">...</asp:HyperLink>
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>
+										<asp:TextBox ID="txt_Prestador_Doc_4" runat="server" CssClass="form-control" MaxLength="150" ToolTip="Informe aqui o DDD e o celular do Prestador de Serviço"
+										 Visible="False" Width="64px"></asp:TextBox>
+									</td>
+									<td>
+										<asp:FileUpload ID="PrexPre_Doc_4" runat="server" ToolTip="Selecione aqui o documento a enviar" Width="500px" />
+										<br />
+										<asp:HyperLink ID="hl_up_4" runat="server" CssClass="form-control" Target="_blank">...</asp:HyperLink>
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>&#160;</td>
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>&#160;</td>
+									<td>
+										<asp:Button ID="btn_Salvar_Prestador" runat="server" BackColor="#00554F" Font-Bold="True" Font-Names="Verdana"
+										 ForeColor="White" Height="40px" Text="GRAVAR" Width="150px" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+										<asp:Button ID="btn_fechar_Prestador_alt" runat="server" BackColor="#00554F" Font-Bold="True" Font-Names="Verdana"
+										 ForeColor="White" Height="40px" Text="FECHAR" Width="150px" />
+									</td>
+									<td>
+										<asp:Button ID="btn_Excluir_Prestador_alt" runat="server" BackColor="#00554F" Font-Bold="True" Font-Names="Verdana"
+										 ForeColor="White" Height="40px" Text="EXCLUIR" Width="150px" />
+									</td>
+								</tr>
+								<tr>
+									<td>&#160;</td>
+									<td>&nbsp;</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>&#160;</td>
+									<td>Os campos assinalados com (*) são de
+										preenchimento obrigatório.</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>&#160;</td>
+									<td>&nbsp;</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>&#160;</td>
+									<td>&#160;</td>
+									<td>&#160;</td>
+								</tr>
+							</table>
+						</asp:Panel>
+						</td>
+						<td>&#160;</td>
+						</tr>
 						<tr>
-							<td width="20px">&#160;</td>
-							<td align="center" style="font-weight: bold">
-								<asp:Panel ID="pnl_prestador" runat="server">
-									<table cellpadding="0" cellspacing="0">
-										<tr>
-											<td>&#160;</td>
-											<td>&#160;</td>
-											<td>&#160;</td>
-										</tr>
-										<tr>
-											<td>&#160;</td>
-											<td align="center" colspan="2" style="font-weight: bold">Informe,
-												um a um, os prestadores de serviços de sua empresa.<br />Caso
-												o próprio Representante Legal seja um dos
-												Prestadores,&#160; <asp:LinkButton ID="lnk_auto_inclusao" runat="server" CausesValidation="False" Font-Bold="True"
-												 ForeColor="#3333CC">clique aqui</asp:LinkButton>&#160;
-												para cadastrá-lo como um Prestador de Serviço.<br /><br />Se
-												desejar cadastrar um Prestador&#160; <asp:LinkButton ID="lnk_inclui_prestador" runat="server"
-												 CausesValidation="False" Font-Bold="True" ForeColor="#3333CC">clique aqui</asp:LinkButton>&#160;.<br /><br />Para
-												alterar os dados de um Prestador já cadastrado, clique
-												no nome do prestador.</td>
-											<td>&#160;</td>
-										</tr>
-										<tr>
-											<td>&#160;</td>
-											<td>&#160;</td>
-											<td>&#160;</td>
-										</tr>
-									</table>
-								</asp:Panel>
-								<asp:Panel ID="pnl_prestador_consulta" runat="server" Visible="False">
-									<table cellpadding="0" cellspacing="0">
-										<tr>
-											<td>&#160;</td>
-											<td>&#160;</td>
-											<td>&#160;</td>
-										</tr>
-										<tr>
-											<td>&#160;</td>
-											<td align="center" colspan="2" style="font-weight: bold">Para
-												consultar os dados do Prestador cadastrado, clique no
-												nome do prestador.</td>
-											<td>&#160;</td>
-										</tr>
-										<tr>
-											<td>&#160;</td>
-											<td>&#160;</td>
-											<td>&#160;</td>
-										</tr>
-									</table>
-								</asp:Panel>
-							</td>
+							<td>&#160;</td>
+							<td>&#160;</td>
+							<td>&#160;</td>
 							<td>&#160;</td>
 						</tr>
 						<tr>
-							<td width="20px">&#160;</td>
-							<td>
-								<asp:GridView ID="GridView2" runat="server" AllowSorting="True" AutoGenerateColumns="False" BorderColor="Gainsboro"
-								 BorderStyle="Solid" BorderWidth="1px" CellPadding="5" DataKeyNames="PrexPre_ID" DataSourceID="SqlPrexPre"
-								 OnRowCommand="GridView2_RowCommand" OnRowDataBound="GridView2_RowDataBound" Width="100%" PageSize="100"
-								 GridLines="None">
-									<Columns>
-										<asp:TemplateField HeaderText="Prestador">
-											<ItemTemplate>
-												<asp:LinkButton ID="cmdDelete20" runat="server" CausesValidation="false" CommandArgument='<%# Eval("PrexPre_ID") %>'
-												 CommandName="Delete20" Text='<%# Bind("PrexPre_Nome") %>'>
-												</asp:LinkButton>
-											</ItemTemplate>
-											<ItemStyle HorizontalAlign="Left" Width="250px" />
-										</asp:TemplateField>
-										<asp:TemplateField HeaderText="Serviços" SortExpression="PrexPre_Servicos">
-											<ItemTemplate>
-												<asp:Label ID="Label55" runat="server" Text='<%# Bind("PrexPre_Servicos") %>'></asp:Label>
-											</ItemTemplate>
-											<ItemStyle Width="80px" />
-										</asp:TemplateField>
-									</Columns>
-									<AlternatingRowStyle BackColor="#E7E7E7" />
-									<FooterStyle ForeColor="#CCCCCC" />
-									<HeaderStyle BackColor="#FFFFFF" />
-									<PagerStyle BackColor="WhiteSmoke" />
-									<RowStyle BackColor="Transparent" ForeColor="Transparent" />
-									<SelectedRowStyle BackColor="Transparent" Font-Bold="True" ForeColor="Transparent" />
-								</asp:GridView>
+							<td>&#160;</td>
+							<td>&#160;</td>
+							<td align="left">
+								<asp:TextBox ID="txt_prexpre_registro" runat="server" BackColor="White" BorderStyle="None" CssClass="form-control"
+								 ForeColor="White" MaxLength="10" Width="119px"></asp:TextBox>
+								<asp:TextBox ID="TextBox6" runat="server" BackColor="White" BorderStyle="None" CssClass="form-control"
+								 ForeColor="White" MaxLength="300" Width="57px"></asp:TextBox>
+								<asp:TextBox ID="TextBox7" runat="server" BackColor="White" BorderStyle="None" CssClass="form-control"
+								 ForeColor="White" MaxLength="300" Width="57px"></asp:TextBox>
 							</td>
 							<td>&#160;</td>
 						</tr>
-						<tr>
-							<td width="20px">&#160;</td>
-							<td>
-								<table width="100%">
-									<tr>
-										<td>&#160;</td>
-										<td>&#160;</td>
-										<td>&#160;</td>
-										<td>&#160;</td>
-									</tr>
-									<tr>
-										<td>&#160;</td>
-										<td colspan="2">
-											<asp:Panel ID="pnl_prestador_detalhe" runat="server" Visible="False">
-												<table class="style1">
-													<tr>
-														<td>Nome :</td>
-														<td>
-															<asp:TextBox ID="txt_Prestador_Nome" runat="server" CssClass="form-control" MaxLength="70" onkeyup="this.value=this.value.toUpperCase();"
-															 ToolTip="Informe aqui o nome do Prestador de Serviço" Width="400px"></asp:TextBox>
-															<asp:Label ID="Label57" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>&#160;
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>R.G. :</td>
-														<td>
-															<asp:TextBox ID="txt_Prestador_RG" runat="server" CssClass="form-control" MaxLength="20" ToolTip="Informe aqui o RG do Prestador de Serviço"
-															 Width="300px"></asp:TextBox>
-															<asp:Label ID="Label58" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>C.P.F. :</td>
-														<td>
-															<asp:TextBox ID="txt_Prestador_CPF" runat="server" CssClass="form-control" MaxLength="20" ToolTip="Informe aqui o CPF do Prestador de Serviço"
-															 Width="300px"></asp:TextBox>
-															<asp:Label ID="Label59" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>Nacionalidade :</td>
-														<td>
-															<asp:TextBox ID="txt_Prestador_Nacionalidade" runat="server" CssClass="form-control" MaxLength="30"
-															 onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui a nacionalidade do Prestador de Serviço"
-															 Width="300px"></asp:TextBox>
-															<asp:Label ID="Label60" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>Estado Civil :</td>
-														<td>
-															<asp:DropDownList ID="ddl_Prestador_EstadoCivil" runat="server" ToolTip="Informe aqui o Estado Civil do Prestador de Serviço"
-															 Width="300px" Height="30px">
-																<asp:ListItem Value=" "> Selecione uma
-																	opção</asp:ListItem>
-																<asp:ListItem>SOLTEIRO</asp:ListItem>
-																<asp:ListItem>CASADO</asp:ListItem>
-																<asp:ListItem>DIVORCIADO</asp:ListItem>
-																<asp:ListItem>VIÚVO</asp:ListItem>
-															</asp:DropDownList>
-															<asp:Label ID="Label61" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>Profissão :</td>
-														<td>
-															<asp:TextBox ID="txt_Prestador_Profissao" runat="server" CssClass="form-control" MaxLength="50" onkeyup="this.value=this.value.toUpperCase();"
-															 ToolTip="Informe aqui a Profissão do Prestador de Serviço" Width="300px"></asp:TextBox>
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>C.E.P. :</td>
-														<td>
-															<asp:TextBox ID="txt_Prestador_CEP" runat="server" CssClass="form-control" MaxLength="10" onkeyup="this.value=this.value.toUpperCase();"
-															 ToolTip="Informe aqui o código de endereçamento postal e em seguida clique no botão Pesquisar CEP para o preenchimento automático do Endereço, Bairro, Cidade e UF."
-															 Width="200px"></asp:TextBox>
-															<asp:Label ID="Label62" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>&#160;&nbsp;
-															<asp:Button ID="btn_CEP_Prestador" runat="server" CausesValidation="False" Height="30px" Text="Pesquisar CEP" />
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>Endereço :</td>
-														<td>
-															<asp:TextBox ID="txt_Prestador_Endereco" runat="server" CssClass="form-control" MaxLength="100" onkeyup="this.value=this.value.toUpperCase();"
-															 ToolTip="Informe aqui o endereço do Prestador de Serviço" Width="400px"></asp:TextBox>
-															<asp:Label ID="Label63" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>Número :</td>
-														<td>
-															<asp:TextBox ID="txt_Prestador_Numero" runat="server" CssClass="form-control" MaxLength="10" ToolTip="Informe aqui o número do endereço do Prestador de Serviço"
-															 Width="200px"></asp:TextBox>
-															<asp:Label ID="Label64" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>Complemento :</td>
-														<td>
-															<asp:TextBox ID="txt_Prestador_Complemento" runat="server" CssClass="form-control" MaxLength="50"
-															 onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o complemento do endereço do Prestador de Serviço se houver : bloco, andar, sala, etc."
-															 Width="300px"></asp:TextBox>
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>Bairro :</td>
-														<td>
-															<asp:TextBox ID="txt_Prestador_Bairro" runat="server" CssClass="form-control" MaxLength="50" onkeyup="this.value=this.value.toUpperCase();"
-															 ToolTip="Informe aqui o bairro do Prestador de Serviço" Width="400px"></asp:TextBox>
-															<asp:Label ID="Label65" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>Cidade :</td>
-														<td>
-															<asp:TextBox ID="txt_Prestador_Municipio" runat="server" CssClass="form-control" MaxLength="50" onkeyup="this.value=this.value.toUpperCase();"
-															 ToolTip="Informe aqui a cidade do Prestador de Serviço" Width="300px"></asp:TextBox>
-															<asp:Label ID="Label66" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>UF :</td>
-														<td>
-															<asp:DropDownList ID="ddl_Prestador_UF" runat="server" CssClass="form-control" ToolTip="Informe aqui a Unidade da Federação do Prestador de Serviço"
-															 Width="300px">
-																<asp:ListItem Value=" ">&nbsp;
-																	Selecione uma opção</asp:ListItem>
-																<asp:ListItem Value="DF">DISTRITO
-																	FEDERAL</asp:ListItem>
-																<asp:ListItem Value="AC">ACRE</asp:ListItem>
-																<asp:ListItem Value="AL">ALAGOAS</asp:ListItem>
-																<asp:ListItem Value="AP">AMAPÁ</asp:ListItem>
-																<asp:ListItem Value="AM">AMAZONAS</asp:ListItem>
-																<asp:ListItem Value="BA">BAHIA</asp:ListItem>
-																<asp:ListItem Value="CE">CEARÁ</asp:ListItem>
-																<asp:ListItem Value="ES">ESPÍRITO SANTO</asp:ListItem>
-																<asp:ListItem Value="GO">GOIÁS</asp:ListItem>
-																<asp:ListItem Value="MA">MARANHÃO</asp:ListItem>
-																<asp:ListItem Value="MT">MATO GROSSO</asp:ListItem>
-																<asp:ListItem Value="MS">MATO GROSSO DO
-																	SUL</asp:ListItem>
-																<asp:ListItem Value="MG">MINAS GERAIS</asp:ListItem>
-																<asp:ListItem Value="PR">PARANÁ</asp:ListItem>
-																<asp:ListItem Value="PB">PARAÍBA</asp:ListItem>
-																<asp:ListItem Value="PA">PARÁ</asp:ListItem>
-																<asp:ListItem Value="PE">PERNAMBUCO</asp:ListItem>
-																<asp:ListItem Value="PI">PIAUÍ</asp:ListItem>
-																<asp:ListItem Value="RJ">RIO DE JANEIRO</asp:ListItem>
-																<asp:ListItem Value="RN">RIO GRANDE DO
-																	NORTE</asp:ListItem>
-																<asp:ListItem Value="RS">RIO GRANDE DO
-																	SUL</asp:ListItem>
-																<asp:ListItem Value="RO">RONDÔNIA</asp:ListItem>
-																<asp:ListItem Value="RR">RORAIMA</asp:ListItem>
-																<asp:ListItem Value="SC">SANTA CATARINA</asp:ListItem>
-																<asp:ListItem Value="SE">SERGIPE</asp:ListItem>
-																<asp:ListItem Value="SP">SÃO PAULO</asp:ListItem>
-																<asp:ListItem Value="TO">TOCANTINS</asp:ListItem>
-															</asp:DropDownList>
-															<asp:Label ID="Label67" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>Telefone :</td>
-														<td>
-															<asp:TextBox ID="txt_Prestador_Telefone" runat="server" CssClass="form-control" MaxLength="25" ToolTip="Informe aqui o DDD e o telefone do Prestador de Serviço"
-															 Width="300px"></asp:TextBox>
-															<br />
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>Celular :</td>
-														<td>
-															<asp:TextBox ID="txt_Prestador_Celular" runat="server" CssClass="form-control" MaxLength="25" ToolTip="Informe aqui o DDD e o celular do Prestador de Serviço"
-															 Width="300px"></asp:TextBox>
-															<br />
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>E-mail :</td>
-														<td>
-															<asp:TextBox ID="txt_Prestador_Email" runat="server" CssClass="form-control" MaxLength="50" ToolTip="Informe aqui o endereço de email do Prestador de Serviço"
-															 Width="300px"></asp:TextBox>
-															<br />
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>Serviços :</td>
-														<td>
-															<asp:TextBox ID="txt_Prestador_Servico" runat="server" CssClass="form-control" MaxLength="100" onkeyup="this.value=this.value.toUpperCase();"
-															 ToolTip="Informe aqui o(s) serviço(s) prestado(s) separados por ;" Width="400px"></asp:TextBox>
-															<br />
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>&#160;</td>
-														<td>
-															Informe abaixo os arquivos com informações
-															do prestador,
-															<br />
-															Tamanho máximo permitido de 800kb e&nbsp;
-															somente formato PDF.</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>
-															<asp:TextBox ID="txt_Prestador_Doc_1" runat="server" CssClass="form-control" MaxLength="150" ReadOnly="True"
-															 ToolTip="Informe aqui o DDD e o celular do Prestador de Serviço" Visible="False" Width="56px"></asp:TextBox>
-														</td>
-														<td>
-															<asp:FileUpload ID="PrexPre_Doc_1" runat="server" ToolTip="Selecione aqui o documento a enviar" Width="400px"
-															 CssClass="form-control" Height="40px" />
-															<br />
-															<asp:HyperLink ID="hl_up_1" runat="server" CssClass="form-control" Target="_blank">...</asp:HyperLink>
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>
-															<asp:TextBox ID="txt_Prestador_Doc_2" runat="server" CssClass="form-control" MaxLength="150" ToolTip="Informe aqui o DDD e o celular do Prestador de Serviço"
-															 Visible="False" Width="64px"></asp:TextBox>
-														</td>
-														<td>
-															<asp:FileUpload ID="PrexPre_Doc_2" runat="server" ToolTip="Selecione aqui o documento a enviar" Width="500px" />
-															<br />
-															<asp:HyperLink ID="hl_up_2" runat="server" CssClass="form-control" Target="_blank">...</asp:HyperLink>
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>
-															<asp:TextBox ID="txt_Prestador_Doc_3" runat="server" CssClass="form-control" MaxLength="150" ToolTip="Informe aqui o DDD e o celular do Prestador de Serviço"
-															 Visible="False" Width="64px"></asp:TextBox>
-														</td>
-														<td>
-															<asp:FileUpload ID="PrexPre_Doc_3" runat="server" ToolTip="Selecione aqui o documento a enviar" Width="500px" />
-															<br />
-															<asp:HyperLink ID="hl_up_3" runat="server" CssClass="form-control" Target="_blank">...</asp:HyperLink>
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>
-															<asp:TextBox ID="txt_Prestador_Doc_4" runat="server" CssClass="form-control" MaxLength="150" ToolTip="Informe aqui o DDD e o celular do Prestador de Serviço"
-															 Visible="False" Width="64px"></asp:TextBox>
-														</td>
-														<td>
-															<asp:FileUpload ID="PrexPre_Doc_4" runat="server" ToolTip="Selecione aqui o documento a enviar" Width="500px" />
-															<br />
-															<asp:HyperLink ID="hl_up_4" runat="server" CssClass="form-control" Target="_blank">...</asp:HyperLink>
-														</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>&#160;</td>
-														<td>&nbsp;</td>
-														<td>&nbsp;</td>
-													</tr>
-													<tr>
-														<td>&#160;</td>
-														<td>
-															<asp:Button ID="btn_Salvar_Prestador" runat="server" BackColor="#00554F" Font-Bold="True" Font-Names="Verdana"
-															 ForeColor="White" Height="40px" Text="GRAVAR" Width="150px" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-															<asp:Button ID="btn_fechar_Prestador_alt" runat="server" BackColor="#00554F" Font-Bold="True" Font-Names="Verdana"
-															 ForeColor="White" Height="40px" Text="FECHAR" Width="150px" />
-														</td>
-														<td>
-															<asp:Button ID="btn_Excluir_Prestador_alt" runat="server" BackColor="#00554F" Font-Bold="True"
-															 Font-Names="Verdana" ForeColor="White" Height="40px" Text="EXCLUIR" Width="150px" />
-														</td>
-													</tr>
-													<tr>
-														<td>&#160;</td>
-														<td>&nbsp;</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>&#160;</td>
-														<td>Os campos assinalados com (*) são de
-															preenchimento obrigatório.</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>&#160;</td>
-														<td>&nbsp;</td>
-														<td>&#160;</td>
-													</tr>
-													<tr>
-														<td>&#160;</td>
-														<td>&#160;</td>
-														<td>&#160;</td>
-													</tr>
-												</table>
-											</asp:Panel>
-										</td>
-										<td>&#160;</td>
-									</tr>
-									<tr>
-										<td>&#160;</td>
-										<td>&#160;</td>
-										<td>&#160;</td>
-										<td>&#160;</td>
-									</tr>
-									<tr>
-										<td>&#160;</td>
-										<td>&#160;</td>
-										<td align="left">
-											<asp:TextBox ID="txt_prexpre_registro" runat="server" BackColor="White" BorderStyle="None" CssClass="form-control"
-											 ForeColor="White" MaxLength="10" Width="119px"></asp:TextBox>
-											<asp:TextBox ID="TextBox6" runat="server" BackColor="White" BorderStyle="None" CssClass="form-control"
-											 ForeColor="White" MaxLength="300" Width="57px"></asp:TextBox>
-											<asp:TextBox ID="TextBox7" runat="server" BackColor="White" BorderStyle="None" CssClass="form-control"
-											 ForeColor="White" MaxLength="300" Width="57px"></asp:TextBox>
-										</td>
-										<td>&#160;</td>
-									</tr>
-								</table>
-							</td>
-							<td>&#160;</td>
+						</table>
+						</td>
+						<td>&#160;</td>
 						</tr>
-					</table>
+						</table>
 
 
+					</div>
 				</ContentTemplate>
 
 
 			</asp:TabPanel>
 
+			<!-- MATERIAIS -->
+
 			<asp:TabPanel runat="server" ID="TabPanel_3" HeaderText="" Enabled="true">
 				<ContentTemplate>
-					<table width="100%">
-						<tr>
-							<td width="20px">&#160;</td>
-							<td colspan="2" align="center" style="font-weight: bold">
-								<asp:Panel ID="pnl_material" runat="server">
-									<table cellpadding="0" cellspacing="0">
-										<tr>
-											<td>&#160;</td>
-											<td align="center" style="font-weight: bold">Marque os
-												materiais que podem ser&#160; fornecidos, clicando na
-												descrição do material.</td>
-											<td>&#160;</td>
-										</tr>
-										<tr>
-											<td>&#160;</td>
-											<td align="center" style="font-weight: bold">
-												Se o material não constar na lista e desejar cadastrar,
-												preencha o campo abaixo
-												e clique no botão de adição</td>
-											<td>&#160;</td>
-										</tr>
-										<tr>
-											<td>&#160;</td>
-											<td align="center" style="font-weight: bold">Material :
-												<asp:TextBox ID="txtdescservico" runat="server" CausesValidation="True" CssClass="form-control" Height="30px"
-												 MaxLength="250" onkeyup="this.value=this.value.toUpperCase();" Rows="1" Width="500px"></asp:TextBox>
-												&nbsp;
-												<asp:ImageButton ID="ImageButton3" runat="server" CausesValidation="False" ImageUrl="~/Imagens/Botoes/botao_mais.gif" />
-											</td>
-											<td>&#160;</td>
-										</tr>
-									</table>
-								</asp:Panel>
-							</td>
-							<td>&#160;</td>
-						</tr>
-						<tr>
-							<td width="20px">&#160;</td>
-							<td>&#160;</td>
-							<td align="center">
-								<asp:DataGrid ID="Datagrid2" runat="server" AllowSorting="True" AutoGenerateColumns="False" BackColor="White"
-								 BorderColor="Gainsboro" BorderStyle="Solid" BorderWidth="1px" CellPadding="5" DataKeyField="PrexSM_ID"
-								 OnDeleteCommand="DataGrid2_DeleteCommand" OnItemDataBound="DataGrid2_ItemDataBound" PageSize="100" Width="90%">
-									<Columns>
-										<asp:TemplateColumn HeaderText="Lista dos Materiais">
-											<ItemTemplate>
-												<asp:LinkButton ID="LnkBtnDel3" runat="server" CausesValidation="False" CommandName="Delete" Height="10px"
-												 Text='<%# DataBinder.Eval(Container, "DataItem.SM_Descricao") %>' ToolTip="Marcar/Desmarcar este material da minha lista">
-												</asp:LinkButton>
-											</ItemTemplate>
-											<HeaderStyle Width="90%" />
-										</asp:TemplateColumn>
-										<asp:TemplateColumn>
-											<ItemTemplate>
-												<asp:CheckBox ID="ckitem" runat="server" AutoPostBack="True" Enabled="false" Checked='<%# DataBinder.Eval(Container, "DataItem.SM_Selecao") %>' />
-											</ItemTemplate>
-										</asp:TemplateColumn>
-									</Columns>
-									<EditItemStyle VerticalAlign="Middle" />
-									<FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-									<HeaderStyle BackColor="WhiteSmoke" Font-Bold="True" ForeColor="White" />
-									<ItemStyle Font-Bold="False" Font-Italic="False" Font-Names="Verdana" Font-Overline="False" Font-Size="Small"
-									 Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Left" VerticalAlign="Middle" />
-									<PagerStyle BackColor="WhiteSmoke" HorizontalAlign="Center" Mode="NumericPages" NextPageText="Posterior"
-									 PrevPageText="Anterior" />
-									<SelectedItemStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
-								</asp:DataGrid>
-							</td>
-							<td>&#160; </td>
-						</tr>
-						<tr>
-							<td width="20px">&#160;</td>
-							<td>&#160;</td>
-							<td>&#160;</td>
-							<td>&nbsp;</td>
-						</tr>
-						<tr>
-							<td width="20px">&#160;</td>
-							<td align="center" colspan="2">&nbsp;&nbsp;<br /><br />
-								<asp:TextBox ID="txtcodservico" runat="server" BackColor="White" BorderStyle="None" ForeColor="White" Width="30px"></asp:TextBox>
-							</td>
-							<td>&nbsp;</td>
-						</tr>
-						<tr>
-							<td width="20px">&#160;</td>
-							<td align="center" colspan="2">&nbsp;</td>
-							<td>&#160;</td>
-						</tr>
-						<tr>
-							<td width="20px">&#160;</td>
-							<td align="left" colspan="2">&#160;</td>
-							<td>&#160;</td>
-						</tr>
-					</table>
+					<div id="content3">
 
+						<asp:Panel ID="pnl_material" runat="server">
+							Marque os
+							materiais que podem ser fornecidos, clicando na
+							descrição do material.
+							Se o material não constar na lista e desejar cadastrar,
+							preencha o campo abaixo
+							e clique no botão de adição
+							Material :
+							<asp:TextBox ID="txtdescservico" runat="server" CausesValidation="True" CssClass="form-control" Height="30px"
+							 MaxLength="250" onkeyup="this.value=this.value.toUpperCase();" Rows="1" Width="500px"></asp:TextBox>
 
+							<asp:ImageButton ID="ImageButton3" runat="server" CausesValidation="False" ImageUrl="~/Imagens/Botoes/botao_mais.gif" />
 
+						</asp:Panel>
 
+						<div class="p-2">
+							<asp:DataGrid ID="Datagrid2" runat="server" AllowSorting="True" AutoGenerateColumns="False" BorderColor="Gainsboro"
+							 CellPadding="5" DataKeyField="PrexSM_ID" OnDeleteCommand="DataGrid2_DeleteCommand" OnItemDataBound="DataGrid2_ItemDataBound"
+							 CssClass="table table-borderless border-0">
+
+								<Columns>
+									<asp:TemplateColumn HeaderText="Lista dos Materiais">
+										<ItemTemplate>
+											<asp:LinkButton ID="LnkBtnDel3" runat="server" CausesValidation="False" CommandName="Delete" CssClass="text-dark"
+											 Text='<%# DataBinder.Eval(Container, "DataItem.SM_Descricao") %>' ToolTip="Marcar/Desmarcar este material da minha lista">
+											</asp:LinkButton>
+										</ItemTemplate>
+										<HeaderStyle Width="90%" />
+									</asp:TemplateColumn>
+
+									<asp:TemplateColumn>
+										<ItemTemplate>
+											<asp:CheckBox ID="ckitem" runat="server" AutoPostBack="True" Enabled="false" Checked='<%# DataBinder.Eval(Container, "DataItem.SM_Selecao") %>' />
+										</ItemTemplate>
+									</asp:TemplateColumn>
+								</Columns>
+
+								<EditItemStyle VerticalAlign="Middle" />
+								<FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+								<HeaderStyle BackColor="#e9ecef" CssClass="border-bottom-2px border-top font-weight-bold" />
+								<ItemStyle VerticalAlign="Middle" CssClass="border-bottom" />
+								<PagerStyle BackColor="WhiteSmoke" HorizontalAlign="Center" Mode="NumericPages" NextPageText="Posterior"
+								 PrevPageText="Anterior" />
+								<SelectedItemStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+							</asp:DataGrid>
+						</div>
+						<asp:TextBox ID="txtcodservico" runat="server" BackColor="White" BorderStyle="None" ForeColor="White" Width="30px"></asp:TextBox>
+
+					</div>
 				</ContentTemplate>
 
 			</asp:TabPanel>
