@@ -904,107 +904,62 @@
 
 			</asp:TabPanel>
 
+			<!-- MATERIAIS -->
+
 			<asp:TabPanel runat="server" ID="TabPanel_3" HeaderText="" Enabled="true">
 				<ContentTemplate>
-					<table width="100%">
-						<tr>
-							<td width="20px">&#160;</td>
-							<td colspan="2" align="center" style="font-weight: bold">
+					<div id="content3">
+				
 								<asp:Panel ID="pnl_material" runat="server">
-									<table cellpadding="0" cellspacing="0">
-										<tr>
-											<td>&#160;</td>
-											<td align="center" style="font-weight: bold">Marque os
-												materiais que podem ser&#160; fornecidos, clicando na
-												descrição do material.</td>
-											<td>&#160;</td>
-										</tr>
-										<tr>
-											<td>&#160;</td>
-											<td align="center" style="font-weight: bold">
+								Marque os
+												materiais que podem ser fornecidos, clicando na
+												descrição do material.
 												Se o material não constar na lista e desejar cadastrar,
 												preencha o campo abaixo
-												e clique no botão de adição</td>
-											<td>&#160;</td>
-										</tr>
-										<tr>
-											<td>&#160;</td>
-											<td align="center" style="font-weight: bold">Material :
+												e clique no botão de adição
+												Material :
 												<asp:TextBox ID="txtdescservico" runat="server" CausesValidation="True" CssClass="form-control" Height="30px"
 												 MaxLength="250" onkeyup="this.value=this.value.toUpperCase();" Rows="1" Width="500px"></asp:TextBox>
-												&nbsp;
+											
 												<asp:ImageButton ID="ImageButton3" runat="server" CausesValidation="False" ImageUrl="~/Imagens/Botoes/botao_mais.gif" />
-											</td>
-											<td>&#160;</td>
-										</tr>
-									</table>
+										
 								</asp:Panel>
-							</td>
-							<td>&#160;</td>
-						</tr>
-						<tr>
-							<td width="20px">&#160;</td>
-							<td>&#160;</td>
-							<td align="center">
-								<asp:DataGrid ID="Datagrid2" runat="server" AllowSorting="True" AutoGenerateColumns="False" BackColor="White"
-								 BorderColor="Gainsboro" BorderStyle="Solid" BorderWidth="1px" CellPadding="5" DataKeyField="PrexSM_ID"
-								 OnDeleteCommand="DataGrid2_DeleteCommand" OnItemDataBound="DataGrid2_ItemDataBound" PageSize="100" Width="90%">
-									<Columns>
+
+							<div class="p-2">
+								<asp:DataGrid ID="Datagrid2" runat="server" AllowSorting="True" AutoGenerateColumns="False"
+								 BorderColor="Gainsboro" CellPadding="5" DataKeyField="PrexSM_ID"
+								 OnDeleteCommand="DataGrid2_DeleteCommand" OnItemDataBound="DataGrid2_ItemDataBound" CssClass="table table-borderless border-0">
+									
+								 <Columns>
 										<asp:TemplateColumn HeaderText="Lista dos Materiais">
 											<ItemTemplate>
-												<asp:LinkButton ID="LnkBtnDel3" runat="server" CausesValidation="False" CommandName="Delete" Height="10px"
+												<asp:LinkButton ID="LnkBtnDel3" runat="server" CausesValidation="False" CommandName="Delete" CssClass="text-dark"
 												 Text='<%# DataBinder.Eval(Container, "DataItem.SM_Descricao") %>' ToolTip="Marcar/Desmarcar este material da minha lista">
 												</asp:LinkButton>
 											</ItemTemplate>
 											<HeaderStyle Width="90%" />
 										</asp:TemplateColumn>
+
 										<asp:TemplateColumn>
 											<ItemTemplate>
 												<asp:CheckBox ID="ckitem" runat="server" AutoPostBack="True" Enabled="false" Checked='<%# DataBinder.Eval(Container, "DataItem.SM_Selecao") %>' />
 											</ItemTemplate>
 										</asp:TemplateColumn>
 									</Columns>
+
 									<EditItemStyle VerticalAlign="Middle" />
 									<FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-									<HeaderStyle BackColor="WhiteSmoke" Font-Bold="True" ForeColor="White" />
-									<ItemStyle Font-Bold="False" Font-Italic="False" Font-Names="Verdana" Font-Overline="False" Font-Size="Small"
-									 Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Left" VerticalAlign="Middle" />
+									<HeaderStyle BackColor="#e9ecef" CssClass="border-bottom-2px border-top font-weight-bold" />
+									<ItemStyle VerticalAlign="Middle" CssClass="border-bottom" />
 									<PagerStyle BackColor="WhiteSmoke" HorizontalAlign="Center" Mode="NumericPages" NextPageText="Posterior"
 									 PrevPageText="Anterior" />
 									<SelectedItemStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
 								</asp:DataGrid>
-							</td>
-							<td>&#160; </td>
-						</tr>
-						<tr>
-							<td width="20px">&#160;</td>
-							<td>&#160;</td>
-							<td>&#160;</td>
-							<td>&nbsp;</td>
-						</tr>
-						<tr>
-							<td width="20px">&#160;</td>
-							<td align="center" colspan="2">&nbsp;&nbsp;<br /><br />
+							</div>
 								<asp:TextBox ID="txtcodservico" runat="server" BackColor="White" BorderStyle="None" ForeColor="White" Width="30px"></asp:TextBox>
-							</td>
-							<td>&nbsp;</td>
-						</tr>
-						<tr>
-							<td width="20px">&#160;</td>
-							<td align="center" colspan="2">&nbsp;</td>
-							<td>&#160;</td>
-						</tr>
-						<tr>
-							<td width="20px">&#160;</td>
-							<td align="left" colspan="2">&#160;</td>
-							<td>&#160;</td>
-						</tr>
-					</table>
-
-
-
-
-				</ContentTemplate>
+						
+				</div>
+			</ContentTemplate>
 
 			</asp:TabPanel>
 			<asp:TabPanel runat="server" ID="TabPanel_4" HeaderText="" Enabled="true">
