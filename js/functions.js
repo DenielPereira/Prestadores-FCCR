@@ -327,6 +327,7 @@ function abrir_menu() {
     document.getElementById("botao_abrir").style.display = "none";
     document.getElementById("botao_fechar").style.display = "initial";
     document.getElementById("botao_fechar").style.marginLeft = "250px";
+    document.getElementById("title").style.marginLeft = "250px";
     document.getElementById("content").style.marginLeft = "250px";
     document.getElementById("content2").style.marginLeft = "250px";
     document.getElementById("content3").style.marginLeft = "250px";
@@ -340,6 +341,7 @@ function fechar_menu() {
     document.getElementById("botao_fechar").style.display = "none";
     document.getElementById("botao_abrir").style.display = "initial";
     document.getElementById("botao_abrir").style.marginLeft = "0";
+    document.getElementById("title").style.marginLeft = "0";
     document.getElementById("content").style.marginLeft = "0";
     document.getElementById("content2").style.marginLeft = "0";
     document.getElementById("content3").style.marginLeft = "0";
