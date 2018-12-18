@@ -1264,11 +1264,11 @@ Partial Class Alteracao_Prestador
                 strimage = ""
                 Select Case situacao
                     Case "Vigente"
-                        strimage = "Imagens/Icones/Yes.ico"
+                        strimage = "Imagens/Icones/check-circle-solid.svg"
                     Case "Pendente"
-                        strimage = "Imagens/Icones/No.ico"
+                        strimage = "Imagens/Icones/times-circle-solid.svg"
                     Case "Opcional"
-                        strimage = "Imagens/Icones/Tipo_01.gif"
+                        strimage = "Imagens/Icones/info-circle-solid.svg"
                 End Select
                 Dim imgSIT As WebControls.Image = e.Row.FindControl("imgSIT")
                 imgSIT.ImageUrl = strimage

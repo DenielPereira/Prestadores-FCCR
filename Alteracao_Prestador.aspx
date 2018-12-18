@@ -1199,13 +1199,11 @@
 								<span>Serviços</span>
 							</div>
 							<asp:Panel ID="pnl_servico" runat="server">
-								Marque os
-								serviços que podem ser prestados, clicando na
-								descrição do serviço.
+								Marque os serviços que podem ser prestados, clicando na descrição do serviço.
 							</asp:Panel>
 						</div>
 
-						<div class="ml-2 mb-3">
+						<div class="mx-2 mb-3">
 							<asp:DataGrid ID="Datagrid3" runat="server" AllowSorting="True" AutoGenerateColumns="False" CellPadding="5"
 							 DataKeyField="PrexSM_ID" OnDeleteCommand="DataGrid3_DeleteCommand" OnItemDataBound="DataGrid3_ItemDataBound"
 							 GridLines="None" CssClass="table table-borderless border-0">
@@ -1260,247 +1258,229 @@
 
 			<asp:TabPanel runat="server" ID="TabPanel_5" HeaderText="" Enabled="true">
 				<ContentTemplate>
-					<table width="100%">
-						<tr>
-							<td>&#160;</td>
-							<td>&#160;</td>
-							<td>&#160;</td>
-							<td>&#160;</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td align="center" colspan="2" style="font-weight: bold">
-								<asp:Panel ID="pnl_documento" runat="server">
-									<table cellpadding="0" cellspacing="0">
-										<tr>
-											<td>&#160;</td>
-											<td align="center" style="font-weight: bold">Os documentos
-												abaixo são de preenchimento obrigatório de acordo com
-												sua categoria.<br />Para fazer o Upload e completar as
-												informações, clique na descrição do documento.<br /><br />Se
-												desejar incluir um documento a mais, &#160;
-												<asp:LinkButton ID="lnk_Inclui_Documento" runat="server" ForeColor="#3333CC">clique aqui &#160;
-												</asp:LinkButton>&#160;e selecione-o da lista de Tipos
-												de Documentos e preencha os demais campos.<br /><br /></td>
-											<td>&#160;</td>
-										</tr>
-									</table>
-								</asp:Panel>
-								<asp:Panel ID="pnl_documento_consulta" runat="server">
-									<table cellpadding="0" cellspacing="0" class="style1">
-										<tr>
-											<td>&#160;</td>
-											<td align="center" style="font-weight: bold">Para consultar
-												os dados do Documento cadastrado, clique na descrição
-												do mesmo.</td>
-											<td>&#160;</td>
-										</tr>
-									</table>
-								</asp:Panel>
-							</td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>&#160;</td>
-							<td>&#160;</td>
-							<td>&#160;</td>
-							<td>&#160;</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td colspan="2">
-								<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BorderColor="Gainsboro" BorderStyle="Solid"
-								 BorderWidth="1px" CellPadding="5" DataKeyNames="PrexDoc_ID" DataSourceID="SqlPrexDoc" Width="100%"
-								 OnRowDataBound="GridView1_RowDataBound" OnRowCommand="GridView1_RowCommand" AllowSorting="True" PageSize="500">
-									<Columns>
-										<asp:TemplateField HeaderText="Descrição do Documento">
-											<ItemTemplate>
-												<asp:LinkButton ID="cmdDelete1" Text='<%# Bind("Doc_Descricao") %>' CommandArgument='<%# Eval("PrexDoc_ID") %>'
-												 CommandName="Delete1" runat="server" CausesValidation="false" ToolTip="Editar as informações deste documento">
-												</asp:LinkButton>
-											</ItemTemplate>
-											<ItemStyle HorizontalAlign="Left" Width="300px" />
-										</asp:TemplateField>
-										<asp:TemplateField HeaderText="Complemento" SortExpression="PrexDoc_Observacao">
-											<ItemTemplate>
-												<asp:Label ID="Label41" runat="server" Text='<%# Bind("PrexDoc_Observacao") %>'></asp:Label>
-											</ItemTemplate>
-											<ItemStyle Width="240px" />
-										</asp:TemplateField>
-										<asp:TemplateField HeaderText="Emitido em" SortExpression="PrexDoc_Emissao">
-											<ItemTemplate>
-												<asp:Label ID="Label5" runat="server" Text='<%# Bind("PrexDoc_Emissao", "{0:d}") %>'></asp:Label>
-											</ItemTemplate>
-											<ItemStyle Width="80px" />
-										</asp:TemplateField>
-										<asp:TemplateField HeaderText="Válido até" SortExpression="PrexDoc_Validade">
-											<ItemTemplate>
-												<asp:Label ID="Label6" runat="server" Text='<%# Bind("PrexDoc_Validade", "{0:d}") %>'></asp:Label>
-											</ItemTemplate>
-											<ItemStyle Width="80px" />
-										</asp:TemplateField>
-										<asp:TemplateField>
-											<ItemTemplate>
-												<asp:HyperLink ID="HyperLink1" runat="server" Text='<IMG src="Imagens/botoes/search16_h.gif"  border="0">'
-												 NavigateUrl='<%# Eval("PrexDoc_Nome", "{0}") %>' Target="_blank" ToolTip="Visualizar o Documento"></asp:HyperLink>
-											</ItemTemplate>
-											<ItemStyle Width="30px" Font-Bold="False" Font-Size="Small" />
-										</asp:TemplateField>
-										<asp:TemplateField HeaderText="Situação" SortExpression="PrexDoc_Situacao">
-											<ItemTemplate>
-												<asp:imagebutton ID="imgSIT" runat="server" CausesValidation="false" ImageAlign="Middle" />
-											</ItemTemplate>
-											<ItemStyle horizontalalign="Center" />
-										</asp:TemplateField>
-									</Columns>
-									<AlternatingRowStyle BackColor="White" />
-									<HeaderStyle BackColor="WhiteSmoke" />
-									<PagerStyle BackColor="WhiteSmoke" />
-									<RowStyle BackColor="Transparent" ForeColor="Transparent" />
-									<SelectedRowStyle BackColor="Transparent" Font-Bold="True" ForeColor="Transparent" />
-								</asp:GridView>
-							</td>
-							<td>&#160; </td>
-						</tr>
-						<tr>
-							<td></td>
-							<td colspan="2">&#160;<asp:Panel ID="pnl_documento_detalhe" runat="server" Visible="False">
-									<table width="100%">
-										<tr>
-											<td>&#160;&nbsp;</td>
-											<td>&#160;&nbsp;</td>
-											<td>&#160;&nbsp;</td>
-											<td>&#160;&nbsp;</td>
-										</tr>
-										<tr>
-											<td>&#160;&nbsp;</td>
-											<td>Tipo de Documento : </td>
-											<td>
-												<asp:DropDownList ID="ddlDocumento" runat="server" AutoPostBack="True" DataSourceID="SqlDocumento"
-												 DataTextField="Doc_Descricao" DataValueField="Doc_ID" Height="25px" Width="400px"></asp:DropDownList>&#160;&#160;<asp:Label
-												 ID="Label69" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
-											</td>
-											<td>&#160;&nbsp;</td>
-										</tr>
-										<tr>
-											<td>&#160;&nbsp;</td>
-											<td>Complemento : </td>
-											<td>
-												<asp:TextBox ID="txt_prexdoc_obs" runat="server" CssClass="form-control" MaxLength="300" onkeyup="this.value=this.value.toUpperCase();"
-												 ToolTip="Informe aqui alguma observação complementar referente ao documento." Width="500px"></asp:TextBox>
-											</td>
-											<td>&#160;&nbsp;</td>
-										</tr>
-										<tr>
-											<td>&#160;&nbsp;</td>
-											<td>Descritivo : </td>
-											<td>
-												<asp:TextBox ID="txt_prexdoc_ajuda_alt" runat="server" CssClass="form-control" Height="70px" MaxLength="300"
-												 onkeyup="this.value=this.value.toUpperCase();" ReadOnly="True" Rows="4" TextMode="MultiLine" ToolTip="Informe aqui alguma observação complementar referente ao documento."
-												 Width="500px"></asp:TextBox>
-											</td>
-											<td>&#160;&nbsp;</td>
-										</tr>
-										<tr>
-											<td>&#160;&nbsp;</td>
-											<td>&#160;&nbsp;</td>
-											<td>
-												<asp:HyperLink ID="hpl_modelo_alt" runat="server" Target="_blank"> Clique aqui para visualizar o
-													Modelo do Documento </asp:HyperLink>
-												<asp:TextBox ID="txt_prexdoc_doc" runat="server" CssClass="form-control" Enabled="False" MaxLength="300"
-												 onkeyup="this.value=this.value.toUpperCase();" Visible="False" Width="74px"></asp:TextBox>
-											</td>
-											<td>&#160;&nbsp;</td>
-										</tr>
-										<tr>
-											<td>&#160;&nbsp;</td>
-											<td>Emissão : </td>
-											<td>
-												<asp:TextBox ID="txt_prexdoc_emissao" runat="server" CssClass="form-control" MaxLength="10" ToolTip="Informe aqui a Data de Emissão do Documento"
-												 Width="119px"></asp:TextBox>&#160;&#160; <asp:Label ID="Label68" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>(dd/mm/aaaa)
-												&#160;&#160;&#160; <asp:Label ID="lbl_Validade" runat="server" Text="Validade :" Visible="False"></asp:Label>&#160;&#160;&#160;
-												<asp:TextBox ID="txt_prexdoc_validade" runat="server" CssClass="form-control" MaxLength="10" ToolTip="Informe aqui a Data de Validade do documento se houver, caso contrário, deixe em branco."
-												 Visible="False" Width="119px"></asp:TextBox>&#160;&#160;
-												<asp:Label ID="lbl_Validade_Formato" runat="server" Text="(dd/mm/aaaa)" Visible="False"></asp:Label>
-											</td>
-											<td>&#160;&nbsp;</td>
-										</tr>
-										<tr>
-											<td>&#160;&nbsp;</td>
-											<td>Selecione o arquivo : </td>
-											<td>
-												<asp:FileUpload ID="PrexDoc_Nome" runat="server" ToolTip="Selecione aqui o documento a enviar" Width="500px" />
-											</td>
-											<td>&#160;&nbsp;</td>
-										</tr>
-										<tr>
-											<td>&#160;&nbsp;</td>
-											<td>&#160;&nbsp;</td>
-											<td>Tamanho máximo permitido do documento a enviar é de
-												800kbytes. <br />Permitidos somente documentos no
-												formato&#160;PDF.</td>
-											<td>&#160;</td>
-										</tr>
-										<tr>
-											<td>&#160;</td>
-											<td>&#160;</td>
-											<td>&#160;</td>
-											<td>&#160;</td>
-										</tr>
-										<tr>
-											<td>&#160;</td>
-											<td>&#160;</td>
-											<td>
-												<asp:Label ID="lbl_data_upload" runat="server" Font-Bold="True" Font-Names="Verdana" Font-Overline="False"
-												 Font-Size="Small" Font-Strikeout="False" ForeColor="Black"></asp:Label>
-											</td>
-											<td>&#160;</td>
-										</tr>
-										<tr>
-											<td>&#160;</td>
-											<td>&#160;</td>
-											<td>
-												<asp:TextBox ID="txt_prexdoc_registro" runat="server" BackColor="White" BorderStyle="None" CssClass="form-control"
-												 ForeColor="White" MaxLength="10" Width="119px"></asp:TextBox>
-												<asp:TextBox ID="txt_prexdoc_nome" runat="server" BackColor="White" BorderStyle="None" CssClass="form-control"
-												 ForeColor="White" MaxLength="300" Width="57px"></asp:TextBox>
-												<asp:TextBox ID="txt_dias_validade" runat="server" BackColor="White" BorderStyle="None" CssClass="form-control"
-												 ForeColor="White" MaxLength="300" Width="57px"></asp:TextBox>
-											</td>
-											<td>&#160;</td>
-										</tr>
-										<tr>
-											<td>&#160;</td>
-											<td>&#160;</td>
-											<td>
-												<asp:Button ID="btn_Salvar_Documento" runat="server" BackColor="#00554F" Font-Bold="True" Font-Names="Verdana"
-												 ForeColor="White" Height="40px" Text="SALVAR" Width="150px" />&#160;&#160;&#160;
-												&#160;
-												<asp:Button ID="btn_Fechar_Documento_alt" runat="server" BackColor="#00554F" Font-Bold="True" Font-Names="Verdana"
-												 ForeColor="White" Height="40px" Text="FECHAR" Width="150px" />&#160;&#160;
-												&#160; &#160;&#160; <br /></td>
-											<td>
-												<asp:Button ID="btn_Excluir_Documento_alt" runat="server" BackColor="#00554F" Font-Bold="True" Font-Names="Verdana"
-												 ForeColor="White" Height="40px" Text="EXCLUIR" Width="150px" />
-											</td>
-										</tr>
-										<tr>
-											<td>&#160;</td>
-											<td>&#160;</td>
-											<td>&#160;</td>
-											<td>&#160;</td>
-										</tr>
-									</table>
-								</asp:Panel><br />&#160;</td>
-							<td>&#160;</td>
+					<div id="content5">
+
+						<div class="ml-2 mt-5 mb-5">
+							<div class="display-4">
+								<span>Documentação</span>
+							</div>
+							<asp:Panel ID="pnl_documento" runat="server">
+
+								Os documentos abaixo são de preenchimento obrigatório de acordo com
+								sua categoria.
+								Para fazer o Upload e completar as
+								informações, clique na descrição do documento.
+								Se desejar incluir um documento a mais, <asp:LinkButton ID="lnk_Inclui_Documento" runat="server" ForeColor="#3333CC">clique
+									aqui</asp:LinkButton>
+								e selecione-o da lista de Tipos de Documentos e preencha os demais campos.
+							</asp:Panel>
+
+						</div>
+						<asp:Panel ID="pnl_documento_consulta" runat="server">
+
+							<td align="center" style="font-weight: bold">Para consultar
+								os dados do Documento cadastrado, clique na descrição
+								do mesmo.</td>
+
+						</asp:Panel>
+
+						<div class="mx-3">
+							<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="5" DataKeyNames="PrexDoc_ID"
+							 DataSourceID="SqlPrexDoc" OnRowDataBound="GridView1_RowDataBound" OnRowCommand="GridView1_RowCommand"
+							 AllowSorting="True" PageSize="500" CssClass="table table-borderless border-0">
+
+								<Columns>
+									<asp:TemplateField HeaderText="Descrição do Documento">
+										<ItemTemplate>
+											<asp:LinkButton ID="cmdDelete1" Text='<%# Bind("Doc_Descricao") %>' CommandArgument='<%# Eval("PrexDoc_ID") %>'
+											 CommandName="Delete1" runat="server" CausesValidation="false" ToolTip="Editar as informações deste documento"
+											 data-toggle="tooltip" data-placement="right" CssClass="text-dark">
+											</asp:LinkButton>
+										</ItemTemplate>
+										<ItemStyle HorizontalAlign="Left" />
+									</asp:TemplateField>
+									<asp:TemplateField HeaderText="Complemento" SortExpression="PrexDoc_Observacao">
+										<ItemTemplate>
+											<asp:Label ID="Label41" runat="server" Text='<%# Bind("PrexDoc_Observacao") %>'></asp:Label>
+										</ItemTemplate>
+										<ItemStyle />
+									</asp:TemplateField>
+									<asp:TemplateField HeaderText="Emitido em" SortExpression="PrexDoc_Emissao">
+										<ItemTemplate>
+											<asp:Label ID="Label5" runat="server" Text='<%# Bind("PrexDoc_Emissao", "{0:d}") %>'></asp:Label>
+										</ItemTemplate>
+										<ItemStyle />
+									</asp:TemplateField>
+									<asp:TemplateField HeaderText="Válido até" SortExpression="PrexDoc_Validade">
+										<ItemTemplate>
+											<asp:Label ID="Label6" runat="server" Text='<%# Bind("PrexDoc_Validade", "{0:d}") %>'></asp:Label>
+										</ItemTemplate>
+										<ItemStyle />
+									</asp:TemplateField>
+									<asp:TemplateField HeaderText="Modelo">
+										<ItemTemplate>
+											<asp:HyperLink ID="HyperLink1" runat="server" Text='&#xf15c;' NavigateUrl='<%# Eval("PrexDoc_Nome", "{0}") %>'
+											 Target="_blank" ToolTip="Visualizar o Documento"></asp:HyperLink>
+										</ItemTemplate>
+										<HeaderStyle CssClass="text-center" />
+										<ItemStyle Width="30px" Font-Bold="False" CssClass="text-center text-primary link fa-family" />
+									</asp:TemplateField>
+									<asp:TemplateField HeaderText="Situação" SortExpression="PrexDoc_Situacao">
+										<ItemTemplate>
+											<asp:imagebutton ID="imgSIT" runat="server" CausesValidation="false" ImageAlign="Middle" style="width: 18px;" />
+										</ItemTemplate>
+										<ItemStyle horizontalalign="Center" />
+									</asp:TemplateField>
+								</Columns>
+
+								<AlternatingRowStyle BackColor="White" />
+								<HeaderStyle BackColor="Transparent" CssClass="border-bottom-2px border-top" />
+								<PagerStyle BackColor="WhiteSmoke" />
+								<RowStyle BackColor="Transparent" ForeColor="Transparent" CssClass="border-bottom" />
+								<SelectedRowStyle BackColor="Transparent" Font-Bold="True" ForeColor="Transparent" />
+							</asp:GridView>
+						</div>
+
+						<!-- ADICIONAR DOCUMENTO -->
+
+						<asp:Panel ID="pnl_documento_detalhe" runat="server" Visible="False">
+							<table width="100%">
+								<tr>
+									<td>&#160;&nbsp;</td>
+									<td>&#160;&nbsp;</td>
+									<td>&#160;&nbsp;</td>
+									<td>&#160;&nbsp;</td>
+								</tr>
+								<tr>
+									<td>&#160;&nbsp;</td>
+									<td>Tipo de Documento : </td>
+									<td>
+										<asp:DropDownList ID="ddlDocumento" runat="server" AutoPostBack="True" DataSourceID="SqlDocumento"
+										 DataTextField="Doc_Descricao" DataValueField="Doc_ID" Height="25px" Width="400px"></asp:DropDownList>&#160;&#160;<asp:Label
+										 ID="Label69" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>
+									</td>
+									<td>&#160;&nbsp;</td>
+								</tr>
+								<tr>
+									<td>&#160;&nbsp;</td>
+									<td>Complemento : </td>
+									<td>
+										<asp:TextBox ID="txt_prexdoc_obs" runat="server" CssClass="form-control" MaxLength="300" onkeyup="this.value=this.value.toUpperCase();"
+										 ToolTip="Informe aqui alguma observação complementar referente ao documento." Width="500px"></asp:TextBox>
+									</td>
+									<td>&#160;&nbsp;</td>
+								</tr>
+								<tr>
+									<td>&#160;&nbsp;</td>
+									<td>Descritivo : </td>
+									<td>
+										<asp:TextBox ID="txt_prexdoc_ajuda_alt" runat="server" CssClass="form-control" Height="70px" MaxLength="300"
+										 onkeyup="this.value=this.value.toUpperCase();" ReadOnly="True" Rows="4" TextMode="MultiLine" ToolTip="Informe aqui alguma observação complementar referente ao documento."
+										 Width="500px"></asp:TextBox>
+									</td>
+									<td>&#160;&nbsp;</td>
+								</tr>
+								<tr>
+									<td>&#160;&nbsp;</td>
+									<td>&#160;&nbsp;</td>
+									<td>
+										<asp:HyperLink ID="hpl_modelo_alt" runat="server" Target="_blank"> Clique aqui para visualizar o
+											Modelo do Documento </asp:HyperLink>
+										<asp:TextBox ID="txt_prexdoc_doc" runat="server" CssClass="form-control" Enabled="False" MaxLength="300"
+										 onkeyup="this.value=this.value.toUpperCase();" Visible="False" Width="74px"></asp:TextBox>
+									</td>
+									<td>&#160;&nbsp;</td>
+								</tr>
+								<tr>
+									<td>&#160;&nbsp;</td>
+									<td>Emissão : </td>
+									<td>
+										<asp:TextBox ID="txt_prexdoc_emissao" runat="server" CssClass="form-control" MaxLength="10" ToolTip="Informe aqui a Data de Emissão do Documento"
+										 Width="119px"></asp:TextBox>&#160;&#160; <asp:Label ID="Label68" runat="server" ForeColor="#FF3300" Text=" * "></asp:Label>(dd/mm/aaaa)
+										&#160;&#160;&#160; <asp:Label ID="lbl_Validade" runat="server" Text="Validade :" Visible="False"></asp:Label>&#160;&#160;&#160;
+										<asp:TextBox ID="txt_prexdoc_validade" runat="server" CssClass="form-control" MaxLength="10" ToolTip="Informe aqui a Data de Validade do documento se houver, caso contrário, deixe em branco."
+										 Visible="False" Width="119px"></asp:TextBox>&#160;&#160;
+										<asp:Label ID="lbl_Validade_Formato" runat="server" Text="(dd/mm/aaaa)" Visible="False"></asp:Label>
+									</td>
+									<td>&#160;&nbsp;</td>
+								</tr>
+								<tr>
+									<td>&#160;&nbsp;</td>
+									<td>Selecione o arquivo : </td>
+									<td>
+										<asp:FileUpload ID="PrexDoc_Nome" runat="server" ToolTip="Selecione aqui o documento a enviar" Width="500px" />
+									</td>
+									<td>&#160;&nbsp;</td>
+								</tr>
+								<tr>
+									<td>&#160;&nbsp;</td>
+									<td>&#160;&nbsp;</td>
+									<td>Tamanho máximo permitido do documento a enviar é de
+										800kbytes. <br />Permitidos somente documentos no
+										formato&#160;PDF.</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>&#160;</td>
+									<td>&#160;</td>
+									<td>&#160;</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>&#160;</td>
+									<td>&#160;</td>
+									<td>
+										<asp:Label ID="lbl_data_upload" runat="server" Font-Bold="True" Font-Names="Verdana" Font-Overline="False"
+										 Font-Size="Small" Font-Strikeout="False" ForeColor="Black"></asp:Label>
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>&#160;</td>
+									<td>&#160;</td>
+									<td>
+										<asp:TextBox ID="txt_prexdoc_registro" runat="server" BackColor="White" BorderStyle="None" CssClass="form-control"
+										 ForeColor="White" MaxLength="10" Width="119px"></asp:TextBox>
+										<asp:TextBox ID="txt_prexdoc_nome" runat="server" BackColor="White" BorderStyle="None" CssClass="form-control"
+										 ForeColor="White" MaxLength="300" Width="57px"></asp:TextBox>
+										<asp:TextBox ID="txt_dias_validade" runat="server" BackColor="White" BorderStyle="None" CssClass="form-control"
+										 ForeColor="White" MaxLength="300" Width="57px"></asp:TextBox>
+									</td>
+									<td>&#160;</td>
+								</tr>
+								<tr>
+									<td>&#160;</td>
+									<td>&#160;</td>
+									<td>
+										<asp:Button ID="btn_Salvar_Documento" runat="server" BackColor="#00554F" Font-Bold="True" Font-Names="Verdana"
+										 ForeColor="White" Height="40px" Text="SALVAR" Width="150px" />&#160;&#160;&#160;
+										&#160;
+										<asp:Button ID="btn_Fechar_Documento_alt" runat="server" BackColor="#00554F" Font-Bold="True" Font-Names="Verdana"
+										 ForeColor="White" Height="40px" Text="FECHAR" Width="150px" />&#160;&#160;
+										&#160; &#160;&#160; <br /></td>
+									<td>
+										<asp:Button ID="btn_Excluir_Documento_alt" runat="server" BackColor="#00554F" Font-Bold="True" Font-Names="Verdana"
+										 ForeColor="White" Height="40px" Text="EXCLUIR" Width="150px" />
+									</td>
+								</tr>
+								<tr>
+									<td>&#160;</td>
+									<td>&#160;</td>
+									<td>&#160;</td>
+									<td>&#160;</td>
+								</tr>
+							</table>
+						</asp:Panel><br />&#160;</td>
+						<td>&#160;</td>
 						</tr>
 						<tr>
 							<td>&#160;</td>
 							<td colspan="2">&#160;</td>
 							<td>&#160;</td>
 						</tr>
-					</table>
+						</table>
 
+					</div>
 				</ContentTemplate>
 
 			</asp:TabPanel>
