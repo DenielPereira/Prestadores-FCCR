@@ -65,13 +65,13 @@
 		}
 
 		.Tab .ajax__tab_active .ajax__tab_inner {
-			color: #ffffff;
+			background: transparent;
 			background: url("../../tab_left_active.gif") no-repeat left;
 			padding-left: 10px;
 		}
 
 		.Tab .ajax__tab_active .ajax__tab_outer {
-			color: #ffffff;
+			background: transparent;
 			background: url("../../tab_right_active.gif") no-repeat right;
 			padding-right: 6px;
 		}
@@ -158,12 +158,8 @@
 			
 		}
 
-		.MyTabStyle .ajax__tab_active .ajax__tab_inner i{
-			/* color: #00554f; */
-		}
-
 		.MyTabStyle .ajax__tab_body {
-			background-color: #fff;
+			background: transparent;
 			border-top-width: 0;
 			border: none;
 		}
