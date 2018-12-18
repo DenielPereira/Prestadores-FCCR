@@ -129,9 +129,9 @@ function formataCampo(campo, Mascara, evento) {
     if (Digitato != 8) { // backspace 
         for (i = 0; i <= TamanhoMascara; i++) {
             boleanoMascara = ((Mascara.charAt(i) == "-") || (Mascara.charAt(i) == ".")
-                        || (Mascara.charAt(i) == "/"))
+                || (Mascara.charAt(i) == "/"))
             boleanoMascara = boleanoMascara || ((Mascara.charAt(i) == "(")
-                        || (Mascara.charAt(i) == ")") || (Mascara.charAt(i) == " "))
+                || (Mascara.charAt(i) == ")") || (Mascara.charAt(i) == " "))
             if (boleanoMascara) {
                 NovoValorCampo += Mascara.charAt(i);
                 TamanhoMascara++;
@@ -301,12 +301,12 @@ function clickButton(e, buttonid) {
 }
 
 
-function addClass(){
+function addClass() {
 
     var prevItem = document.getElementById('categoria');
     var nextButton = document.getElementById('Tabs_TabPanel_0_Imgbtn_Continuar_0');
 
-    function exibirMensagem(){
+    function exibirMensagem() {
         console.log('seu buceta');
         prevItem.classList.add("complete");
     }
@@ -316,9 +316,6 @@ function addClass(){
 }
 
 
-window.onload = function(){
-    fechar_menu();
-}
 
 function abrir_menu() {
     document.getElementById("sidebar").style.display = "initial";
@@ -339,6 +336,9 @@ function fechar_menu() {
     document.getElementById("content").style.marginLeft = "0";
 }
 
+window.onload = function () {
+    abrir_menu();
+}
 
 //ReCaptcha
 
