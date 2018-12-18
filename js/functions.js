@@ -317,7 +317,7 @@ function addClass(){
 
 
 window.onload = function(){
-    fechar_menu();
+    abrir_menu();
 }
 
 function abrir_menu() {
@@ -328,6 +328,11 @@ function abrir_menu() {
     document.getElementById("botao_fechar").style.display = "initial";
     document.getElementById("botao_fechar").style.marginLeft = "250px";
     document.getElementById("content").style.marginLeft = "250px";
+    document.getElementById("content2").style.marginLeft = "250px";
+    // document.getElementById("content3").style.marginLeft = "250px";
+    // document.getElementById("content4").style.marginLeft = "250px";
+    // document.getElementById("content5").style.marginLeft = "250px";
+    // document.getElementById("content6").style.marginLeft = "250px";
 }
 
 function fechar_menu() {
@@ -337,6 +342,11 @@ function fechar_menu() {
     document.getElementById("botao_abrir").style.display = "initial";
     document.getElementById("botao_abrir").style.marginLeft = "0";
     document.getElementById("content").style.marginLeft = "0";
+    document.getElementById("content2").style.marginLeft = "0";
+    // document.getElementById("content3").style.marginLeft = "0";
+    // document.getElementById("content4").style.marginLeft = "0";
+    // document.getElementById("content5").style.marginLeft = "0";
+    // document.getElementById("content6").style.marginLeft = "0";
 }
 
 

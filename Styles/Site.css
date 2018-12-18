@@ -6,8 +6,13 @@
 
 body   
 {
-    font-family: 'Montserrat', sans-serif !important; /*Inclui a fonte MontSerrat em todos os elementos*/
+    font-family: 'Montserrat', sans-serif !important; 
     overflow-x: hidden;
+}
+
+.fa-family{
+    font-family: 'Font Awesome 5 Free' ; 
+    font-weight: 900; 
 }
 
 /*Adiciona uma transição suave às mudanças dos elementos (0.15 segundos)*/
@@ -26,33 +31,25 @@ a{
     text-decoration: none !important;
 }
 
+th{
+    font-weight: 500;
+}
+
+th a {
+    color: #000 !important;
+}
+
 .btn-link{
     text-decoration: none !important;
 }
 
-a:link, a:visited
-{
-    color: #034af3;
+.color-darkgreen{
+    color: #00554f;
 }
 
-a:hover
-{
-    color: #1d60ff;
-    text-decoration: none;
+.color-darkgreen:hover{
+    color: #01302d;
 }
-
-a:active
-{
-    color: #034af3;
-}
-
-p
-{
-    margin-bottom: 10px;
-    line-height: 1.6em;
-}
-
-
 /* HEADINGS   
 ----------------------------------------------------------*/
 
@@ -497,6 +494,10 @@ hr{
 
 .font-size-lg-4{
     font-size: 16px !important;
+}
+
+.border-bottom-2px{
+    border-bottom: 2px solid #dee2e6!important;
 }
 
 /* PROGRESS STEP */
