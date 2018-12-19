@@ -108,9 +108,9 @@ Partial Class Documento
                 strimage = ""
                 Select Case situacao
                     Case "Ativo"
-                        strimage = "~/Imagens/Icones/Yes.ico"
+                        strimage = "~/Imagens/Icones/check-circle-solid.svg"
                     Case "Inativo"
-                        strimage = "~/Imagens/Icones/No.ico"
+                        strimage = "~/Imagens/Icones/times-circle-solid.svg"
                 End Select
                 Dim imgSIT_DOC As WebControls.Image = e.Row.FindControl("imgSIT_DOC")
                 imgSIT_DOC.ImageUrl = strimage
