@@ -20,8 +20,10 @@ Partial Class Login_Cadastro
 
         txt_CNPJ.Attributes.Add("onfocus", String.Format("RecebeFoco_CNPJ('{0}');", txt_CNPJ.ClientID))
         txt_CNPJ.Attributes.Add("onblur", String.Format("PerdeFoco_CNPJ('{0}');", txt_CNPJ.ClientID))
+        'txt_CNPJ.Attributes.Add("onblur", String.Format("desativar();", txt_CNPJ.ClientID))
         txt_CPF.Attributes.Add("onfocus", String.Format("RecebeFoco_CPF('{0}');", txt_CPF.ClientID))
         txt_CPF.Attributes.Add("onblur", String.Format("PerdeFoco_CPF('{0}');", txt_CPF.ClientID))
+        'txt_CPF.Attributes.Add("onblur", String.Format("desativar();", txt_CPF.ClientID))
         txt_Senha.Attributes.Add("onfocus", String.Format("RecebeFoco_Senha('{0}');", txt_Senha.ClientID))
 
         'txt_Senha_Mostra.Attributes.Add("onfocus", String.Format("RecebeFoco_Senha('{0}');", txt_Senha.ClientID))
@@ -29,19 +31,19 @@ Partial Class Login_Cadastro
 
         'txt_CNPJ.Attributes.Add("onKeyPress", "javascript:MascaraCNPJ(txt_CNPJ)")
         txt_CNPJ.Attributes.Add("onkeyup", "javascript:formatar(this, '##.###.###/####-##')")
-        txt_CNPJ.Attributes.Add("onBlur", "javascript:ValidarCNPJ(txt_CNPJ)")
+        ' txt_CNPJ.Attributes.Add("onBlur", "javascript:ValidarCNPJ(txt_CNPJ)")
         txt_CPF.Attributes.Add("onkeyup", "javascript:formatar(this, '###.###.###-##')")
-        txt_CPF.Attributes.Add("onBlur", "javascript:valida_cpf(txt_CPF)")
+        ' txt_CPF.Attributes.Add("onBlur", "javascript:valida_cpf(txt_CPF)")
 
 
-        'If txt_CNPJ.Text <> "Digite aqui apenas se você for pessoa jurídica" Then
-        '    txt_CPF.Text = "Digite aqui apenas se você for pessoa física"
-        '    'txt_CPF.Enabled = "false"
-        'End If
-        'If txt_CPF.Text <> "Digite aqui apenas se você for pessoa física" Then
-        '    txt_CNPJ.Text = "Digite aqui apenas se você for pessoa jurídica"
-        '    'txt_CNPJ.Enabled = "false"
-        'End If
+        If txt_CNPJ.Text <> "Digite aqui apenas se você for pessoa jurídica" Then
+            txt_CPF.Text = "Digite aqui apenas se você for pessoa física"
+            'txt_CPF.Enabled = "false"
+        End If
+        If txt_CPF.Text <> "Digite aqui apenas se você for pessoa física" Then
+            txt_CNPJ.Text = "Digite aqui apenas se você for pessoa jurídica"
+            'txt_CNPJ.Enabled = "false"
+        End If
 
     End Sub
   

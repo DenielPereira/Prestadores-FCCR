@@ -315,6 +315,25 @@ function addClass() {
 
 }
 
+/* FUNÇÃO PARA DESATIVAR UM CAMPO SE O USUÁRIO DIGITAR EM OUTRO */
+
+function desativar() {
+
+    var campocnpj = document.getElementById("txt_CNPJ");
+    var campocpf = document.getElementById("txt_CPF");
+
+    if (campocnpj.value.length < 1) {
+        campocpf.disabled = false;
+    } else {
+        campocpf.disabled = true;
+    }
+    if (campocpf.value.length < 1) {
+        campocnpj.disabled = false;
+    } else {
+        campocnpj.disabled = true;
+    }
+
+}
 
 window.onload = function () {
     abrir_menu();
