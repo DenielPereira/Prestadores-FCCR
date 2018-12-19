@@ -655,9 +655,8 @@ hr{
 
 
 .teste {
-    -webkit-background-size: contain !important;
     background-image: url(../imagens/backgrounds/bg_fccr.png);
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
