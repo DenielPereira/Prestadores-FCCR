@@ -114,9 +114,9 @@ Partial Class Cad_Servico_Material
                 strimage = ""
                 Select Case situacao
                     Case "Ativo"
-                        strimage = "~/Imagens/Icones/Yes.ico"
+                        strimage = "~/Imagens/Icones/check-circle-solid.svg"
                     Case "Inativo"
-                        strimage = "~/Imagens/Icones/No.ico"
+                        strimage = "~/Imagens/Icones/times-circle-solid.svg"
                 End Select
                 Dim imgSIT_SM As WebControls.Image = e.Row.FindControl("imgSIT_SM")
                 imgSIT_SM.ImageUrl = strimage
