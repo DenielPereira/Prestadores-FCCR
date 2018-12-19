@@ -145,9 +145,9 @@ Partial Class Pesquisa_Prestador
 
                 strimage = ""
                 If situacao = "Nao" Then
-                    strimage = "~/Imagens/Icones/No.ico"
+                    strimage = "~/Imagens/Icones/times-circle-solid.svg"
                 Else
-                    strimage = "~/Imagens/Icones/Yes.ico"
+                    strimage = "~/Imagens/Icones/check-circle-solid.svg"
                 End If
                 Dim imgSIT_PRE As WebControls.Image = e.Row.FindControl("imgSIT_PRE")
                 imgSIT_PRE.ImageUrl = strimage
