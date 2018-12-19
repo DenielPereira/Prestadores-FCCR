@@ -17,7 +17,7 @@
 	 crossorigin="anonymous">
 </head>
 
-<body class="teste">
+<body class="bg-fccr1">
 	<form id="Form1" name="form1" runat="server">
 		<asp:toolkitScriptManager runat="Server" EnablePartialRendering="true" ID="ToolkitScriptManager2" ScriptMode="Release" />
 

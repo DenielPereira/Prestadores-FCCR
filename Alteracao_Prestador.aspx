@@ -19,7 +19,7 @@
 	 crossorigin="anonymous">
 </head>
 
-<body class="teste">
+<body class="bg-fccr1">
 	<form id="Form1" name="form1" runat="server" enctype="multipart/form-data">
 
 		<asp:toolkitScriptManager runat="Server" EnablePartialRendering="true" ID="ToolkitScriptManager1" ScriptMode="Release" />
