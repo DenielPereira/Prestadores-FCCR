@@ -50,7 +50,7 @@
 								<asp:Label ID="lbl_Titulo2" runat="server" CssClass="input-group-text">CNPJ</asp:Label>
 							</div>
 							<asp:TextBox ID="txt_CNPJ" runat="server" CssClass="ph-center campo form-control" ForeColor="Black" ToolTip="Digite apenas os números"
-							 placeholder="Digite aqui apenas se você for pessoa jurídica" Value="Digite aqui apenas se você for pessoa jurídica" style="font-size: 14px;" required></asp:TextBox>
+							 placeholder="Digite aqui apenas se você for pessoa jurídica" Value="Digite aqui apenas se você for pessoa jurídica" style="font-size: 14px;"></asp:TextBox>
 						</div>
 
 						<div class="input-group mb-3">
@@ -58,7 +58,7 @@
 								<asp:Label ID="lbl_Titulo5" runat="server" CssClass="input-group-text">CPF</asp:Label>
 							</div>
 							<asp:TextBox ID="txt_CPF" runat="server" CssClass="ph-center campo form-control" ForeColor="Black" ToolTip="Digite apenas os números"
-							 placeholder="Digite aqui apenas se você for pessoa física" style="font-size: 14px;" required></asp:TextBox>
+							 placeholder="Digite aqui apenas se você for pessoa física" style="font-size: 14px;"></asp:TextBox>
 						</div>
 
 						<div class="input-group">
@@ -66,7 +66,7 @@
 								<asp:Label ID="lbl_Titulo6" runat="server" CssClass="input-group-text">Senha</asp:Label>
 							</div>
 							<asp:TextBox ID="txt_Senha" runat="server" CssClass="ph-center campo form-control" ForeColor="Black" MaxLength="10"
-							 TextMode="Password" ToolTip="Digite aqui sua senha" placeholder="Digite aqui sua senha" required></asp:TextBox>
+							 TextMode="Password" ToolTip="Digite aqui sua senha" placeholder="Digite aqui sua senha"></asp:TextBox>
 						</div>
 
 						<div class="text-right">
@@ -76,7 +76,7 @@
 						</div>
 
 						<asp:TextBox ID="txtCaptcha" runat="server" BackColor="White" BorderStyle="None" ForeColor="White" CssClass="align-self-center"
-						 value="V" hidden></asp:TextBox>
+						 ></asp:TextBox>
 
 						<div class="row justify-content-center">
 							<div id="ReCaptchContainer" class="mb-2 mt-2"></div>

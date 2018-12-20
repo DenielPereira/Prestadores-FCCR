@@ -7,12 +7,12 @@
 <html>
 
 <head id="Head1" runat="server">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-    crossorigin="anonymous">
+      crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" 
+      crossorigin="anonymous"/>
   <title>FCCR - Prestadores de Serviços</title>
   <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
   <link href="~/Styles/tabs.css" rel="stylesheet" type="text/css" />
@@ -75,7 +75,7 @@
       Height="16px" Width="41px"></asp:TextBox>
 
     <div class="text-center">
-      <asp:Label ID="lbl_Identificacao" runat="server" hidden></asp:Label>
+      <asp:Label ID="lbl_Identificacao" runat="server"></asp:Label>
     </div>
 
 
@@ -409,8 +409,7 @@
                         <span class="input-group-text">Senha</span>
                       </div>
                       <asp:TextBox ID="txt_Senha" runat="server" CssClass="ph-center form-control" MaxLength="10"
-                        ToolTip="Informe aqui sua senha com no mínimo 6 caracteres ( números e/ou letras)" type="password"
-                        placeholder="Escolha uma senha"></asp:TextBox>
+                        ToolTip="Informe aqui sua senha com no mínimo 6 caracteres ( números e/ou letras)" placeholder="Escolha uma senha"></asp:TextBox>
                     </div>
 
                     <div class="input-group mb-3">
@@ -418,7 +417,7 @@
                         <span class="input-group-text">Confirme a senha</span>
                       </div>
                       <asp:TextBox ID="txt_Confirma_Senha" runat="server" CssClass="ph-center form-control" MaxLength="10"
-                        ToolTip="Redigite a senha para confirmá-la" type="password" placeholder="Repita a senha"></asp:TextBox>
+                        ToolTip="Redigite a senha para confirmá-la" placeholder="Repita a senha"></asp:TextBox>
                     </div>
 
                     <asp:Button ID="Imgbtn_Voltar_11" runat="server" CausesValidation="False" Text="Sessão Anterior"
@@ -1359,41 +1358,44 @@
                       placeholder="Material" MaxLength="250" onkeyup="this.value=this.value.toUpperCase();" Rows="1"></asp:TextBox>
                     <div class="input-group-append">
                       <!-- TODO: TROCAR DE IMAGEBUTTON PARA BUTTON NORMAL -->
-                      <asp:ImageButton ID="ImageButton3" runat="server" CausesValidation="False" CssClass="btn btn-secondary"
-                        ImageUrl="~/Imagens/Botoes/plus-solid.svg" style="height: calc(2.25rem + 2px)" />
+                      <asp:ImageButton ID="ImageButton3" runat="server" CausesValidation="False" CssClass="btn btn-primary"
+                        ImageUrl="~/Imagens/Icones/plus-solid-white.svg" style="height: calc(2.25rem + 2px);" width="38px" />
                     </div>
                   </div>
 
-                  <!-- TODO: pesquisar como estilizar tabela abaixo -->
-                  <asp:DataGrid ID="Datagrid2" runat="server" AllowSorting="True" AutoGenerateColumns="False" CssClass="table mt-2"
-                    CellPadding="6" DataKeyField="PrexSM_ID" OnDeleteCommand="DataGrid2_DeleteCommand" OnItemDataBound="DataGrid2_ItemDataBound"
-                    PageSize="100">
-                    <AlternatingItemStyle BackColor="#E6E6E6" />
-                    <Columns>
-                      <asp:TemplateColumn HeaderText="Lista dos Materiais">
-                        <ItemTemplate>
-                          <asp:LinkButton ID="LnkBtnDel3" runat="server" CausesValidation="False" CommandName="Delete"
-                            Height="10px" Text='<%# DataBinder.Eval(Container, "DataItem.SM_Descricao") %>' ToolTip="Marcar/Desmarcar este material da minha lista">
-                          </asp:LinkButton>
-                        </ItemTemplate>
-                        <HeaderStyle Width="90%" />
-                      </asp:TemplateColumn>
-                      <asp:TemplateColumn>
-                        <ItemTemplate>
-                          <asp:CheckBox ID="ckitem" runat="server" AutoPostBack="True" Checked='<%# DataBinder.Eval(Container, "DataItem.SM_Selecao") %>'
-                            Enabled="false" />
-                        </ItemTemplate>
-                      </asp:TemplateColumn>
-                    </Columns>
-                    <EditItemStyle VerticalAlign="Middle" />
-                    <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                    <HeaderStyle Font-Bold="True" HorizontalAlign="Center" />
-                    <ItemStyle Font-Size="Small" VerticalAlign="Middle" HorizontalAlign="Left" />
-                    <PagerStyle BackColor="WhiteSmoke" HorizontalAlign="Center" Mode="NumericPages" NextPageText="Posterior"
-                      PrevPageText="Anterior" />
-                    <SelectedItemStyle Font-Bold="True" ForeColor="White" />
-                  </asp:DataGrid>
+                  <div class="mt-2">
+                    <asp:DataGrid ID="Datagrid2" runat="server" AllowSorting="True" AutoGenerateColumns="False"
+                      CssClass="table table-borderless border-0" CellPadding="6" DataKeyField="PrexSM_ID"
+                      OnDeleteCommand="DataGrid2_DeleteCommand" OnItemDataBound="DataGrid2_ItemDataBound" PageSize="100">
+                      <AlternatingItemStyle BackColor="transparent" />
 
+                      <Columns>
+                        <asp:TemplateColumn HeaderText="Lista dos Materiais">
+                          <ItemTemplate>
+                            <asp:LinkButton ID="LnkBtnDel3" runat="server" CausesValidation="False" CommandName="Delete"
+                              Text='<%# DataBinder.Eval(Container, "DataItem.SM_Descricao") %>' ToolTip="Marcar/Desmarcar este material da minha lista"
+                              CssClass="text-dark">
+                            </asp:LinkButton>
+                          </ItemTemplate>
+                          <HeaderStyle />
+                        </asp:TemplateColumn>
+                        <asp:TemplateColumn>
+                          <ItemTemplate>
+                            <asp:CheckBox ID="ckitem" runat="server" AutoPostBack="True" Checked='<%# DataBinder.Eval(Container, "DataItem.SM_Selecao") %>'
+                              Enabled="false" />
+                          </ItemTemplate>
+                        </asp:TemplateColumn>
+                      </Columns>
+
+                      <EditItemStyle VerticalAlign="Middle" />
+                      <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                      <HeaderStyle HorizontalAlign="Center" CssClass="border-bottom-2px" />
+                      <ItemStyle Font-Size="Small" VerticalAlign="Middle" HorizontalAlign="Left" CssClass="border-bottom" />
+                      <PagerStyle BackColor="WhiteSmoke" HorizontalAlign="Center" Mode="NumericPages" NextPageText="Posterior"
+                        PrevPageText="Anterior" />
+                      <SelectedItemStyle Font-Bold="True" ForeColor="White" />
+                    </asp:DataGrid>
+                  </div>
                   <asp:Button ID="Imgbtn_Voltar_4" runat="server" CausesValidation="False" CssClass="btn btn-primary"
                     ForeColor="White" Text="Sessão anteior" />
 
@@ -1441,49 +1443,48 @@
                   Se o serviço não constar na lista e desejar cadastrar, preencha o campo abaixo e
                   clique no botão de adição
                 </small>
+
                 <div class="card-body py-2 px-5 mt-2">
                   <div class="input-group">
                     <asp:TextBox ID="txtdescservico1" runat="server" CausesValidation="True" CssClass="ph-center form-control"
                       placeholder="Serviço" MaxLength="250" onkeyup="this.value=this.value.toUpperCase();" Rows="1"></asp:TextBox>
                     <div class="input-group-append">
                       <!-- TODO: TROCAR DE IMAGEBUTTON PARA BUTTON NORMAL -->
-                      <asp:ImageButton ID="ImageButton31" runat="server" CausesValidation="False" CssClass="btn btn-secondary"
-                        ImageUrl="~/Imagens/Botoes/plus-solid.svg" style="height: calc(2.25rem + 2px)" />
+                      <asp:ImageButton ID="ImageButton31" runat="server" CausesValidation="False" CssClass="btn btn-primary"
+                        ImageUrl="~/Imagens/Icones/plus-solid-white.svg" style="height: calc(2.25rem + 2px)" width="38px" />
                     </div>
                   </div>
 
-                  <asp:DataGrid ID="Datagrid3" runat="server" AllowSorting="True" AutoGenerateColumns="False" BackColor="White"
-                    BorderColor="Gainsboro" BorderStyle="Solid" BorderWidth="1px" CellPadding="6" DataKeyField="PrexSM_ID"
-                    OnDeleteCommand="DataGrid3_DeleteCommand" OnItemDataBound="DataGrid3_ItemDataBound" PageSize="100"
-                    GridLines="None" CssClass="table">
-                    <AlternatingItemStyle BackColor="#EEEEEE" />
-                    <Columns>
-                      <asp:TemplateColumn HeaderText="Lista dos Serviços">
-                        <ItemTemplate>
-                          <asp:LinkButton ID="LnkBtnDel31" runat="server" CausesValidation="False" CommandName="Delete"
-                            Height="10px" Text='<%# DataBinder.Eval(Container, "DataItem.SM_Descricao") %>' ToolTip="Marcar/Desmarcar este material da minha lista"
-                            Width="90%"></asp:LinkButton>
-                        </ItemTemplate>
-                        <HeaderStyle Width="90%" />
-                      </asp:TemplateColumn>
-                      <asp:TemplateColumn>
-                        <ItemTemplate>
-                          <asp:CheckBox ID="ckitem" runat="server" AutoPostBack="True" Checked='<%# DataBinder.Eval(Container, "DataItem.SM_Selecao") %>'
-                            Enabled="false" />
-                        </ItemTemplate>
-                      </asp:TemplateColumn>
-                    </Columns>
-                    <EditItemStyle VerticalAlign="Middle" />
-                    <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                    <HeaderStyle BackColor="White" Font-Bold="True" HorizontalAlign="Center" />
-                    <ItemStyle Font-Bold="False" Font-Italic="False" Font-Names="Verdana" Font-Overline="False"
-                      Font-Size="Small" Font-Strikeout="False" Font-Underline="False" VerticalAlign="Middle"
-                      HorizontalAlign="Left" />
-                    <PagerStyle BackColor="WhiteSmoke" HorizontalAlign="Center" Mode="NumericPages" NextPageText="Posterior"
-                      PrevPageText="Anterior" />
-                    <SelectedItemStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
-                  </asp:DataGrid>
-
+                  <div class="mt-2">
+                    <asp:DataGrid ID="Datagrid3" runat="server" AllowSorting="True" AutoGenerateColumns="False"
+                      CellPadding="6" DataKeyField="PrexSM_ID" OnDeleteCommand="DataGrid3_DeleteCommand"
+                      OnItemDataBound="DataGrid3_ItemDataBound" PageSize="100" GridLines="None" CssClass="table table-borderless border-0">
+                      <AlternatingItemStyle BackColor="transparent" />
+                      <Columns>
+                        <asp:TemplateColumn HeaderText="Lista dos Serviços">
+                          <ItemTemplate>
+                            <asp:LinkButton ID="LnkBtnDel31" runat="server" CausesValidation="False" CommandName="Delete"
+                              Height="10px" Text='<%# DataBinder.Eval(Container, "DataItem.SM_Descricao") %>' ToolTip="Marcar/Desmarcar este material da minha lista"
+                              CssClass="text-dark"></asp:LinkButton>
+                          </ItemTemplate>
+                          <HeaderStyle />
+                        </asp:TemplateColumn>
+                        <asp:TemplateColumn>
+                          <ItemTemplate>
+                            <asp:CheckBox ID="ckitem" runat="server" AutoPostBack="True" Checked='<%# DataBinder.Eval(Container, "DataItem.SM_Selecao") %>'
+                              Enabled="false" />
+                          </ItemTemplate>
+                        </asp:TemplateColumn>
+                      </Columns>
+                      <EditItemStyle VerticalAlign="Middle" />
+                      <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                      <HeaderStyle BackColor="White" HorizontalAlign="Center" CssClass="border-bottom-2px" />
+                      <ItemStyle Font-Size="Small" VerticalAlign="Middle" HorizontalAlign="Left" CssClass="border-bottom" />
+                      <PagerStyle BackColor="WhiteSmoke" HorizontalAlign="Center" Mode="NumericPages" NextPageText="Posterior"
+                        PrevPageText="Anterior" />
+                      <SelectedItemStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+                    </asp:DataGrid>
+                  </div>
                   <asp:Button ID="Imgbtn_Voltar_5" runat="server" CausesValidation="False" class="btn btn-primary" Text="Sessão Anterior" />
 
                   <asp:Button ID="Imgbtn_Continuar_5" runat="server" CausesValidation="False" class="btn btn-primary"
