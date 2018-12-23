@@ -100,9 +100,9 @@ Partial Class Usuario
                 strimage = ""
                 Select Case situacao
                     Case "Ativo"
-                        strimage = "~/Imagens/Icones/Yes.ico"
+                        strimage = "~/Imagens/Icones/check-circle-solid.svg"
                     Case "Inativo"
-                        strimage = "~/Imagens/Icones/No.ico"
+                        strimage = "~/Imagens/Icones/times-circle-solid.svg"
                 End Select
                 Dim imgSIT_usu As WebControls.Image = e.Row.FindControl("imgSIT_usu")
                 imgSIT_usu.ImageUrl = strimage
