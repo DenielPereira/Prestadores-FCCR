@@ -8,14 +8,15 @@
 <html>
 
 <head id="Head1" runat="server">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>FCCR - Prestadores de Serviços</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+	<meta charset="utf-8" />
+    <title>FCCR - Prestadores de Serviços</title>
 	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 	<link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	 crossorigin="anonymous">
+	 crossorigin="anonymous"/>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-	 crossorigin="anonymous">
+	 crossorigin="anonymous"/>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
@@ -208,25 +209,6 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 	 crossorigin="anonymous"></script>
 	<script type="text/javascript" src="/js/functions.js"></script>
-	<script type="text/javascript">
-		function desativar() {
-
-			var campocnpj = document.getElementById("txt_CNPJ");
-			var campocpf = document.getElementById("txt_CPF");
-
-			if (campocnpj.value.length < 1) {
-				campocpf.disabled = false;
-			} else {
-				campocpf.disabled = true;
-			}
-			if (campocpf.value.length < 1) {
-				campocnpj.disabled = false;
-			} else {
-				campocnpj.disabled = true;
-			}
-
-		}
-	</script>
 </body>
 
 </html>

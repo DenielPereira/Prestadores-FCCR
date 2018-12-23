@@ -487,11 +487,6 @@ hr{
     font-size: 14px; 
 }
 
-.required:after {
-  content:" *"; 
-  color: red;
-}
-
 .font-14{
     font-size: 14px !important;
 }

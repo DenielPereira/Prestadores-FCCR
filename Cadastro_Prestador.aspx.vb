@@ -2599,7 +2599,7 @@ Partial Class Cadastro_Prestador
         If rb_pessoa.SelectedValue = "PF" Then
 
             txt_cad_CPF.Text = ""
-            txt_cad_CNPJ.Text = "Preencha seu CPF abaixo :)"
+            txt_cad_CNPJ.Text = "Digite aqui apenas se você for pessoa jurídica"
 
             txt_cad_CNPJ.Enabled = "false"
             txt_cad_CPF.Enabled = "true"
@@ -2617,7 +2617,7 @@ Partial Class Cadastro_Prestador
         End If
         If rb_pessoa.SelectedValue = "PJ" Then
 
-            txt_cad_CPF.Text = "Preencha seu CNPJ acima :)"
+            txt_cad_CPF.Text = "Digite aqui apenas se você for pessoa física"
             txt_cad_CNPJ.Text = ""
 
             txt_cad_CPF.Enabled = "false"

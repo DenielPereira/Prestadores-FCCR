@@ -279,7 +279,7 @@
                         <span class="input-group-text">UF</span>
                       </div>
                       <asp:DropDownList ID="ddl_IM_UF" runat="server" CssClass="ph-center form-control" ToolTip="Informe aqui o Estado de sua Inscrição Municipal">
-                        <asp:ListItem Value="Selecione " disabled> Selecione uma opção</asp:ListItem>
+                        <asp:ListItem Value="Selecione "> Selecione uma opção</asp:ListItem>
                         <asp:ListItem Value="DF">DISTRITO FEDERAL</asp:ListItem>
                         <asp:ListItem Value="AC">ACRE</asp:ListItem>
                         <asp:ListItem Value="AL">ALAGOAS</asp:ListItem>
@@ -377,7 +377,7 @@
                       </div>
                       <asp:DropDownList ID="ddl_Representante_EstadoCivil" runat="server" ToolTip="Informe aqui o estado civil do Requesentante Legal da Empresa"
                         CssClass="ph-center form-control select-color">
-                        <asp:ListItem Value=" Selecione " selected disabled> Selecione uma opção</asp:ListItem>
+                        <asp:ListItem Value=" Selecione "> Selecione uma opção</asp:ListItem>
                         <asp:ListItem>SOLTEIRO</asp:ListItem>
                         <asp:ListItem>CASADO</asp:ListItem>
                         <asp:ListItem>DIVORCIADO</asp:ListItem>
