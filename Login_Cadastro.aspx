@@ -76,8 +76,8 @@
 							</small>
 						</div>
 
-						<asp:TextBox ID="txtCaptcha" runat="server" BackColor="White" BorderStyle="None" ForeColor="White" CssClass="align-self-center"
-						 ></asp:TextBox>
+						<asp:TextBox ID="txtCaptcha" runat="server" BackColor="White" BorderStyle="None" ForeColor="white" CssClass="d-none align-self-center"
+						 >V</asp:TextBox>
 
 						<div class="row justify-content-center">
 							<div id="ReCaptchContainer" class="mb-2 mt-2"></div>

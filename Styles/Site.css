@@ -565,7 +565,7 @@ hr{
     top: -18.5px;
   }
   .progress-steps > .circle:first-child::before {
-    border: none;
+    border: inherit;
   }
 
 

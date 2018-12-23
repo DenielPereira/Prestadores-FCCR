@@ -2246,6 +2246,7 @@ Partial Class Cadastro_Prestador
                 Else
                     txt_novo.Text = "Nao"
                     'novo registro, nao tem cadastro
+
                 End If
 
                 objCmd.Connection.Close()

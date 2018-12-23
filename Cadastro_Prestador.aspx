@@ -88,7 +88,7 @@
         TabIndex="0" BorderStyle="None" BorderWidth="0px">
         <HeaderTemplate>
           <div class="progress-steps">
-            <div id="categoria" class="circle active">
+            <div id="1" class="circle">
               <span class="number">
                 <i class="fas fa-industry"></i>
               </span>
@@ -99,7 +99,7 @@
           </div>
         </HeaderTemplate>
         <ContentTemplate>
-
+          
           <asp:Panel ID="Pn_Categoria" runat="server" CssClass="row align-items-center justify-content-center text-center mx-0">
 
             <div class="container">
@@ -173,7 +173,7 @@
                     </div>
                     <div class="col-12">
                       <asp:Button ID="Imgbtn_Continuar_0" runat="server" CssClass="btn btn-primary w-50 align-self-center"
-                        CausesValidation="False" Text="Continuar" />
+                        CausesValidation="False" Text="Continuar"/>
                     </div>
 
                     <asp:Label ID="lbl_Erro" runat="server" Font-Size="Large" ForeColor="#CC0000"></asp:Label>
@@ -198,7 +198,7 @@
       <asp:TabPanel runat="server" HeaderText="Identificação" ID="TabPanel_11" Enabled="False" Visible="true" TabIndex="0">
         <HeaderTemplate>
           <div class="progress-steps">
-            <div class="circle ">
+            <div id="11" class="circle ">
               <span class="number">
                 <i class="far fa-id-card"></i>
               </span>
@@ -446,7 +446,7 @@
         TabIndex="0">
         <HeaderTemplate>
           <div class="progress-steps">
-            <div class="circle ">
+            <div id="12" class="circle ">
               <span class="number">
                 <i class="far fa-id-badge"></i>
               </span>
@@ -576,7 +576,7 @@
         TabIndex="0">
         <HeaderTemplate>
           <div class="progress-steps">
-            <div class="circle">
+            <div id="2" class="circle">
               <span class="number">
                 <i class="fas fa-mail-bulk"></i>
               </span>
@@ -809,7 +809,7 @@
         TabIndex="0">
         <HeaderTemplate>
           <div class="progress-steps">
-            <div class="circle">
+            <div id="3" class="circle">
               <span class="number">
                 <i class="fas fa-money-check-alt"></i>
               </span>
@@ -1325,7 +1325,7 @@
       <asp:TabPanel runat="server" ID="TabPanel_4" HeaderText="Materiais" Enabled="false" Visible="true">
         <HeaderTemplate>
           <div class="progress-steps">
-            <div class="circle">
+            <div id="4" class="circle">
               <span class="number">
                 <i class="fas fa-box-open"></i>
               </span>
@@ -1417,7 +1417,7 @@
       <asp:TabPanel runat="server" ID="TabPanel_5" HeaderText="Serviços" Enabled="false" Visible="true">
         <HeaderTemplate>
           <div class="progress-steps">
-            <div class="circle">
+            <div id="5" class="circle">
               <span class="number">
                 <i class="fas fa-wrench"></i>
               </span>
@@ -1835,7 +1835,7 @@
       <asp:TabPanel runat="server" ID="TabPanel_6" HeaderText="DECLARAÇÃO" Enabled="false" Visible="true">
         <HeaderTemplate>
           <div class="progress-steps">
-            <div class="circle">
+            <div id="6" class="circle">
               <span class="number">
                 <i class="fas fa-file-contract"></i>
               </span>
@@ -2179,7 +2179,7 @@
       </p>
     </div>
   </footer>
-  <script src="https://www.google.com/recaptcha/api.js?onload=renderRecaptcha&render=explicit" async defer></script>
+  <!-- <script src="https://www.google.com/recaptcha/api.js?onload=renderRecaptcha&render=explicit" async defer></script> -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"

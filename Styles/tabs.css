@@ -118,7 +118,6 @@
 		.MyTabStyle .ajax__tab_header {
 			/* font-size: 28px; */
 			background: transparent;
-			border: none;
 			-moz-border-radius: 0px;
 			-webkit-border-radius: 0px;
 			border-radius: 0px;
@@ -130,38 +129,39 @@
 			/* color: #222; */
 			padding-left: 10px;
 			margin-right: 3px;
-			border: none;
 		}
 
 		.MyTabStyle .ajax__tab_header .ajax__tab_inner {
 			border-color: #666;
 			/* color: #666; */
 			padding: 3px 10px 2px 0px;
-			border: none;
 		}
 
 		/* .MyTabStyle .ajax__tab_hover .ajax__tab_outer i{
-			border: none;
 			TODO: ADICIONAR EFEITO DE HOVER NO ICONE DA SESSÃO ATIVA
 		 }
 
 		.MyTabStyle .ajax__tab_hover .ajax__tab_inner {
 			color: #fff;
-			border: none;
 			font-weight: bolder;
 		} */
 
-		.MyTabStyle .ajax__tab_active .ajax__tab_outer {
-			border-bottom-color: #ffffff;
-			background: transparent;
-			border: none;
-			
+		.MyTabStyle .ajax__tab_active .ajax__tab_outer
+		 .progress-steps .circle {
+			border-bottom-color: transparent;
+			color: #00554f !important;
+		}
+
+		.MyTabStyle .ajax__tab_active .ajax__tab_outer
+		 .progress-steps .circle .number {
+			border-bottom-color: transparent;
+			background: #00837A!important;
+			color: #fff !important;
 		}
 
 		.MyTabStyle .ajax__tab_body {
 			background: transparent;
 			border-top-width: 0;
-			border: none;
 		}
 
 		.MyTabStyle .ajax__tab_tab {
@@ -172,12 +172,10 @@
 
 		.tabs-min {
 			background: transparent;
-			border: none;
 		}
 
 		.tabs-min .ajax__tab_header {
 			background: transparent;
-			border: none;
 			border-bottom: 1px solid #c0c0c0;
 			-moz-border-radius: 0px;
 			-webkit-border-radius: 0px;
@@ -186,12 +184,10 @@
 
 		.tabs-min .ui-tabs-nav .ui-state-default {
 			background: transparent;
-			border: none;
 		}
 
 		.tabs-min .ui-tabs-nav .ui-state-active {
 			background: transparent url(../img/uiTabsArrow.png) no-repeat bottom center;
-			border: none;
 		}
 
 		.tabs-min .ui-tabs-nav .ui-state-default a {
