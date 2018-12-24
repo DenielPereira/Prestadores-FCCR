@@ -370,36 +370,3 @@ function fechar_menu() {
     document.getElementById("Panel2").style.marginLeft = "0";
 }
 
-
-//ReCaptcha
-
-var your_site_key = '6Lf26n0UAAAAAGrX52ppYaF5BdsEHsPUIr_2f6yJ';
-
-var renderRecaptcha = function () {
-    grecaptcha.render('ReCaptchContainer', {
-        'sitekey': your_site_key,
-        'callback': reCaptchaCallback,
-        theme: 'light', //light or dark    
-        type: 'image',// image or audio    
-        size: 'normal'//normal or compact    
-    });
-};
-
-var reCaptchaCallback = function (response) {
-    document.getElementById('txtCaptcha').value = "F";
-    if (response !== '') {
-        jQuery('#lblMessage').css('color', 'green').html('V');
-        document.getElementById('<%=txtCaptcha.ClientID%>').value = "V";
-    }
-};
-
-jQuery('button[type="button"]').click(function (e) {
-    var message = 'Please checck the checkbox';
-    if (typeof (grecaptcha) != 'undefined') {
-        var response = grecaptcha.getResponse();
-        (response.length === 0) ? (message = 'Captcha verification failed') : (message = 'Success!');
-    }
-    jQuery('#lblMessage').html(message);
-    jQuery('#lblMessage').css('color', (message.toLowerCase() == 'success!') ? "green" : "red");
-});
-

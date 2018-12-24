@@ -5,6 +5,47 @@ Imports System.Web.UI.ScriptReferenceCollection
 Imports System.Web.DynamicData
 Imports System.Web.Routing
 Imports System.Net.Mail
+Imports Newtonsoft.Json
+
+
+Public Class ReCaptchaClass
+    Public Shared Function Validate(ByVal EncodedResponse As String) As String
+        Dim client = New System.Net.WebClient()
+
+        Dim PrivateKey As String = "6LcbhYQUAAAAAAt8JB8BHVN9YNtuCkQH73DJuQ7H"
+
+        Dim GoogleReply = client.DownloadString(String.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", PrivateKey, EncodedResponse))
+
+        Dim captchaResponse = Newtonsoft.Json.JsonConvert.DeserializeObject(Of ReCaptchaClass)(GoogleReply)
+
+        Return captchaResponse.Success
+    End Function
+
+    <JsonProperty("success")>
+    Public Property Success() As String
+        Get
+            Return m_Success
+        End Get
+        Set(value As String)
+            m_Success = value
+        End Set
+    End Property
+    Private m_Success As String
+
+    <JsonProperty("error-codes")>
+    Public Property ErrorCodes() As List(Of String)
+        Get
+            Return m_ErrorCodes
+        End Get
+        Set(value As List(Of String))
+            m_ErrorCodes = value
+        End Set
+    End Property
+
+    Private m_ErrorCodes As List(Of String)
+
+End Class
+
 Partial Class Enviar_Senha
     Inherits System.Web.UI.Page
     Dim objConn, objConn1 As MySqlConnection
@@ -31,14 +72,14 @@ Partial Class Enviar_Senha
         txt_CPF.Attributes.Add("onkeyup", "javascript:formatar(this, '###.###.###-##')")
         txt_CPF.Attributes.Add("onBlur", "javascript:valida_cpf(txt_CPF)")
 
-        ' If txt_CNPJ.Text <> "Digite aqui apenas se você for pessoa jurídica" Then
-        '     txt_CPF.Text = "Digite aqui apenas se você for pessoa física"
-        '     'txt_CPF.Enabled = "false"
-        ' End If
-        ' If txt_CPF.Text <> "Digite aqui apenas se você for pessoa física" Then
-        '     txt_CNPJ.Text = "Digite aqui apenas se você for pessoa jurídica"
-        '     'txt_CNPJ.Enabled = "false"
-        ' End If
+        If txt_CNPJ.Text <> "Digite aqui apenas se você for pessoa jurídica" Then
+            txt_CPF.Text = "Digite aqui apenas se você for pessoa física"
+            'txt_CPF.Enabled = "false"
+        End If
+        If txt_CPF.Text <> "Digite aqui apenas se você for pessoa física" Then
+            txt_CNPJ.Text = "Digite aqui apenas se você for pessoa jurídica"
+            'txt_CNPJ.Enabled = "false"
+        End If
 
     End Sub
 
@@ -203,7 +244,10 @@ Partial Class Enviar_Senha
 
         If 1 = 1 Then
 
-            If txtCaptcha.Text <> "V" Then
+            Dim EncodedResponse As String = Request.Form("g-Recaptcha-Response")
+            Dim IsCaptchaValid As Boolean = IIf(ReCaptchaClass.Validate(EncodedResponse) = "true", True, False)
+
+            If IsCaptchaValid = False Then
 
                 lbl_mensagem_1.Text = "FALHA NA AUTENTICAÇÃO !!!"
                 lbl_mensagem_2.Text = " VOCE É UM ROBÔ ?"
@@ -212,7 +256,6 @@ Partial Class Enviar_Senha
                 btn_Confirma_Exclusao.Visible = "false"
                 btn_Nao_Confirma.Visible = "false"
                 MPE_Senha.Show()
-                txtCaptcha.Text = ""
 
             Else
                 Dim TestValue As String = txtCaptcha.Text.Trim.ToUpper(System.Globalization.CultureInfo.CreateSpecificCulture("en-US"))

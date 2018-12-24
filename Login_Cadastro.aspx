@@ -17,7 +17,7 @@
 	 crossorigin="anonymous"/>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
 	 crossorigin="anonymous"/>
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	 <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body style="overflow-x: hidden;">
@@ -79,10 +79,10 @@
 						<asp:TextBox ID="txtCaptcha" runat="server" BackColor="White" BorderStyle="None" ForeColor="white" CssClass="d-none align-self-center"
 						 >V</asp:TextBox>
 
-						<div class="row justify-content-center">
-							<div id="ReCaptchContainer" class="mb-2 mt-2"></div>
-							<label id="lblMessage" runat="server" clientidmode="static" visible="False"></label>
-							<div class="g-recaptcha" data-sitekey="6Lf26n0UAAAAAGrX52ppYaF5BdsEHsPUIr_2f6yJ"></div>
+						<div class="row justify-content-center mb-2 mt-2">
+							<!-- <div id="ReCaptchContainer" class="mb-2 mt-2"></div> -->
+							<!-- <label id="lblMessage" runat="server"></label> -->
+							<div class="g-recaptcha" data-sitekey="6LcbhYQUAAAAAEbd5Nmr_ooi9UzlrFv45RBAbfBp"></div>
 						</div>
 
 						<asp:Button ID="btn_entrar" runat="server" CssClass="btn btn-primary w-50 align-self-center mb-2" Text="Entrar" />
@@ -204,8 +204,6 @@
 			</p>
 		</div>
 	</footer>
-
-	<script src="https://www.google.com/recaptcha/api.js?onload=renderRecaptcha&render=explicit" async defer></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 	 crossorigin="anonymous"></script>
 	<script type="text/javascript" src="/js/functions.js"></script>

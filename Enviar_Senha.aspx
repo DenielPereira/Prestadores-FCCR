@@ -14,7 +14,8 @@
 	 crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
 	 crossorigin="anonymous">
-	<title>FCCR - Prestadores de Serviços</title>
+	<title>Esquecimento de senha | Prestadores de Serviços - FCCR</title>
+	<script src="https://www.google.com/recaptcha/api.js?"></script>
 </head>
 
 <body style="overflow-x: hidden;">
@@ -51,7 +52,7 @@
 								<asp:Label ID="lbl_Titulo2" runat="server" CssClass="input-group-text">CNPJ</asp:Label>
 							</div>
 							<asp:TextBox ID="txt_CNPJ" runat="server" CssClass="ph-center campo form-control" ForeColor="Black" ToolTip="Digite apenas os números"
-							 placeholder="Digite aqui apenas se você for pessoa jurídica" MaxLength="18"></asp:TextBox>
+							 placeholder="Digite aqui apenas se você for pessoa jurídica" MaxLength="18">Digite aqui apenas se você for pessoa jurídica</asp:TextBox>
 						</div>
 
 						<div class="input-group mb-3">
@@ -70,11 +71,11 @@
 							 placeholder="Digite aqui o seu e-mail" MaxLength="50"></asp:TextBox>
 						</div>
 
-						<asp:TextBox ID="txtCaptcha" runat="server" hidden="true" value="V"></asp:TextBox>
-						<div class="row justify-content-center">
-							<div id="ReCaptchContainer" class="mb-2 mt-2"></div>
+						<asp:TextBox ID="txtCaptcha" runat="server" hidden="true" ></asp:TextBox>
+						<div class="row justify-content-center mb-2 mt-2">
+							<!-- <div id="ReCaptchContainer" class=""></div> -->
 							<label id="lblMessage" runat="server" clientidmode="static" visible="False"></label>
-							<div class="g-recaptcha" data-sitekey="6Lf26n0UAAAAAGrX52ppYaF5BdsEHsPUIr_2f6yJ"></div>
+							<div class="g-recaptcha" data-sitekey="6LcbhYQUAAAAAEbd5Nmr_ooi9UzlrFv45RBAbfBp"></div>
 						</div>
 
 						<asp:Button ID="btn_entrar_senha" runat="server" Text="Enviar Senha" CssClass="btn btn-primary w-50 align-self-center mb-2" />
@@ -206,7 +207,6 @@
 			</p>
 		</div>
 	</footer>
-	<script src="https://www.google.com/recaptcha/api.js?onload=renderRecaptcha&render=explicit" async defer></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 	 crossorigin="anonymous"></script>
 	<script type="text/javascript" src="/js/functions.js"></script>

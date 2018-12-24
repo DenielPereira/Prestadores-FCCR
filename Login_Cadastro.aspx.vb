@@ -5,6 +5,46 @@ Imports System.Web.UI.ScriptReferenceCollection
 Imports System.Web.DynamicData
 Imports System.Web.Routing
 Imports System.Net.Mail
+Imports Newtonsoft.Json
+
+
+Public Class ReCaptchaClass
+    Public Shared Function Validate(ByVal EncodedResponse As String) As String
+        Dim client = New System.Net.WebClient()
+
+        Dim PrivateKey As String = "6LcbhYQUAAAAAAt8JB8BHVN9YNtuCkQH73DJuQ7H"
+
+        Dim GoogleReply = client.DownloadString(String.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", PrivateKey, EncodedResponse))
+
+        Dim captchaResponse = Newtonsoft.Json.JsonConvert.DeserializeObject(Of ReCaptchaClass)(GoogleReply)
+
+        Return captchaResponse.Success
+    End Function
+
+    <JsonProperty("success")>
+    Public Property Success() As String
+        Get
+            Return m_Success
+        End Get
+        Set(value As String)
+            m_Success = value
+        End Set
+    End Property
+    Private m_Success As String
+
+    <JsonProperty("error-codes")>
+    Public Property ErrorCodes() As List(Of String)
+        Get
+            Return m_ErrorCodes
+        End Get
+        Set(value As List(Of String))
+            m_ErrorCodes = value
+        End Set
+    End Property
+
+    Private m_ErrorCodes As List(Of String)
+
+End Class
 
 Partial Class Login_Cadastro
     Inherits System.Web.UI.Page
@@ -81,7 +121,10 @@ Partial Class Login_Cadastro
 
         If 1 = 1 Then
 
-            If txtCaptcha.Text <> "V" Then
+            Dim EncodedResponse As String = Request.Form("g-Recaptcha-Response")
+            Dim IsCaptchaValid As Boolean = IIf(ReCaptchaClass.Validate(EncodedResponse) = "true", True, False)
+
+            If IsCaptchaValid = False Then
 
                 lbl_mensagem_1.Text = "FALHA NA AUTENTICAÇÃO !!!"
                 lbl_mensagem_2.Text = " VOCE É UM ROBÔ ?"
@@ -91,10 +134,9 @@ Partial Class Login_Cadastro
                 btn_Nao_Confirma.Visible = "false"
                 MPE_Login.Show()
 
-                txtCaptcha.Text = ""
-
             Else
-                Dim TestValue As String = txtCaptcha.Text.Trim.ToUpper(System.Globalization.CultureInfo.CreateSpecificCulture("en-US"))
+
+                Dim TestValue As String = txtCaptcha.Text.Trim.ToUpper(System.Globalization.CultureInfo.CreateSpecificCulture("pt-BR"))
                 If 1 = 1 Then ' StrComp(TestValue, Session("ASPCAPTCHA").ToString.Trim, CompareMethod.Text) = 0 Then
                     'lblResult.Text = "CAPTCHA PASSED"
                     'lblResult.ForeColor = Drawing.Color.Green

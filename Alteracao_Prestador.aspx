@@ -1211,8 +1211,8 @@
 								<asp:TextBox ID="txtdescservico" runat="server" CausesValidation="True" CssClass="form-control" MaxLength="250"
 								 onkeyup="this.value=this.value.toUpperCase();" Rows="1" placeholder="Adicionar Material"></asp:TextBox>
 								<div class="input-group-append">
-									<asp:ImageButton ID="ImageButton3" runat="server" CausesValidation="False" ImageUrl="~/Imagens/Botoes/plus-solid.svg"
-									 style="height: calc(2.25rem + 2px); background-color: #c78d8d !important; filter: invert(100%);" CssClass="btn btn-primary" />
+									<asp:ImageButton ID="ImageButton3" runat="server" CausesValidation="False" ImageUrl="~/Imagens/Icones/plus-solid.svg"
+									 style="height: calc(2.25rem + 2px);" CssClass="btn btn-secondary" />
 								</div>
 							</div>
 						</div>
@@ -1278,8 +1278,8 @@
 								 onkeyup="this.value=this.value.toUpperCase();" Rows="1" placeholder="Adicionar Serviço"></asp:TextBox>
 								<div class="input-group-append">
 								</div>
-								<asp:ImageButton ID="btn_cadserv" runat="server" CausesValidation="False" ImageUrl="~/Imagens/Botoes/plus-solid.svg"
-								 style="height: calc(2.25rem + 2px); background-color: #c78d8d !important; filter: invert(100%);" CssClass="btn btn-primary" />
+								<asp:ImageButton ID="btn_cadserv" runat="server" CausesValidation="False" ImageUrl="~/Imagens/Icones/plus-solid.svg"
+								 style="height: calc(2.25rem + 2px);" CssClass="btn btn-secondary" />
 							</div>
 						</div>
 
@@ -1314,9 +1314,9 @@
 						</div>
 						<asp:Panel ID="pnl_documento_consulta" runat="server">
 
-							<td align="center" style="font-weight: bold">Para consultar
+							<p>Para consultar
 								os dados do Documento cadastrado, clique na descrição
-								do mesmo.</td>
+								do mesmo.</p>
 
 						</asp:Panel>
 
