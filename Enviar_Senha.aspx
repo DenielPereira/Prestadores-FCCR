@@ -203,7 +203,7 @@
 		</div>
 		<div class="text-center text-light mt-2 copy">
 			<p>
-				&copy;2018 <a href="http://fccr.sp.gov.br" target="_blank">Fundação Cultural Cassiano Ricardo </a>
+				&copy;<asp:Label runat="server" ID="ano"></asp:Label> <a href="http://fccr.sp.gov.br" target="_blank">Fundação Cultural Cassiano Ricardo </a>
 			</p>
 		</div>
 	</footer>

@@ -95,6 +95,8 @@ Partial Class Cadastro_Prestador
 
         End If
 
+        ano.Text = Year(Today)
+
     End Sub
     Private Sub Verifica_Acesso()
 
@@ -2324,14 +2326,15 @@ Partial Class Cadastro_Prestador
 
     End Sub
     Protected Sub Imgbtn_Cancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Imgbtn_Cancelar.Click
+
         lbl_mensagem_cadastro.Text = "Confirma o cancelamento de seu cadastro ? "
         Imgbtn_Fechar_Mensagem.Visible = "false"
         Imgbtn_Sair_Mensagem.Visible = "false"
         Imgbtn_Sim_Mensagem.Visible = "true"
         Imgbtn_Nao_Mensagem.Visible = "true"
         MPE_Cadastro.Show()
-       
-      
+
+
     End Sub
 
     Protected Sub Imgbtn_Continuar_11_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Imgbtn_Continuar_11.Click
@@ -2354,7 +2357,7 @@ Partial Class Cadastro_Prestador
                 MPE_Cadastro.Show()
             Else
                 Gravar_Prestador()
-                lbl_Identificacao.Text = RTrim(txt_Razao_Social.Text) & " - CNPJ: " & txt_cad_CNPJ.Text & " - ID: " & txt_ID.Text
+                lbl_Identificacao.Text = RTrim(txt_Razao_Social.Text) & " - CNPJ:   " & txt_cad_CNPJ.Text & " - ID: " & txt_ID.Text
                 lbl_Error_ID.Visible = "false"
                 lbl_Error_ID.Text = ""
                 lbl_Error_ID.Visible = "false"
@@ -2577,12 +2580,13 @@ Partial Class Cadastro_Prestador
             End Try
 
         End If
-        lbl_mensagem_cadastro.Text = "Cadastro cancelado com sucesso !!!"
-        Imgbtn_Fechar_Mensagem.Visible = "false"
-        Imgbtn_Sair_Mensagem.Visible = "true"
-        Imgbtn_Sim_Mensagem.Visible = "false"
-        Imgbtn_Nao_Mensagem.Visible = "false"
-        MPE_Cadastro.Show()
+        ClientScript.RegisterStartupScript(Me.GetType(), "swal", "swal('Tudo certo!', 'O seu cadastro foi cancelado :)', 'success').then((value) => {window.location.href='/Login_cadastro.aspx'});;", True)
+        'lbl_mensagem_cadastro.Text = "Cadastro cancelado com sucesso !!!"
+        'Imgbtn_Fechar_Mensagem.Visible = "false"
+        'Imgbtn_Sair_Mensagem.Visible = "true"
+        'Imgbtn_Sim_Mensagem.Visible = "false"
+        'Imgbtn_Nao_Mensagem.Visible = "false"
+        'MPE_Cadastro.Show()
     End Sub
 
     Protected Sub Imgbtn_Nao_Mensagem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Imgbtn_Nao_Mensagem.Click

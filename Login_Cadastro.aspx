@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
 	 crossorigin="anonymous"/>
 	 <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body style="overflow-x: hidden;">
@@ -51,7 +52,7 @@
 								<asp:Label ID="lbl_Titulo2" runat="server" CssClass="input-group-text">CNPJ</asp:Label>
 							</div>
 							<asp:TextBox ID="txt_CNPJ" runat="server" CssClass="ph-center campo form-control" ForeColor="Black" ToolTip="Digite apenas os números"
-							 placeholder="Digite aqui apenas se você for pessoa jurídica" Value="Digite aqui apenas se você for pessoa jurídica" style="font-size: 14px;"></asp:TextBox>
+							 placeholder="Digite aqui apenas se você for pessoa jurídica" Value="Digite aqui apenas se você for pessoa jurídica" style="font-size: 14px;" required></asp:TextBox>
 						</div>
 
 						<div class="input-group mb-3">
@@ -59,7 +60,7 @@
 								<asp:Label ID="lbl_Titulo5" runat="server" CssClass="input-group-text">CPF</asp:Label>
 							</div>
 							<asp:TextBox ID="txt_CPF" runat="server" CssClass="ph-center campo form-control" ForeColor="Black" ToolTip="Digite apenas os números"
-							 placeholder="Digite aqui apenas se você for pessoa física" style="font-size: 14px;"></asp:TextBox>
+							 placeholder="Digite aqui apenas se você for pessoa física" style="font-size: 14px;" required></asp:TextBox>
 						</div>
 
 						<div class="input-group">
@@ -67,7 +68,7 @@
 								<asp:Label ID="lbl_Titulo6" runat="server" CssClass="input-group-text">Senha</asp:Label>
 							</div>
 							<asp:TextBox ID="txt_Senha" runat="server" CssClass="ph-center campo form-control" ForeColor="Black" MaxLength="10"
-							 TextMode="Password" ToolTip="Digite aqui sua senha" placeholder="Digite aqui sua senha"></asp:TextBox>
+							 TextMode="Password" ToolTip="Digite aqui sua senha" placeholder="Digite aqui sua senha" required></asp:TextBox>
 						</div>
 
 						<div class="text-right">
@@ -82,7 +83,7 @@
 						<div class="row justify-content-center mb-2 mt-2">
 							<!-- <div id="ReCaptchContainer" class="mb-2 mt-2"></div> -->
 							<!-- <label id="lblMessage" runat="server"></label> -->
-							<div class="g-recaptcha" data-sitekey="6LcbhYQUAAAAAEbd5Nmr_ooi9UzlrFv45RBAbfBp"></div>
+							<div class="g-recaptcha" data-sitekey="6LcbhYQUAAAAAEbd5Nmr_ooi9UzlrFv45RBAbfBp" ></div>
 						</div>
 
 						<asp:Button ID="btn_entrar" runat="server" CssClass="btn btn-primary w-50 align-self-center mb-2" Text="Entrar" />
@@ -200,7 +201,7 @@
 		</div>
 		<div class="text-center text-light mt-2 copy">
 			<p>
-				&copy;2018 <a href="http://fccr.sp.gov.br" target="_blank">Fundação Cultural Cassiano Ricardo </a>
+				&copy;<asp:Label runat="server" ID="ano"></asp:Label> <a href="http://fccr.sp.gov.br" target="_blank">Fundação Cultural Cassiano Ricardo </a>
 			</p>
 		</div>
 	</footer>

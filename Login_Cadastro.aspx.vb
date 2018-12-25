@@ -7,7 +7,6 @@ Imports System.Web.Routing
 Imports System.Net.Mail
 Imports Newtonsoft.Json
 
-
 Public Class ReCaptchaClass
     Public Shared Function Validate(ByVal EncodedResponse As String) As String
         Dim client = New System.Net.WebClient()
@@ -85,6 +84,8 @@ Partial Class Login_Cadastro
             'txt_CNPJ.Enabled = "false"
         End If
 
+        ano.Text = Year(Today)
+
     End Sub
   
     Protected Sub LinkButton2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles lnk_esqueceu.Click
@@ -126,13 +127,15 @@ Partial Class Login_Cadastro
 
             If IsCaptchaValid = False Then
 
-                lbl_mensagem_1.Text = "FALHA NA AUTENTICAÇÃO !!!"
-                lbl_mensagem_2.Text = " VOCE É UM ROBÔ ?"
-                img_btn_Fechar_Mensagem.Visible = "true"
-                img_btn_sair_Mensagem.Visible = "false"
-                btn_Confirma_Exclusao.Visible = "false"
-                btn_Nao_Confirma.Visible = "false"
-                MPE_Login.Show()
+                ClientScript.RegisterStartupScript(Me.GetType(), "swal", "swal('Ops! Algo deu errado :(', 'Você não preencheu o Captcha', 'error');", True)
+
+                'lbl_mensagem_1.Text = "FALHA NA AUTENTICAÇÃO !!!"
+                'lbl_mensagem_2.Text = " VOCE É UM ROBÔ ?"
+                'img_btn_Fechar_Mensagem.Visible = "true"
+                'img_btn_sair_Mensagem.Visible = "false"
+                'btn_Confirma_Exclusao.Visible = "false"
+                'btn_Nao_Confirma.Visible = "false"
+                'MPE_Login.Show()
 
             Else
 
@@ -206,14 +209,16 @@ Partial Class Login_Cadastro
 
                                 Else
 
-                                    lbl_mensagem_1.Text = "Este CNPJ/CPF não está cadastrado ou a senha está incorreta !!!"
-                                    lbl_mensagem_2.Text = ""
-                                    img_btn_Fechar_Mensagem.Visible = "True"
-                                    img_btn_sair_Mensagem.Visible = "False"
-                                    btn_Confirma_Exclusao.Visible = "False"
-                                    btn_Nao_Confirma.Visible = "False"
-                                    MPE_Login.Show()
-                                    txtCaptcha.Text = ""
+                                    ClientScript.RegisterStartupScript(Me.GetType(), "swal", "swal('Ops! Algo deu errado :(', 'Você tem certeza que digitou tudo certo?', 'error');", True)
+
+                                    ' lbl_mensagem_1.Text = "Este CNPJ/CPF não está cadastrado ou a senha está incorreta !!!"
+                                    ' lbl_mensagem_2.Text = ""
+                                    ' img_btn_Fechar_Mensagem.Visible = "True"
+                                    ' img_btn_sair_Mensagem.Visible = "False"
+                                    ' btn_Confirma_Exclusao.Visible = "False"
+                                    ' btn_Nao_Confirma.Visible = "False"
+                                    ' MPE_Login.Show()
+                                    ' txtCaptcha.Text = ""
 
                                 End If
 
@@ -241,14 +246,16 @@ Partial Class Login_Cadastro
 
                     Else
 
-                        lbl_mensagem_1.Text = "Informe seus dados corretamente !!!"
-                        lbl_mensagem_2.Text = ""
-                        img_btn_Fechar_Mensagem.Visible = "true"
-                        img_btn_sair_Mensagem.Visible = "false"
-                        btn_Confirma_Exclusao.Visible = "false"
-                        btn_Nao_Confirma.Visible = "false"
-                        MPE_Login.Show()
-                        txtCaptcha.Text = ""
+                        ClientScript.RegisterStartupScript(Me.GetType(), "swal", "swal('Ops! Algo deu errado :(', 'Preencha os campos corretamente', 'error');", True)
+
+                        ' lbl_mensagem_1.Text = "Informe seus dados corretamente !!!"
+                        ' lbl_mensagem_2.Text = ""
+                        ' img_btn_Fechar_Mensagem.Visible = "true"
+                        ' img_btn_sair_Mensagem.Visible = "false"
+                        ' btn_Confirma_Exclusao.Visible = "false"
+                        ' btn_Nao_Confirma.Visible = "false"
+                        ' MPE_Login.Show()
+                        ' txtCaptcha.Text = ""
 
                     End If
 

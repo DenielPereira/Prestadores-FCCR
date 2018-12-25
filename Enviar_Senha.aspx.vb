@@ -81,6 +81,8 @@ Partial Class Enviar_Senha
             'txt_CNPJ.Enabled = "false"
         End If
 
+        ano.Text = Year(Today)
+
     End Sub
 
     Private Sub Enviar_senha()

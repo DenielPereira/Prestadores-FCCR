@@ -13,9 +13,10 @@
       crossorigin="anonymous"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" 
       crossorigin="anonymous"/>
-  <title>FCCR - Prestadores de Serviços</title>
+  <title>Cadastro | Prestadores de Serviços - FCCR</title>
   <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
   <link href="~/Styles/tabs.css" rel="stylesheet" type="text/css" />
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -2175,7 +2176,7 @@
     </div>
     <div class="text-center text-light mt-2 copy">
       <p>
-        &copy;2018 <a href="http://fccr.sp.gov.br" target="_blank">Fundação Cultural Cassiano Ricardo </a>
+        &copy;<asp:Label runat="server" ID="ano"></asp:Label> <a href="http://fccr.sp.gov.br" target="_blank">Fundação Cultural Cassiano Ricardo </a>
       </p>
     </div>
   </footer>
