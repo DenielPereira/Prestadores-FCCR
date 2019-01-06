@@ -238,6 +238,7 @@
                       <asp:TextBox ID="txt_Razao_Social" runat="server" CssClass="ph-center form-control" MaxLength="70"
                         onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui sua Razão Social"
                         placeholder="Qual a razão social da empresa?"></asp:TextBox>
+                        <span style="color: red; margin-left: 2px; margin-top: 12px;">*</span>
                     </div>
 
                     <div class="input-group mb-3">
@@ -247,6 +248,7 @@
                       <asp:TextBox ID="txt_Nome_Fantasia" runat="server" CssClass="ph-center form-control" MaxLength="25"
                         onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui seu Nome Fantasia caso tenha"
                         placeholder="Qual o nome fantasia da empresa?"></asp:TextBox>
+                        <span style="color: red; margin-left: 2px; margin-top: 12px;">*</span>
                     </div>
 
 
@@ -264,7 +266,8 @@
                       </div>
                       <asp:TextBox ID="txt_IMunicipal" runat="server" CssClass="ph-center form-control" MaxLength="20"
                         ToolTip="Se não tiver uma, digite ISENTO." placeholder="Qual a Inscrição Municipal da empresa?"></asp:TextBox>
-                    </div>
+                        <span style="color: red; margin-left: 2px; margin-top: 12px;">*</span>
+                      </div>
 
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
@@ -411,7 +414,8 @@
                       </div>
                       <asp:TextBox ID="txt_Senha" runat="server" CssClass="ph-center form-control" MaxLength="10"
                         ToolTip="Informe aqui sua senha com no mínimo 6 caracteres ( números e/ou letras)" placeholder="Escolha uma senha"></asp:TextBox>
-                    </div>
+                        <span style="color: red; margin-left: 2px; margin-top: 12px;">*</span>
+                      </div>
 
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
@@ -419,7 +423,8 @@
                       </div>
                       <asp:TextBox ID="txt_Confirma_Senha" runat="server" CssClass="ph-center form-control" MaxLength="10"
                         ToolTip="Redigite a senha para confirmá-la" placeholder="Repita a senha"></asp:TextBox>
-                    </div>
+                        <span style="color: red; margin-left: 2px; margin-top: 12px;">*</span>
+                      </div>
 
                     <asp:Button ID="Imgbtn_Voltar_11" runat="server" CausesValidation="False" Text="Sessão Anterior"
                       CssClass="btn btn-primary" />
@@ -482,6 +487,7 @@
                       <asp:TextBox ID="txt_PF_Nome" runat="server" CssClass="ph-center form-control" MaxLength="70"
                         onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui seu Nome" placeholder="Como você se chama?">
                       </asp:TextBox>
+                      <span style="color: red; margin-left: 2px; margin-top: 12px;">*</span>
                     </div>
 
                     <div class="input-group mb-3">
@@ -491,6 +497,7 @@
                       <asp:TextBox ID="txt_PF_RG" runat="server" CssClass="ph-center form-control" MaxLength="20"
                         onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o RG do Requesentante Legal da Empresa"
                         placeholder="Qual o seu RG?"></asp:TextBox>
+                        <span style="color: red; margin-left: 2px; margin-top: 12px;">*</span>
                     </div>
 
                     <div class="input-group mb-3">
@@ -499,7 +506,8 @@
                       </div>
                       <asp:TextBox ID="txt_PF_PISPASEP" runat="server" CssClass="ph-center form-control" MaxLength="14"
                         onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o PIS/PASEP" placeholder="Informe o seu PIS/PASEP"></asp:TextBox>
-                    </div>
+                        <span style="color: red; margin-left: 2px; margin-top: 12px;">*</span>
+                      </div>
 
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
@@ -507,7 +515,8 @@
                       </div>
                       <asp:TextBox ID="txt_PF_NIT" runat="server" CssClass="ph-center form-control" MaxLength="14"
                         onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o NIT" placeholder="Informe o seu NIT"></asp:TextBox>
-                    </div>
+                        <span style="color: red; margin-left: 2px; margin-top: 12px;">*</span>
+                      </div>
 
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
@@ -547,7 +556,8 @@
                       </div>
                       <asp:TextBox ID="txt_Senha0" runat="server" CssClass="ph-center form-control" MaxLength="10"
                         ToolTip="Informe aqui sua senha com no mínimo 6 caracteres ( números e/ou letras)" placeholder="Escolha a sua senha"></asp:TextBox>
-                    </div>
+                        <span style="color: red; margin-left: 2px; margin-top: 12px;">*</span>
+                      </div>
 
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
@@ -555,7 +565,8 @@
                       </div>
                       <asp:TextBox ID="txt_Confirma_Senha0" runat="server" CssClass="ph-center form-control required"
                         MaxLength="10" ToolTip="Redigite a senha para confirmá-la" placeholder="Repita a senha escolhida"></asp:TextBox>
-                    </div>
+                        <span style="color: red; margin-left: 2px; margin-top: 12px;">*</span>
+                      </div>
 
                     <asp:Button ID="Imgbtn_Voltar_12" runat="server" Text="Sessão Anterior" CausesValidation="False"
                       CssClass="btn btn-primary" />
@@ -613,8 +624,9 @@
                         placeholder="Qual o CEP do endereço de correspondencia?" data-toggle="tooltip" data-placement="top"></asp:TextBox>
                       <div class="input-group-append">
                         <asp:Button ID="btn_CEP" runat="server" CausesValidation="False" CssClass="btn btn-secondary"
-                          Text="&#xf002;" style="font-family: 'Font Awesome 5 Free' !important; font-weight: 900;" />
-                      </div>
+                          Text="&#xf002;" style="font-family: 'Font Awesome 5 Free' !important; font-weight: 900; border-top-right-radius: .25rem !important; border-bottom-right-radius: .25rem !important;" />
+                          <span style="color: red; margin-left: 2px; margin-top: 12px;">*</span>
+                        </div>
                     </div>
 
                     <div class="text-center text-muted mb-2">
@@ -631,7 +643,8 @@
                       <asp:TextBox ID="txt_Endereco" runat="server" CssClass="ph-center form-control" MaxLength="100"
                         onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o endereço da empresa"
                         placeholder="Informe aqui o endereço da empresa"></asp:TextBox>
-                    </div>
+                        <span style="color: red; margin-left: 2px; margin-top: 12px;">*</span>
+                      </div>
 
                     <asp:RequiredFieldValidator ID="RV_Endereco" runat="server" ControlToValidate="txt_Endereco"
                       ErrorMessage="Informe o Endereço" style="display:none;">*</asp:RequiredFieldValidator>
@@ -642,7 +655,8 @@
                       </div>
                       <asp:TextBox ID="txt_Numero" runat="server" CssClass="ph-center form-control" MaxLength="10"
                         ToolTip="Informe aqui o número do endereço da empresa" placeholder="Informe aqui o número do endereço da empresa"></asp:TextBox>
-                    </div>
+                        <span style="color: red; margin-left: 2px; margin-top: 12px;">*</span>
+                      </div>
 
                     <asp:RequiredFieldValidator ID="RV_Numero" runat="server" ControlToValidate="txt_Numero"
                       ErrorMessage="Informe o Número" style="display:none;">*</asp:RequiredFieldValidator>
@@ -663,7 +677,8 @@
                       <asp:TextBox ID="txt_Bairro" runat="server" CssClass="ph-center form-control" MaxLength="50"
                         onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui o bairro da empresa"
                         placeholder="Informe aqui o bairro da empresa"></asp:TextBox>
-                    </div>
+                        <span style="color: red; margin-left: 2px; margin-top: 12px;">*</span>
+                      </div>
 
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
@@ -672,7 +687,8 @@
                       <asp:TextBox ID="txt_Cidade" runat="server" CssClass="ph-center form-control" MaxLength="50"
                         onkeyup="this.value=this.value.toUpperCase();" ToolTip="Informe aqui a cidade da empresa"
                         placeholder="Informe aqui a cidade da empresa"></asp:TextBox>
-                    </div>
+                        <span style="color: red; margin-left: 2px; margin-top: 12px;">*</span>
+                      </div>
 
                     <asp:RequiredFieldValidator ID="RV_Cidade" runat="server" ControlToValidate="txt_Cidade"
                       ErrorMessage="Informe a Cidade" style="display:none;">*</asp:RequiredFieldValidator>
@@ -712,6 +728,7 @@
                         <asp:ListItem Value="SP">SÃO PAULO</asp:ListItem>
                         <asp:ListItem Value="TO">TOCANTINS</asp:ListItem>
                       </asp:DropDownList>
+                      <span style="color: red; margin-left: 2px; margin-top: 12px;">*</span>
                     </div>
 
                     <div class="input-group mb-3">
@@ -720,7 +737,8 @@
                       </div>
                       <asp:TextBox ID="txt_Telefone" runat="server" CssClass="ph-center form-control" MaxLength="25"
                         ToolTip="Informe aqui o DDD e o telefone da empresa" ValidateRequestMode="Enabled" placeholder="Informe aqui o DDD e o telefone da empresa"></asp:TextBox>
-                    </div>
+                        <span style="color: red; margin-left: 2px; margin-top: 12px;">*</span>
+                      </div>
 
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
@@ -746,17 +764,14 @@
                         ToolTip="Informe aqui o DDD e o celular da empresa" placeholder="Informe aqui outro DDD e o celular da empresa"></asp:TextBox>
                     </div>
 
-                    <!-- FIXME: o email do usuário já foi solicitado na tela anteior. 
-                             tirar esses campos daqui ou retirar da outra tela -->
-
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
                         <span class="input-group-text">E-mail 1</span>
                       </div>
                       <asp:TextBox ID="txt_Email" runat="server" CssClass="ph-center form-control" MaxLength="50"
-                        ToolTip="Informe aqui o endereço de email da empresa - ATENÇÃO !!! Este será o email de contato com a Fundação Cultural "
-                        placeholder="Informe o email de contato da empresa"></asp:TextBox>
-                    </div>
+                        placeholder="Informe o email de contato da empresa" data-toggle="popover" data-title="Atenção!" data-content="Este será o email de contato com a Fundação Cultural Cassiano Ricardo"></asp:TextBox>
+                        <span style="color: red; margin-left: 2px; margin-top: 12px;">*</span>
+                      </div>
 
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
