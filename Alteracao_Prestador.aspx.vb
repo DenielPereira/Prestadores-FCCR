@@ -489,7 +489,7 @@ Partial Class Alteracao_Prestador
             objConn = Nothing
 
             lbl_nome_prestador.Text = txt_Razao_Social.Text
-            lbl_cnpj_codigo.Text = txt_CNPJ.Text & " ID - " & CodPrestador
+            lbl_cnpj_codigo.Text = txt_CNPJ.Text & " | Nº do Cadastro: " & CodPrestador
 
             If lbl_TipoEmpresa_cod.Text = 10 Then
                 pnl_PF.Visible = True

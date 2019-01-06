@@ -398,10 +398,10 @@
 
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
-                        <span class="input-group-text">E-mail</span>
+                        <span class="input-group-text" data-tooltip="Email do Representante legal da empresa">E-mail do Repres.</span>
                       </div>
                       <asp:TextBox ID="txt_Representante_Email" runat="server" CssClass="ph-center form-control"
-                        MaxLength="50" placeholder="E-mail de contato da empresa" data-toggle="popover" title="Atenção!"
+                        MaxLength="50" placeholder="E-mail do representante legal da empresa" data-toggle="popover" title="Atenção!"
                         data-content="Esse e-mail vai servir como meio de contato com a Fundação Cultural Cassiano Ricardo."></asp:TextBox>
                     </div>
 
@@ -1857,10 +1857,6 @@
                   <asp:Label ID="Label12" runat="server">Declaração</asp:Label>
                 </div>
                 <hr class="w-90  align-self-center" />
-                <small>
-                  <p>Perfeito. Chegamos no último passo e ele é bem simples: <br>
-                    Apenas leia e concorde com a declaração abaixo.</p>
-                </small>
                 <div class="card-body py-2 px-5 mt-2 text-justify">
 
                   <p style="text-indent : 2em;">DECLARO, nos termos da recomendação contida no PPIC nº. 59/07 da 7º

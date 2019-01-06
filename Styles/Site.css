@@ -657,6 +657,14 @@ hr{
     width: 100%;
 }
 
+.bg-fccr2{
+    background-image: url(../imagens/backgrounds/bg_fccr.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
 .prestador_data{
     font-size: 22px;
 }
@@ -665,3 +673,7 @@ hr{
     font-weight: 500;
 }
 
+.input-group>.custom-select:not(:last-child), .input-group>.form-control:not(:last-child) {
+    border-top-right-radius: .25rem !important;
+    border-bottom-right-radius: .25rem !important;
+}
